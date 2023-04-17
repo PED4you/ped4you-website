@@ -37,9 +37,6 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
     },
-    fontFamily: {
-      display: ["Mitr", "SF Pro Display", "Sukhumvit Set", "IBM Plex Sans Thai", ...defaultTheme.fontFamily.sans],
-    },
   },
   plugins: [require("@tailwindcss/typography")],
 }

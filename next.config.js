@@ -16,4 +16,7 @@ module.exports = withPWA({
 
     return config
   },
+  experimental: {
+    appDir: true,
+  },
 })
