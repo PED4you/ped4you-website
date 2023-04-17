@@ -1,5 +1,3 @@
-const defaultTheme = require("tailwindcss/defaultTheme")
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   experimental: {
@@ -9,6 +7,7 @@ module.exports = {
   theme: {
     colors: {
       black: "#000",
+      white: "#fff",
       PED: {
         yellow: {
           DEFAULT: "#F2DC5D",

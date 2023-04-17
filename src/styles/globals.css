@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.max-w-desktop {
+    @apply max-w-6xl
+}
+
+.text-sub-heading {
+    @apply text-3xl font-medium
+}
+
+.text-tagline {
+    @apply font-light
+}

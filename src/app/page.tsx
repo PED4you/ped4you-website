@@ -1,25 +1,27 @@
 import type { Metadata } from "next"
 
-import Link from "next/link"
+import {Footer} from "@/components/common/Footer/Footer"
+import {Navigation} from "@/components/common/Navigation/Navigation"
+import {FYI} from "@/components/Home/FYI/FYI"
+import {Landing} from "@/components/Home/Landing/Landing"
+import {MiscData} from "@/components/Home/MiscData/MiscData"
+import {Simulator} from "@/components/Home/Simulator/Simulator"
 
 export const metadata: Metadata = {
   title: "PED4YOU —​ เป็ดฟอร์ยู",
-  description: "ช่วยทุกคนกาบัตรเลือกตั้งของตัวเองได้อย่างมั่นใจ !",
+  description: "ช่วยทุกคนกาบัตรเลือกตั้งของตัวเองได้อย่างมั่นใจ !"
 }
 
 export default function HomePage() {
+  // TODO Home page mobile UI
   return (
-    <main className="bg-PED-yellow p-6 text-black">
-      <div className="flex min-h-screen flex-col gap-4">
-        <h1 className="text-xl font-medium sm:text-6xl">เป็ดฟอร์ยูก๊าบ</h1>
-        <p className="text-lg font-light text-PED-orange">
-          Generated using{" "}
-          <Link href="https://github.com/betich/next-boilerplate" className="underline hover:no-underline">
-            betich&apos;s
-          </Link>{" "}
-          Next.js boilerplate template
-        </p>
-      </div>
-    </main>
+    <>
+      <Navigation/>
+      <Landing/>
+      <Simulator/>
+      <FYI/>
+      <MiscData/>
+      <Footer/>
+    </>
   )
 }
