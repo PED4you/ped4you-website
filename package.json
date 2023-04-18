@@ -13,6 +13,7 @@
     "fix:prettier": "pnpm lint:prettier --write"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.17",
     "classnames": "^2.3.2",
     "next": "^13.3.0",
     "next-pwa": "^5.5.4",

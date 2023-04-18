@@ -4,19 +4,19 @@ import {LandingHeading} from "@/components/Home/Landing/LandingHeading"
 
 export const Landing = () => {
   return (
-    <section className="space-y-14 bg-PED-yellow py-16">
-      <div className="flex items-center justify-center">
-        <div className="mr-12 w-[322px]">
+    <section className="space-y-8 bg-PED-yellow py-12 md:space-y-14 md:py-16">
+      <div className="flex flex-col items-center justify-center md:flex-row">
+        <div className="w-[270px] md:mr-12 md:w-[322px]">
           <DuckSplash/>
         </div>
-        <div className="flex flex-col">
+        <div className="mt-6 flex flex-col items-center text-center md:mt-0 md:items-start md:text-left">
           <LandingHeading/>
-          <p className="text-sub-heading">
+          <p className="md:text-sub-heading text-2xl font-medium">
             ช่วยทุกคน <br/>
             กาบัตรเลือกตั้งของตัวเอง <br/>
             ได้อย่างมั่นใจ !
           </p>
-          <p className="text-tagline mt-2">
+          <p className="text-tagline mt-4 md:mt-2">
             จำลองขั้นตอนการเลือกตั้งตามกติกาใหม่ <br/>
             และรวบรวมข้อมูลที่จำเป็นต่าง ๆ <br/>
             เกี่ยวกับการเลือกตั้ง

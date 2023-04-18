@@ -5,8 +5,10 @@ import {MiscHeader} from "@/components/Home/MiscData/MiscHeader"
 export const MiscData = () => {
   return <section>
     <div className="flex flex-col items-center py-20">
-      <MiscHeader/>
-      <h2 className="text-tagline mt-2 text-xl">อ่านง่าย ย่อยง่าย สำหรับทุกคน</h2>
+      <div className="-ml-4 flex flex-col items-start md:ml-0 md:items-center">
+        <MiscHeader/>
+        <h2 className="text-tagline mt-6 text-xl md:mt-2">อ่านง่าย ย่อยง่าย สำหรับทุกคน</h2>
+      </div>
 
       <div className="my-12 flex w-full max-w-4xl flex-wrap items-center justify-center">
         <ArticleCard title={<span>การเลือก<br/>นายกรัฐมนตรี</span>} date="24 เม.ย. 66"/>

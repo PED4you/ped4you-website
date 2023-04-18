@@ -4,25 +4,25 @@ import {DuckSplash} from "@/components/Home/Landing/DuckSplash"
 
 export const Footer = () => {
   return <footer className="bg-PED-yellow py-20">
-    <div className="mx-auto flex max-w-4xl flex-col items-center">
+    <div className="mx-auto flex max-w-4xl flex-col items-center px-8">
       <FooterHeading/>
-      <p className="mt-8 border-b-[3px] border-b-PED-purple pb-14 text-center">ped4youtupedped4youtupedped4youtupedped4youtupedped4youtupedped4youtupedped4youtuped
+      <p className="mt-8 break-all border-b-[3px] border-b-PED-purple pb-14 text-center">ped4youtupedped4youtupedped4youtupedped4youtupedped4youtupedped4youtupedped4youtuped
         ped4youtupedped4youtupedped4youtupedped4youtupedped4youtupedped4youtuped
         ped4youtupedped4youtupedped4youtupedped4youtupedped4youtuped
         ped4youtupedped4youtupedped4youtupedped4youtuped</p>
       <div className="mt-14 w-[100px]">
         <DuckSplash/>
       </div>
-      <div className="mt-8 flex space-x-8">
-        <div className="flex items-center space-x-2">
+      <div className="mt-8 flex flex-wrap items-center justify-center space-x-8">
+        <div className="m-1 flex items-center space-x-2">
           <FacebookIcon/>
           <span className="text-lg font-light">PED4you</span>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="m-1 flex items-center space-x-2">
           <TwitterIcon/>
           <span className="text-lg font-light">@PED4you</span>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="m-1 flex items-center space-x-2">
           <InstagramIcon/>
           <span className="text-lg font-light">@PED4you</span>
         </div>
