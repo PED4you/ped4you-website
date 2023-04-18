@@ -5,7 +5,7 @@ import {Logo} from "@/components/common/Navigation/Logo"
 export const Navigation = () => {
   return <nav className="w-full bg-PED-purple py-2 px-6">
     <div className="max-w-desktop mx-auto flex w-full items-center justify-between">
-      <div className="w-[220px] sm:w-[451px]">
+      <div className="w-[256px] sm:w-[446px]">
         <Logo/>
       </div>
       <div className="hidden items-center space-x-8 text-lg text-white lg:flex">

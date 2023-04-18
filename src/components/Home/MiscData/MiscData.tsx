@@ -10,7 +10,7 @@ export const MiscData = () => {
         <h2 className="text-tagline mt-6 text-xl md:mt-2">อ่านง่าย ย่อยง่าย สำหรับทุกคน</h2>
       </div>
 
-      <div className="my-12 flex w-full max-w-4xl flex-wrap items-center justify-center">
+      <div className="my-12 flex w-full max-w-4xl flex-wrap items-center justify-center sm:px-4">
         <ArticleCard title={<span>การเลือก<br/>นายกรัฐมนตรี</span>} date="24 เม.ย. 66"/>
         <ArticleCard title={<span>ความสำคัญของ ส.ว.</span>} date="24 เม.ย. 66"/>
         <ArticleCard title={<span>ส.ส. เขต vs<br/>ส.ส. บัญชีรายชื่อ</span>} date="24 เม.ย. 66"/>

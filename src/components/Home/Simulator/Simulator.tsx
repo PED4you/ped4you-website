@@ -5,8 +5,8 @@ import {SimulatorHeading} from "@/components/Home/Simulator/SimulatorHeading"
 
 export const Simulator = () => {
   return <SectionWithDivider>
-    <div className="relative mt-20 flex items-center justify-center py-20 md:mt-0 md:space-x-16">
-      <div>
+    <div className="relative mx-auto mt-20 flex max-w-[823px] items-center justify-center py-20 px-6 md:mt-0 md:justify-between md:py-24">
+      <div className="shrink-0">
         <div className="-ml-4 md:ml-0">
           <SimulatorHeading/>
         </div>
@@ -22,7 +22,7 @@ export const Simulator = () => {
         </p>
         <Button text={"ลองเลือกตั้ง"}/>
       </div>
-      <div className="absolute -top-14 ml-32 w-[210px] md:relative md:top-[unset] md:w-[378px]">
+      <div className="absolute -top-14 ml-32 w-[210px] md:relative md:top-[unset] md:ml-0 md:w-[378px]">
         <DuckSimulator/>
       </div>
     </div>

@@ -20,9 +20,9 @@ export const FYI = () => {
         <InfoCard title="การนับคะแนน"/>
         <InfoCard title="ข้อห้ามที่ควรรู้"/>
         <InfoCard title={
-          <div className="-mt-1 text-center text-lg">
+          <div className="-mt-2 pb-1 text-center text-[13px] md:-mt-1 md:pb-0 md:text-lg">
             <h2>สำหรับผู้สูงอายุ</h2>
-            <h2 className="leading-[8px]">ทุพพลภาพ พิการ</h2>
+            <h2 className="leading-[6px] md:leading-[8px]">ทุพพลภาพ พิการ</h2>
           </div>
         }/>
       </div>
