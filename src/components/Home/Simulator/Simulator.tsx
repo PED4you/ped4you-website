@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/common/Home/Button"
 import { SectionWithDivider } from "@/components/common/Home/SectionWithDivider"
 import { DuckSimulator } from "@/components/Home/Simulator/DuckSimulator"
