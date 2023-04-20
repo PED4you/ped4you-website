@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { Button } from "../common/Home/Button"
+import { LinkButton } from "../common/Home/Button"
 import SimulatorHeading from "./Heading/SimulatorHeading"
 
 export default function Landing() {
@@ -30,14 +30,14 @@ export default function Landing() {
         />
       </div>
 
-      <div className="relative flex flex-col items-center justify-center gap-3 overflow-hidden p-10 sm:mt-4">
+      <div className="relative flex flex-col items-center justify-center gap-4 overflow-hidden p-10 sm:mt-4">
         <SimulatorHeading className="h-32 sm:h-36" />
 
         <p className="mt-4 text-center text-lg font-light text-PED-purple-secondary">
           ถ้าคุณสงสัยว่าขั้นตอนการเลือกตั้งเป็นอย่างไร มาลองเลือกตั้งกับพวกเราสิ !
         </p>
 
-        <Button text={"เริ่มลองเลือกตั้ง"} />
+        <LinkButton text={"เริ่มลองเลือกตั้ง"} link="/simulator" />
       </div>
     </section>
   )
