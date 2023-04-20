@@ -1,7 +1,9 @@
 import { ReactNode } from "react"
 
+import { Mitr } from "next/font/google"
+
 import "@/styles/globals.css"
-import {Mitr} from "next/font/google"
+import { Navigation } from "@/components/common/Navigation/Navigation"
 
 const mitr = Mitr({
   weight: ["300", "400", "500", "600"],
@@ -30,7 +32,10 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#5438DC" />
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className={mitr.className}>{children}</body>
+      <body className={mitr.className}>
+        <Navigation />
+        <>{children}</>
+      </body>
     </html>
   )
 }
