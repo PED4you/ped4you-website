@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 
-import Landing from "@/components/Simulator/Landing"
+import GamePage from "@/components/Simulator/GamePage"
+import { PageProvider } from "@/components/Simulator/PageProvider"
 
 export const metadata: Metadata = {
   title: "เลือกตั้ง Simulator : PED4YOU —​ เป็ดฟอร์ยู",
@@ -10,8 +11,8 @@ export const metadata: Metadata = {
 
 export default function SimulatorPage() {
   return (
-    <>
-      <Landing />
-    </>
+    <PageProvider>
+      <GamePage />
+    </PageProvider>
   )
 }

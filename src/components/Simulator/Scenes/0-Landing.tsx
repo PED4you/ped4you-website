@@ -1,9 +1,12 @@
 import Image from "next/image"
 
-import { LinkButton } from "../common/Home/Button"
-import SimulatorHeading from "./Heading/SimulatorHeading"
+import { Button } from "../../common/Home/Button"
+import SimulatorHeading from "../Heading/SimulatorHeading"
+import { usePage } from "../PageProvider"
 
 export default function Landing() {
+  const { increment } = usePage()
+
   return (
     <section className="flex flex-col-reverse sm:flex-col">
       <div className="relative grid h-full w-full grid-cols-1 justify-center overflow-hidden sm:max-h-56 sm:grid-cols-3">
@@ -37,7 +40,7 @@ export default function Landing() {
           ถ้าคุณสงสัยว่าขั้นตอนการเลือกตั้งเป็นอย่างไร มาลองเลือกตั้งกับพวกเราสิ !
         </p>
 
-        <LinkButton text={"เริ่มลองเลือกตั้ง"} link="/simulator" />
+        <Button text={"เริ่มจำลองเลือกตั้ง"} onClick={() => increment()} />
       </div>
     </section>
   )
