@@ -7,13 +7,13 @@ export default function PageRenderer() {
   const { page } = usePage()
 
   switch (page) {
-    case 0:
+    case "0":
       return <Landing />
-    case 1:
+    case "1":
       return <FillName />
-    case 2:
+    case "2-true":
       return <div>yess</div>
-    case 3:
+    case "2-false":
       return <div>noo</div>
     default:
       return <div />

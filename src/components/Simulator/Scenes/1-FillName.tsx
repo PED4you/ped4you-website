@@ -1,10 +1,11 @@
 import { StarIcon } from "@heroicons/react/24/solid"
 import { Field, Form, Formik } from "formik"
 
-import BirthDatePicker from "../components/BirthDatePicker"
-import AddressSelect from "../components/AddressSelect"
-import { usePage } from "../PageProvider"
 import { Button } from "@/components/common/Home/Button"
+
+import AddressSelect from "../components/AddressSelect"
+import BirthDatePicker from "../components/BirthDatePicker"
+import { usePage } from "../PageProvider"
 import { isAbleToVote } from "../utils"
 
 export default function FillName() {
@@ -45,8 +46,8 @@ export default function FillName() {
         onSubmit={(values) => {
           setUserData(values)
 
-          if (isAbleToVote(values.birthdate)) setPage(2)
-          else setPage(3)
+          if (isAbleToVote(values.birthdate)) setPage("2-true")
+          else setPage("2-false")
         }}
       >
         {({

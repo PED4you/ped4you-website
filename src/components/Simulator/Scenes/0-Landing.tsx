@@ -5,7 +5,7 @@ import SimulatorHeading from "../Heading/SimulatorHeading"
 import { usePage } from "../PageProvider"
 
 export default function Landing() {
-  const { increment } = usePage()
+  const { setPage } = usePage()
 
   return (
     <section className="flex flex-col-reverse sm:flex-col">
@@ -40,7 +40,7 @@ export default function Landing() {
           ถ้าคุณสงสัยว่าขั้นตอนการเลือกตั้งเป็นอย่างไร มาลองเลือกตั้งกับพวกเราสิ !
         </p>
 
-        <Button text={"เริ่มจำลองเลือกตั้ง"} onClick={() => increment()} />
+        <Button text={"เริ่มจำลองเลือกตั้ง"} onClick={() => setPage("1")} />
       </div>
     </section>
   )

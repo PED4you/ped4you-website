@@ -11,9 +11,8 @@ export interface UserData {
 }
 
 interface PageContextType {
-  page: number
-  setPage: (page: number) => void
-  increment: () => void
+  page: string
+  setPage: (page: string) => void
   userData: UserData
   setUserData: (userData: UserData) => void
 }
@@ -31,7 +30,7 @@ export const usePage = (): PageContextType => {
 }
 
 export function PageProvider({ children }: { children: ReactNode }) {
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useState("0")
   const [userData, setUserData] = useState<UserData>({
     name: "",
     title: "",
@@ -41,9 +40,5 @@ export function PageProvider({ children }: { children: ReactNode }) {
     subdistrict: "",
   })
 
-  const increment = () => setPage(page + 1)
-
-  return (
-    <PageContext.Provider value={{ userData, setUserData, page, setPage, increment }}>{children}</PageContext.Provider>
-  )
+  return <PageContext.Provider value={{ userData, setUserData, page, setPage }}>{children}</PageContext.Provider>
 }
