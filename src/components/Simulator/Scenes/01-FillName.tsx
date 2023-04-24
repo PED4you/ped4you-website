@@ -6,7 +6,6 @@ import { Button } from "@/components/common/Home/Button"
 import AddressSelect from "../components/AddressSelect"
 import BirthDatePicker from "../components/BirthDatePicker"
 import { usePage } from "../PageProvider"
-import { isAbleToVote } from "../utils"
 
 export default function FillName() {
   const { setUserData, setPage } = usePage()
@@ -45,9 +44,7 @@ export default function FillName() {
         }}
         onSubmit={(values) => {
           setUserData(values)
-
-          if (isAbleToVote(values.birthdate)) setPage("2-true")
-          else setPage("2-false")
+          setPage("2")
         }}
       >
         {({

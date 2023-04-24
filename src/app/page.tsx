@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 
 import { Footer } from "@/components/common/Footer/Footer"
+import { Navigation } from "@/components/common/Navigation/Navigation"
 import { FYI } from "@/components/Home/FYI/FYI"
 import { Landing } from "@/components/Home/Landing/Landing"
 import { MiscData } from "@/components/Home/MiscData/MiscData"
@@ -12,9 +13,9 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
-  // TODO Home page mobile UI
   return (
     <>
+      <Navigation />
       <Landing />
       <Simulator />
       <FYI />
