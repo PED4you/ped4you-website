@@ -10,6 +10,7 @@ const mitr = Mitr({
   style: ["normal"],
   subsets: ["latin", "latin-ext", "thai"],
   display: "swap",
+  fallback: ["system-ui", "Sukhumvit Set", "arial"],
 })
 
 export default function RootLayout({
