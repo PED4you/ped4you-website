@@ -6,9 +6,10 @@ import { Button } from "@/components/common/Home/Button"
 import AddressSelect from "../components/AddressSelect"
 import BirthDatePicker from "../components/BirthDatePicker"
 import { usePage } from "../PageProvider"
+import { getDistrictData, getVotingDistrict } from "../utils"
 
 export default function FillName() {
-  const { setUserData, setPage } = usePage()
+  const { userData, setUserData, setPage } = usePage()
 
   return (
     <section className="mx-auto flex w-full max-w-xl flex-col gap-4 px-4 py-10">
@@ -43,7 +44,10 @@ export default function FillName() {
           subdistrict: "คลองตัน",
         }}
         onSubmit={(values) => {
-          setUserData(values)
+          const votingDistrictId = getVotingDistrict(values.province, values.district, values.subdistrict)
+          const votingDistrict = getDistrictData(votingDistrictId)
+
+          setUserData({ ...userData, ...values, votingDistrict })
           setPage("2")
         }}
       >

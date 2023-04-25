@@ -23,7 +23,7 @@ export default function Elgibility() {
 
         <p
           className={classNames(
-            "text-center text-lg font-light",
+            "text-center text-lg font-normal",
             canVote ? "text-PED-green" : "text-PED-orange-secondary"
           )}
         >
@@ -31,7 +31,8 @@ export default function Elgibility() {
             <>
               เขตการเลือกตั้งของคุณคือ
               <br />
-              กทม. เขต 2 (เขตสาทร เขตปทุมวัน เขตราชเทวี)
+              {userData.votingDistrict.province} เขต {userData.votingDistrict.code}
+              <br />({userData.votingDistrict.districts.map((d) => `เขต${d.name}`).join(" ")})
             </>
           ) : (
             <>แต่คุณยังสามารถลองเลือกตั้งกับพวกเราได้นะ !</>

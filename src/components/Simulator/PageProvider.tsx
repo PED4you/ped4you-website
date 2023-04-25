@@ -1,5 +1,7 @@
 "use client"
-import React, { ReactNode, createContext, useContext, useState } from "react"
+import { ReactNode, createContext, useContext, useState } from "react"
+
+import { VotingDistrict } from "./types"
 
 export interface UserData {
   name: string
@@ -8,6 +10,7 @@ export interface UserData {
   province: string
   district: string
   subdistrict: string
+  votingDistrict: VotingDistrict
 }
 
 interface PageContextType {
@@ -38,6 +41,13 @@ export function PageProvider({ children }: { children: ReactNode }) {
     province: "",
     district: "",
     subdistrict: "",
+    votingDistrict: {
+      id: "",
+      code: "",
+      province: "",
+      candidates: [],
+      districts: [],
+    },
   })
 
   return <PageContext.Provider value={{ userData, setUserData, page, setPage }}>{children}</PageContext.Provider>
