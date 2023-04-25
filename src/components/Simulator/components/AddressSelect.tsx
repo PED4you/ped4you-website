@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 
 import { Field } from "formik"
 
@@ -8,14 +8,16 @@ export default function AddressSelect({
   selectedProvince,
   selectedDistrict,
   selectedSubdistrict,
+  setFieldValue,
 }: {
   selectedProvince: string
   selectedDistrict: string
   selectedSubdistrict: string
+  setFieldValue: (field: string, value: any, shouldValidate?: boolean | undefined) => void
 }) {
   const provinces = useMemo(() => ProvinceData, [])
   const districts = useMemo(
-    () => ProvinceData.find((province) => province.name === selectedProvince)?.districts,
+    () => ProvinceData.find((province) => province.name === selectedProvince)?.districts || [],
     [selectedProvince]
   )
   const subdistricts = useMemo(() => {
@@ -27,6 +29,11 @@ export default function AddressSelect({
       )
     else return []
   }, [selectedDistrict, selectedProvince])
+
+  useEffect(() => {
+    if (!districts.find((d) => d.name === selectedDistrict)) setFieldValue("district", districts?.[0].name)
+    if (!subdistricts.find((s) => s.name === selectedSubdistrict)) setFieldValue("subdistrict", subdistricts?.[0].name)
+  }, [selectedDistrict, selectedProvince, selectedSubdistrict, districts, subdistricts, setFieldValue])
 
   return (
     <div className="flex flex-col gap-2">

@@ -40,9 +40,9 @@ export function getDistrictData(votingDistrict: string): VotingDistrict {
     candidate: string
     party: string
   }[] = ElectionData.votables
-    .filter((c) => c.votingDistrict === votingDistrict)
+    .filter((c) => c.voteingDistrict === votingDistrict)
     .map((c) => {
-      const party = ElectionData.candidates.find((p) => p.name === c.name)?.party ?? ""
+      const party = ElectionData.candidates.find((p) => p.name === c.candidate)?.party ?? ""
       return { ...c, party }
     })
 
@@ -53,4 +53,22 @@ export function getDistrictData(votingDistrict: string): VotingDistrict {
     districts: allVotingDistricts,
     candidates: allCandidates,
   }
+}
+
+// {
+//   "no": "66",
+//   "electionType": "ส.ส.บัญชีรายชื่อ",
+//   "voteingDistrict": "",
+//   "party": "พลังประชาธิปไตย"
+// }
+
+export function getPartyList() {
+  return ElectionData.votables
+    .filter((c) => c.electionType === "ส.ส.บัญชีรายชื่อ")
+    .map((c) => {
+      return {
+        no: c.no,
+        party: c.party,
+      }
+    })
 }

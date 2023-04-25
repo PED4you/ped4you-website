@@ -37,7 +37,7 @@ export default function FillName() {
         }}
         initialValues={{
           name: "",
-          title: "",
+          title: "นาย",
           birthdate: "",
           province: "กรุงเทพมหานคร",
           district: "คลองเตย",
@@ -107,6 +107,7 @@ export default function FillName() {
 
             {/* address */}
             <AddressSelect
+              setFieldValue={setFieldValue}
               selectedDistrict={values.district}
               selectedProvince={values.province}
               selectedSubdistrict={values.subdistrict}
