@@ -21,8 +21,9 @@ export const MiscData = () => {
               </span>
             }
             date="24 เม.ย. 66"
+            thumbnail={"thumb-6.jpg"}
           />
-          <ArticleCard title={<span>ความสำคัญของ ส.ว.</span>} date="24 เม.ย. 66" />
+          <ArticleCard title={<span>ความสำคัญของ ส.ว.</span>} date="24 เม.ย. 66" thumbnail={"thumb-2.jpg"}/>
           <ArticleCard
             title={
               <span>
@@ -32,6 +33,7 @@ export const MiscData = () => {
               </span>
             }
             date="24 เม.ย. 66"
+            thumbnail={"thumb-3.jpg"}
           />
           <ArticleCard
             title={
@@ -42,6 +44,7 @@ export const MiscData = () => {
               </span>
             }
             date="24 เม.ย. 66"
+            thumbnail={"thumb-1.jpg"}
           />
           <ArticleCard
             title={
@@ -54,16 +57,18 @@ export const MiscData = () => {
               </span>
             }
             date="24 เม.ย. 66"
+            thumbnail={"thumb-4.jpg"}
           />
           <ArticleCard
             title={
               <span>
-                รวมโพล
+                สูตรคำนวณ
                 <br />
-                จากทุกสำนัก
+                ส.ส. บัญชีรายชื่อ
               </span>
             }
             date="24 เม.ย. 66"
+            thumbnail={"thumb-5.jpg"}
           />
         </div>
         <LinkButton link="/data" text={"ดูข้อมูลทั้งหมด"} />
