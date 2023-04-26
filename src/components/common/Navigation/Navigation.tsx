@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 import {Bars3Icon} from "@heroicons/react/24/solid"
 
 import {Logo} from "@/components/common/Navigation/Logo"
@@ -5,9 +7,11 @@ import {Logo} from "@/components/common/Navigation/Logo"
 export const Navigation = () => {
   return <nav className="w-full bg-PED-purple py-2 px-6">
     <div className="max-w-desktop mx-auto flex w-full items-center justify-between">
-      <div className="w-[256px] sm:w-[446px]">
-        <Logo/>
-      </div>
+      <Link href={"/"}>
+        <div className="w-[256px] sm:w-[446px]">
+          <Logo/>
+        </div>
+      </Link>
       <div className="hidden items-center space-x-8 text-lg text-white lg:flex">
         <a>ลองเลือกตั้ง</a>
         <a>สิ่งที่ควรรู้</a>

@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
-  // TODO Home page mobile UI
   return (
     <>
       <Navigation/>

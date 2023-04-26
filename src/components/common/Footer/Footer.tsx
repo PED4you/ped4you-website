@@ -6,10 +6,11 @@ export const Footer = () => {
   return <footer className="bg-PED-yellow py-20">
     <div className="mx-auto flex max-w-4xl flex-col items-center px-8">
       <FooterHeading/>
-      <p className="mt-8 break-all border-b-[3px] border-b-PED-purple pb-14 text-center">ped4youtupedped4youtupedped4youtupedped4youtupedped4youtupedped4youtupedped4youtuped
-        ped4youtupedped4youtupedped4youtupedped4youtupedped4youtupedped4youtuped
-        ped4youtupedped4youtupedped4youtupedped4youtupedped4youtuped
-        ped4youtupedped4youtupedped4youtupedped4youtuped</p>
+      <p className="mt-8 text-center font-light">ped4you คือ แพลตฟอร์มที่ช่วยให้ผู้มีสิทธิ์เลือกตั้งครั้งแรกได้เข้าใจระบบการเลือกตั้งผ่านประสบการณ์เลือกตั้งเสมือนจริง
+        และเป็นแหล่งรวบรวมข้อมูลเกี่ยวกับการเลือกตั้งที่ย่อยง่าย อ่านสบาย และมีประโยชน์ต่อการเลือกตั้งครั้งแรกของทุกคน</p>
+      <p className="mt-8 break-words border-b-[3px] border-b-PED-purple pb-14 text-center font-light">Ped4you is an internet-based platform that facilitates the comprehension of the election process for novice voters,
+        by offering them a virtual election experience. It is an accessible, comprehensible,
+        and beneficial resource to aid first-time voters in making informed decisions during their initial election participation.</p>
       <div className="mt-14 w-[100px]">
         <DuckSplash/>
       </div>

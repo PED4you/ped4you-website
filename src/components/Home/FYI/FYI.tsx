@@ -11,15 +11,15 @@ export const FYI = () => {
       </div>
 
       <div className="mt-12 flex max-w-4xl flex-wrap items-center justify-center">
-        <InfoCard title="ใครเลือกตั้งได้บ้าง ?" isInverted isChecked/>
-        <InfoCard title="หน่วยเลือกตั้ง ?" isChecked/>
-        <InfoCard title="เซ็นชื่อ ?"/>
-        <InfoCard title="บัตรเลือกตั้ง ?"/>
-        <InfoCard title="การลงคะแนน ?"/>
-        <InfoCard title="บัตรดี / บัตรเสีย ?"/>
-        <InfoCard title="การนับคะแนน"/>
-        <InfoCard title="ข้อห้ามที่ควรรู้"/>
-        <InfoCard title={
+        <InfoCard href={"info/eligibility"} title="ใครเลือกตั้งได้บ้าง ?" isInverted isChecked/>
+        <InfoCard href={"info/station"} title="หน่วยเลือกตั้ง ?" isChecked/>
+        <InfoCard href={"info/signing"} title="เซ็นชื่อ ?"/>
+        <InfoCard href={"info/ballot"} title="บัตรเลือกตั้ง ?"/>
+        <InfoCard href={"info/voting"} title="การลงคะแนน ?"/>
+        <InfoCard href={"info/spoiling"} title="บัตรดี / บัตรเสีย ?"/>
+        <InfoCard href={"info/counting"} title="การนับคะแนน"/>
+        <InfoCard href={"info/prohibition"} title="ข้อห้ามที่ควรรู้"/>
+        <InfoCard href={"info/services"} title={
           <div className="-mt-2 pb-1 text-center text-[13px] md:-mt-1 md:pb-0 md:text-lg">
             <h2>สำหรับผู้สูงอายุ</h2>
             <h2 className="leading-[6px] md:leading-[8px]">ทุพพลภาพ พิการ</h2>
