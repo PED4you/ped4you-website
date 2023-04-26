@@ -1,6 +1,7 @@
 "use client"
 import { ReactNode, createContext, useContext, useState } from "react"
 
+import { BaseUser, MockUser } from "./mock"
 import { VotingDistrict } from "./types"
 
 export interface UserData {
@@ -32,23 +33,12 @@ export const usePage = (): PageContextType => {
   return context
 }
 
+const DEBUG = false
+const DEBUG_PAGE = "10"
+
 export function PageProvider({ children }: { children: ReactNode }) {
-  const [page, setPage] = useState("0")
-  const [userData, setUserData] = useState<UserData>({
-    name: "",
-    title: "",
-    birthdate: "",
-    province: "",
-    district: "",
-    subdistrict: "",
-    votingDistrict: {
-      id: "",
-      code: "",
-      province: "",
-      candidates: [],
-      districts: [],
-    },
-  })
+  const [page, setPage] = useState(DEBUG ? DEBUG_PAGE : "0")
+  const [userData, setUserData] = useState<UserData>(DEBUG ? MockUser : BaseUser)
 
   return <PageContext.Provider value={{ userData, setUserData, page, setPage }}>{children}</PageContext.Provider>
 }

@@ -27,15 +27,15 @@ export default function ViewYourNumber() {
 
       <div className="flex flex-col gap-2 overflow-hidden rounded-md bg-gradient-to-b from-[#FCFCFC] to-[#F3F1FF] p-4 text-center shadow-lg">
         <div className="grid grid-cols-5 items-center">
-          <div className="col-span-2 flex h-full w-full items-center px-6 py-2">
+          <div className="col-span-2 flex h-full w-full items-center justify-center px-6 py-2">
             <h2 className="text-center text-xl font-medium">ชื่อตัว-ชื่อสกุล</h2>
           </div>
 
-          <div className="col-span-1 flex h-full w-full items-center px-6 py-2">
+          <div className="col-span-1 flex h-full w-full items-center justify-center px-6 py-2">
             <h2 className="text-center text-xl font-medium">ลำดับที่</h2>
           </div>
 
-          <div className="col-span-2 flex h-full w-full items-center px-6 py-2">
+          <div className="col-span-2 flex h-full w-full items-center justify-center px-6 py-2">
             <h2 className="text-center text-base font-medium">
               ลายมือชื่อหรือ
               <br />
@@ -99,7 +99,7 @@ export default function ViewYourNumber() {
                 </div>
 
                 <div className="col-span-1 h-full w-full p-6 blur-sm">
-                  <p className="text-center text-lg font-medium">145</p>
+                  <p className="text-center text-lg font-medium">{146 + i}</p>
                 </div>
 
                 <div className="col-span-2 h-full w-full p-6"></div>

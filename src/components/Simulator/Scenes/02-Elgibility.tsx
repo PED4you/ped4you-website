@@ -34,7 +34,7 @@ export default function Elgibility() {
               {userData.votingDistrict.province} เขต {userData.votingDistrict.code}
               <br />
               <span className="text-sm font-light">
-                ({userData.votingDistrict.districts.map((d) => `เขต${d.name}`).join(" ")})
+                ({userData.votingDistrict.districts.map((d) => `${d.name}`).join(" ")})
               </span>
             </>
           ) : (

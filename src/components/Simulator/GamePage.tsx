@@ -7,6 +7,14 @@ import ViewBoard from "./Scenes/03-ViewBoard"
 import ViewYourNumber from "./Scenes/04-VIewYourNumber"
 import YourNumber from "./Scenes/05-YourNumber"
 import ShowID from "./Scenes/06-ShowID"
+import Signature from "./Scenes/07-Signature"
+import ReceiveCard from "./Scenes/08-ReceiveCard"
+import Cubible from "./Scenes/09-Cubicle"
+import MarkBallots from "./Scenes/10-MarkBallots"
+import Folding from "./Scenes/11-Folding"
+import DropBallots from "./Scenes/12-DropBallots"
+import Result from "./Scenes/13-Result"
+import Recap from "./Scenes/14-Recap"
 
 export default function PageRenderer() {
   const { page } = usePage()
@@ -26,6 +34,22 @@ export default function PageRenderer() {
       return <YourNumber />
     case "6":
       return <ShowID />
+    case "7":
+      return <Signature />
+    case "8":
+      return <ReceiveCard />
+    case "9":
+      return <Cubible />
+    case "10":
+      return <MarkBallots />
+    case "11":
+      return <Folding />
+    case "12":
+      return <DropBallots />
+    case "13":
+      return <Result />
+    case "14":
+      return <Recap />
     default:
       return <div />
   }

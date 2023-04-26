@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react"
 
+import Image from "next/image"
+
 import { StarIcon } from "@heroicons/react/24/solid"
 import classNames from "classnames"
 
@@ -60,22 +62,35 @@ export default function ViewBoard() {
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           {type === "region" &&
             userData.votingDistrict.candidates.map((candidate, index) => (
-              <div key={index} className="flex items-center gap-2 rounded-lg bg-white px-4 pb-2 pt-16">
-                <p className="text-4xl font-medium">{candidate.no}</p>
+              <div key={index} className="flex flex-col items-center gap-2 rounded-lg bg-white py-2">
+                <Image
+                  src={`/images/simulator/party/${candidate.party}.png`}
+                  alt={candidate.party}
+                  width={75}
+                  height={75}
+                />
 
-                <div className="flex flex-col">
-                  <p className="text-left text-[0.85rem] font-light">{candidate.candidate}</p>
-                  <p className="text-left text-[0.65rem] font-light">{candidate.party}</p>
+                <div className="flex items-center gap-2 px-4">
+                  <p className="text-4xl font-medium">{candidate.no}</p>
+
+                  <div className="flex flex-col">
+                    <p className="text-left text-[0.85rem] font-light">{candidate.candidate}</p>
+                    <p className="text-left text-[0.65rem] font-light">{candidate.party}</p>
+                  </div>
                 </div>
               </div>
             ))}
 
           {type === "partylist" &&
             partyListMembers.map((member, index) => (
-              <div key={index} className="flex items-center gap-2 rounded-lg bg-white px-4 pb-2 pt-8">
-                <p className="text-left text-[1.5rem] font-light">{member.no}</p>
+              <div key={index} className="flex flex-col items-center gap-2 rounded-lg bg-white px-4 pb-2 pt-8">
+                <Image src={`/images/simulator/party/${member.party}.png`} alt={member.party} width={75} height={75} />
 
-                <p className="text-left text-[0.85rem] font-light">{member.party}</p>
+                <div className="flex items-center gap-2">
+                  <p className="text-left text-[1.5rem] font-medium">{member.no}</p>
+
+                  <p className="text-left text-[0.85rem] font-light">พรรค{member.party}</p>
+                </div>
               </div>
             ))}
         </div>
