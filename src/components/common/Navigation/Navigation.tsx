@@ -1,8 +1,8 @@
 import Link from "next/link"
 
-import {Bars3Icon} from "@heroicons/react/24/solid"
+import { Bars3Icon } from "@heroicons/react/24/solid"
 
-import {Logo} from "@/components/common/Navigation/Logo"
+import { Logo } from "@/components/common/Navigation/Logo"
 
 export const Navigation = () => {
   return <nav className="w-full bg-PED-purple py-2 px-6">
@@ -16,7 +16,7 @@ export const Navigation = () => {
         <a>ลองเลือกตั้ง</a>
         <a>สิ่งที่ควรรู้</a>
         <a>เกี่ยวกับการเลือกตั้ง</a>
-        <a>About us</a>
+        <a>About Us</a>
       </div>
       <div className="lg:hidden">
         <Bars3Icon strokeWidth={0.6} stroke={"currentColor"} className="h-8 w-8 text-white"/>

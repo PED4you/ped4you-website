@@ -1,13 +1,15 @@
 import { ReactNode } from "react"
 
+import { Mitr } from "next/font/google"
+
 import "@/styles/globals.css"
-import {Mitr} from "next/font/google"
 
 const mitr = Mitr({
   weight: ["300", "400", "500", "600"],
   style: ["normal"],
   subsets: ["latin", "latin-ext", "thai"],
   display: "swap",
+  fallback: ["system-ui", "Sukhumvit Set", "arial"],
 })
 
 export default function RootLayout({
@@ -30,7 +32,9 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#5438DC" />
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className={mitr.className}>{children}</body>
+      <body className={mitr.className}>
+        <>{children}</>
+      </body>
     </html>
   )
 }
