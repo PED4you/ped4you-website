@@ -1,8 +1,11 @@
 import {FC, ReactElement} from "react"
 
+import Image from "next/image"
+
 interface ArticleCardProps {
   title: ReactElement<HTMLSpanElement>,
-  date: string
+  date: string,
+  thumbnail: string
 }
 export const ArticleCard:FC<ArticleCardProps> = (props) => {
 
@@ -13,7 +16,7 @@ export const ArticleCard:FC<ArticleCardProps> = (props) => {
       {
         // TODO Image handler
       }
-      <div className="h-[144px] w-[144px] rounded-xl bg-PED-orange md:h-[222px] md:w-[222px]"/>
+      <Image src={`/images/article/${props.thumbnail}`} alt={"thumbnail"} width={222} height={222} className="h-[144px] w-[144px] rounded-xl bg-PED-orange md:h-[222px] md:w-[222px]"/>
       <div className="mt-2 px-1 md:mt-4 md:px-2">
         <div className="h-[72px] text-base font-medium leading-5 md:text-xl md:leading-6">
           {title}
