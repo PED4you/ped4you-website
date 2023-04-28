@@ -1,4 +1,4 @@
-import { UserData } from "./PageProvider"
+import { UserData } from "./types"
 
 export const MockUser: UserData = {
   name: "จำลอง เลือกตั้ง",
@@ -145,6 +145,16 @@ export const MockUser: UserData = {
       },
     ],
   },
+  regionVote: {
+    no: "15",
+    candidate: "นายอิ่มหรอน ทิ้งผอม",
+    party: "คลองไทย",
+  },
+  partylistVote: {
+    no: "31",
+    party: "ก้าวไกล",
+  },
+  startDate: new Date(),
 }
 
 export const BaseUser: UserData = {
@@ -161,4 +171,14 @@ export const BaseUser: UserData = {
     candidates: [],
     districts: [],
   },
+  regionVote: {
+    no: "",
+    candidate: "",
+    party: "",
+  },
+  partylistVote: {
+    no: "",
+    party: "",
+  },
+  startDate: new Date(),
 }

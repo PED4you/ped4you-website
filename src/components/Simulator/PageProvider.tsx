@@ -2,17 +2,7 @@
 import { ReactNode, createContext, useContext, useState } from "react"
 
 import { BaseUser, MockUser } from "./mock"
-import { VotingDistrict } from "./types"
-
-export interface UserData {
-  name: string
-  title: string
-  birthdate: string
-  province: string
-  district: string
-  subdistrict: string
-  votingDistrict: VotingDistrict
-}
+import { UserData } from "./types"
 
 interface PageContextType {
   page: string

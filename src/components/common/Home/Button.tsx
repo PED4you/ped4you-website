@@ -1,5 +1,5 @@
 "use client"
-import { ButtonHTMLAttributes, DetailedHTMLProps } from "react"
+import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from "react"
 
 import Link from "next/link"
 
@@ -22,11 +22,15 @@ export const LinkButton = ({ text, className, link }: { text: string; className?
 export const Button = ({
   text,
   className,
+  secondary,
+  disabled,
   onClick,
   ...props
 }: DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
-  text: string
+  text: string | ReactNode
   className?: string
+  secondary?: boolean
+  disabled?: boolean
   onClick?: () => void
 }) => {
   return (
@@ -34,7 +38,9 @@ export const Button = ({
       onClick={() => onClick && onClick()}
       className={classNames(
         className,
-        "relative mt-4 rounded-xl bg-PED-orange py-2.5 px-10 text-lg font-semibold text-white ring-2 ring-PED-orange/25 transition-all duration-300 ease-out hover:scale-105 hover:ring-8"
+        "relative mt-4 rounded-xl py-2.5 px-10 text-lg font-semibold ring-2 ring-PED-orange/25",
+        secondary ? "bg-white text-PED-orange" : "bg-PED-orange text-white",
+        disabled ? "cursor-not-allowed opacity-50" : "transition-all duration-300 ease-out hover:scale-105 hover:ring-8"
       )}
       {...props}
     >

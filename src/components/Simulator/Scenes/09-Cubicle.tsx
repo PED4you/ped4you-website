@@ -5,8 +5,9 @@ import Image from "next/image"
 import { StarIcon } from "@heroicons/react/24/solid"
 import { AnimatePresence, motion } from "framer-motion"
 
-import { usePage } from "../PageProvider"
 import { Button } from "@/components/common/Home/Button"
+
+import { usePage } from "../PageProvider"
 
 function Heading() {
   return (
@@ -68,7 +69,7 @@ export default function Cubible() {
                 alt="Green Ballot"
                 className="mx-auto block sm:hidden"
               />
-              <div className="absolute top-[16rem] left-1/2 -translate-x-1/2">
+              <div className="absolute top-[16rem] left-1/2 -translate-x-1/2 sm:left-[calc(50%+8.05rem)] sm:top-[7.25rem] sm:text-sm">
                 <AnimatePresence>
                   {!signed ? (
                     <button
@@ -119,7 +120,7 @@ export default function Cubible() {
                 alt="Purple Ballot"
                 className="mx-auto block sm:hidden"
               />
-              <div className="absolute top-[16rem] left-1/2 -translate-x-1/2">
+              <div className="absolute top-[16rem] left-1/2 -translate-x-1/2 sm:left-[calc(50%+8.05rem)] sm:top-[7.25rem] sm:text-sm">
                 <AnimatePresence>
                   {!signed ? (
                     <button

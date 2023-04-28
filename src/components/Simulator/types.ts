@@ -1,3 +1,16 @@
+export interface UserData {
+  startDate: Date
+  name: string
+  title: string
+  birthdate: string
+  province: string
+  district: string
+  subdistrict: string
+  votingDistrict: VotingDistrict
+  regionVote: RegionVote
+  partylistVote: PartyListVote
+}
+
 export interface VotingDistrict {
   id: string
   province: string
@@ -13,4 +26,15 @@ export interface VotingDistrict {
     candidate: string
     party: string
   }[]
+}
+
+export interface RegionVote {
+  no: string
+  party: string
+  candidate: string
+}
+
+export interface PartyListVote {
+  no: string
+  party: string
 }

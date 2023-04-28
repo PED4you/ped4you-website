@@ -55,13 +55,6 @@ export function getDistrictData(votingDistrict: string): VotingDistrict {
   }
 }
 
-// {
-//   "no": "66",
-//   "electionType": "ส.ส.บัญชีรายชื่อ",
-//   "voteingDistrict": "",
-//   "party": "พลังประชาธิปไตย"
-// }
-
 export function getPartyList() {
   return ElectionData.votables
     .filter((c) => c.electionType === "ส.ส.บัญชีรายชื่อ")
@@ -71,4 +64,27 @@ export function getPartyList() {
         party: c.party,
       }
     })
+}
+
+export function chunkArray<T>(array: T[], columns = 4): [T[][], number] {
+  // chunk array to 2d array
+  const chunkedArray = []
+  const maxLength = Math.ceil(array.length / columns)
+  // const maxLength = 6
+
+  for (let i = 0; i < columns; i++) {
+    chunkedArray.push(array.slice(i * maxLength, (i + 1) * maxLength))
+  }
+
+  return [chunkedArray, maxLength]
+}
+
+export function formatDate(date: Date) {
+  return {
+    year: date.getFullYear(),
+    month: date.getMonth() + 1,
+    thMonth: date.toLocaleString("th-TH", { month: "long" }),
+    date: date.getDate(),
+    "hh-mm": `${date.getHours()}:${date.getMinutes()}`,
+  }
 }
