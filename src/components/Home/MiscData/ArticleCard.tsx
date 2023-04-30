@@ -15,12 +15,12 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
   return (
     <div className="p-2 md:p-4">
       <Link href={props.url}>
-        <div className="w-[166px] rounded-2xl border-[3px] border-black bg-white pl-2 pt-2 pb-1 text-PED-orange ring-2 ring-PED-orange/25 transition-all duration-500 ease-out hover:scale-[101%] hover:ring-8 md:w-[252px] md:p-2 md:px-3 md:pt-3">
+        <div className="w-[166px] rounded-2xl border-[3px] border-black pl-2 pt-2 pb-1 text-PED-orange ring-2 ring-PED-orange/25 transition-all duration-500 ease-out hover:scale-[101%] hover:ring-8 md:w-[252px] md:p-2 md:px-3 md:pt-3">
           {
             // TODO Image handler
           }
           <Image
-            src={`/images/article/${props.thumbnail}`}
+            src={`/images/blog/${props.thumbnail}`}
             alt={"thumbnail"}
             width={222}
             height={222}
@@ -28,7 +28,6 @@ export const ArticleCard: FC<ArticleCardProps> = (props) => {
           />
           <div className="mt-2 px-1 md:mt-4 md:px-2">
             <div className="h-[72px] text-base font-medium leading-5 md:text-xl md:leading-6">{title}</div>
-            <h3 className="-mt-1 text-sm font-light md:mt-3">{date}</h3>
           </div>
         </div>
       </Link>

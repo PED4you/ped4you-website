@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 import {FooterHeading} from "@/components/common/Footer/FooterHeading"
 import {FacebookIcon, InstagramIcon, TwitterIcon} from "@/components/common/Footer/SocialIcons"
 import {DuckSplash} from "@/components/Home/Landing/DuckSplash"
@@ -15,18 +17,24 @@ export const Footer = () => {
         <DuckSplash/>
       </div>
       <div className="mt-8 flex flex-wrap items-center justify-center space-x-8">
-        <div className="m-1 flex items-center space-x-2">
-          <FacebookIcon/>
-          <span className="text-lg font-light">PED4you</span>
-        </div>
-        <div className="m-1 flex items-center space-x-2">
-          <TwitterIcon/>
-          <span className="text-lg font-light">@PED4you</span>
-        </div>
-        <div className="m-1 flex items-center space-x-2">
-          <InstagramIcon/>
-          <span className="text-lg font-light">@PED4you</span>
-        </div>
+        <Link href="https://www.facebook.com/profile.php?id=100091240677745&mibextid=LQQJ4d">
+          <div className="m-1 flex items-center space-x-2">
+            <FacebookIcon/>
+            <span className="text-lg font-light">PED4you</span>
+          </div>
+        </Link>
+        <Link href="https://twitter.com/ped4you">
+          <div className="m-1 flex items-center space-x-2">
+            <TwitterIcon/>
+            <span className="text-lg font-light">@PED4you</span>
+          </div>
+        </Link>
+        <Link href="https://www.instagram.com/ped4you.ig/">
+          <div className="m-1 flex items-center space-x-2">
+            <InstagramIcon/>
+            <span className="text-lg font-light">@PED4you</span>
+          </div>
+        </Link>
       </div>
     </div>
   </footer>

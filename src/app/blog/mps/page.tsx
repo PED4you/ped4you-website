@@ -6,7 +6,7 @@ const Page = () => {
     <div className="mx-auto w-full max-w-[752px] py-16">
       <BlogHeading namespace={"mps"} title={"ส.ส. แบ่งเขต vs ส.ส. บัญชีรายชื่อ"} />
       <BlogImage namespace={"mps"} index={1} description={"ส.ส. แบ่งเขต vs ส.ส. บัญชีรายชื่อ"} />
-      <p className="mt-8 mb-4 font-light">
+      <p className="mt-8 mb-4 px-4 font-light">
         ส.ส. ทั้งหมดมีจำนวน 500 คน แบ่งเป็น ส.ส. แบบแบ่งเขตเลือกตั้งจากทั่วประเทศ 400 คน และ ส.ส. แบบบัญชีรายชื่อ 100 คน
         <br />
         <br />
