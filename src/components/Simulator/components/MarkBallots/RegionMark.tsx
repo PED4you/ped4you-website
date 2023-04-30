@@ -32,15 +32,16 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
           <h2 className="text-2xl font-semibold">Tools</h2>
           <Button text="ต่อไป" onClick={() => nextPage()} />
           <div className="flex items-center gap-4">
-            <button
+            <Button
+              text="Clear"
               onClick={() => {
                 canvasRef.current?.clearCanvas()
               }}
-              className="rounded-sm bg-gray-500 px-6 py-3 text-white shadow-sm transition-colors duration-500 hover:bg-gray-600"
-            >
-              Clear
-            </button>
-            <button
+              secondary
+            />
+
+            <Button
+              text="Submit"
               onClick={() => {
                 canvasRef?.current
                   ?.exportImage("png")
@@ -72,10 +73,7 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
                     console.log(e)
                   })
               }}
-              className="rounded-sm bg-PED-orange px-6 py-3 text-white shadow-sm transition-colors duration-500 hover:bg-orange-700"
-            >
-              Submit
-            </button>
+            />
           </div>
         </div>
       </div>
