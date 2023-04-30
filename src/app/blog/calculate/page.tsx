@@ -5,7 +5,7 @@ const Page = () => {
   return <div className="mx-auto w-full max-w-[752px] py-16">
     <BlogHeading namespace={"calculate"} title={"สูตรคำนวณ ส.ส. บัญชีรายชื่อ"}/>
     <BlogImage namespace={"calculate"} index={1} description={"สูตรคำนวณ ส.ส. บัญชีรายชื่อ"}/>
-    <p className="mt-8 mb-4 font-light">
+    <p className="mt-8 mb-4 px-4 font-light">
       1. คะแนนรวมทุกพรรค / 100 = คะแนนเฉลี่ยต่อ ส.ส. 1 คน<br/>
       2. คะแนนแต่ละพรรค / คะแนนเฉลี่ยต่อ ส.ส. 1 คน = จำนวน ส.ส. บัญชีรายชื่อ (จำนวนเต็ม)<br/>
       3. ถ้าพรรคการเมืองได้ ส.ส. รวมกันไม่ครบ 100 คน ให้เรียงเศษคะแนนของทุกพรรค
@@ -19,7 +19,7 @@ const Page = () => {
       หากมี ส.ส. ที่ได้จากการคำนวณยังไม่ครบ 100 คน ให้นำทศนิยมมาเรียงจากมากไปน้อย จากนั้นเพิ่ม ส.ส. ให้ครบ 100 คน โดยให้พรรคที่มีทศนิยมสูงได้ ส.ส. เพิ่มก่อน เช่น ถ้าขาด ส.ส. ไป 9 คน ให้พรรคที่หลักทศนิยมสูงสุด 9 พรรค ได้ ส.ส. เพิ่มไปอีกพรรคละคน
     </p>
     <BlogImage namespace={"calculate"} index={2} description={"ตัวอย่างการคำนวณ"}/>
-    <p className="mt-8 mb-4 font-light">
+    <p className="mt-8 mb-4 px-4 font-light">
       <span className="font-medium">ตัวอย่างสถานการณ์</span>
       <br/><br/>
       มีผู้มาใช้สิทธิเลือกตั้ง 15,000,000 คน<br/>
