@@ -17,7 +17,7 @@ export const Navigation = () => {
   const pathname = usePathname()
 
   return <nav className="w-full bg-PED-purple py-2 px-6">
-    <motion.div initial={{x: -300}} animate={{x: show ?0 : -300}} transition={{type: "tween"}} className="fixed top-0 left-0 z-[99] min-h-screen bg-PED-purple">
+    <motion.div initial={{x: -500}} animate={{x: show ?0 : -500}} transition={{type: "tween"}} className="fixed top-0 left-0 z-[99] min-h-screen bg-PED-purple lg:hidden">
       <div className="bg-PED-yellow py-[10px] px-5">
         <div className="w-[256px] sm:w-[446px]">
           <Logo/>
