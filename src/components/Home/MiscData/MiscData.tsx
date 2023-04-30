@@ -7,6 +7,7 @@ import { MiscHeader } from "@/components/Home/MiscData/MiscHeader"
 interface MiscDataProps {
   hideButton?: boolean
 }
+
 export const MiscData: FC<MiscDataProps> = ({hideButton}) => {
   return (
     <section>
@@ -27,8 +28,9 @@ export const MiscData: FC<MiscDataProps> = ({hideButton}) => {
             }
             date="24 เม.ย. 66"
             thumbnail={"thumb-6.jpg"}
+            url={"/blog/priminister"}
           />
-          <ArticleCard title={<span>ความสำคัญของ ส.ว.</span>} date="24 เม.ย. 66" thumbnail={"thumb-2.jpg"}/>
+          <ArticleCard title={<span>ความสำคัญของ ส.ว.</span>} date="24 เม.ย. 66" thumbnail={"thumb-2.jpg"} url={"/blog/senator"}/>
           <ArticleCard
             title={
               <span>
@@ -39,6 +41,7 @@ export const MiscData: FC<MiscDataProps> = ({hideButton}) => {
             }
             date="24 เม.ย. 66"
             thumbnail={"thumb-3.jpg"}
+            url={"/blog/mps"}
           />
           <ArticleCard
             title={
@@ -49,6 +52,7 @@ export const MiscData: FC<MiscDataProps> = ({hideButton}) => {
               </span>
             }
             date="24 เม.ย. 66"
+            url={"/blog/words"}
             thumbnail={"thumb-1.jpg"}
           />
           <ArticleCard
@@ -62,6 +66,7 @@ export const MiscData: FC<MiscDataProps> = ({hideButton}) => {
               </span>
             }
             date="24 เม.ย. 66"
+            url={"/blog/role"}
             thumbnail={"thumb-4.jpg"}
           />
           <ArticleCard
@@ -73,6 +78,7 @@ export const MiscData: FC<MiscDataProps> = ({hideButton}) => {
               </span>
             }
             date="24 เม.ย. 66"
+            url={"/blog/calculate"}
             thumbnail={"thumb-5.jpg"}
           />
         </div>
