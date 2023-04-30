@@ -38,8 +38,10 @@ export const Button = ({
       onClick={() => onClick && onClick()}
       className={classNames(
         className,
-        "relative mt-4 rounded-xl py-2.5 px-10 text-lg font-semibold ring-2 ring-PED-orange/25",
-        secondary ? "bg-white text-PED-orange" : "bg-PED-orange text-white",
+        "relative mt-4 rounded-xl py-2.5 px-10 text-lg font-semibold ring-2",
+        secondary
+          ? "bg-gradient-to-b from-white to-slate-50 text-PED-orange ring-PED-orange/20"
+          : "bg-PED-orange text-white ring-PED-orange/25",
         disabled ? "cursor-not-allowed opacity-50" : "transition-all duration-300 ease-out hover:scale-105 hover:ring-8"
       )}
       {...props}
