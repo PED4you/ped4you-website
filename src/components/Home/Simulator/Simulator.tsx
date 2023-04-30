@@ -1,5 +1,5 @@
 "use client"
-import { Button } from "@/components/common/Home/Button"
+import { LinkButton } from "@/components/common/Home/Button"
 import { SectionWithDivider } from "@/components/common/Home/SectionWithDivider"
 import { DuckSimulator } from "@/components/Home/Simulator/DuckSimulator"
 import { SimulatorHeading } from "@/components/Home/Simulator/SimulatorHeading"
@@ -27,7 +27,7 @@ export const Simulator = () => {
             แถมรู้ผลด้วยว่ากาให้ใครไปบ้าง
             <br />
           </p>
-          <Button text={"ลองเลือกตั้ง"} />
+          <LinkButton className="top-6" link="/simulator" text={"ลองเลือกตั้ง"} />
         </div>
         <div className="absolute -top-14 ml-32 w-[210px] md:relative md:top-[unset] md:ml-0 md:w-[378px]">
           <DuckSimulator />

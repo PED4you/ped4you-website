@@ -85,6 +85,6 @@ export function formatDate(date: Date) {
     month: date.getMonth() + 1,
     thMonth: date.toLocaleString("th-TH", { month: "long" }),
     date: date.getDate(),
-    "hh-mm": `${date.getHours()}:${date.getMinutes()}`,
+    "hh-mm": `${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}`,
   }
 }

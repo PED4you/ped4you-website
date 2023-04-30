@@ -23,7 +23,7 @@ export const usePage = (): PageContextType => {
   return context
 }
 
-const DEBUG = false
+const DEBUG = true
 const DEBUG_PAGE = "10"
 
 export function PageProvider({ children }: { children: ReactNode }) {
