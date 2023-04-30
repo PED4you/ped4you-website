@@ -1,8 +1,13 @@
+import {FC} from "react"
+
 import { LinkButton } from "@/components/common/Home/Button"
 import { ArticleCard } from "@/components/Home/MiscData/ArticleCard"
 import { MiscHeader } from "@/components/Home/MiscData/MiscHeader"
 
-export const MiscData = () => {
+interface MiscDataProps {
+  hideButton?: boolean
+}
+export const MiscData: FC<MiscDataProps> = ({hideButton}) => {
   return (
     <section>
       <div className="flex flex-col items-center py-20">
@@ -71,7 +76,7 @@ export const MiscData = () => {
             thumbnail={"thumb-5.jpg"}
           />
         </div>
-        <LinkButton link="/data" text={"ดูข้อมูลทั้งหมด"} />
+        {!hideButton && <LinkButton link="/blog" text={"ดูข้อมูลทั้งหมด"}/>}
       </div>
     </section>
   )
