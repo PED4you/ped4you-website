@@ -3,7 +3,7 @@ import {FacebookIcon, InstagramIcon, TwitterIcon} from "@/components/common/Foot
 import {DuckSplash} from "@/components/Home/Landing/DuckSplash"
 
 export const Footer = () => {
-  return <footer className="bg-PED-yellow py-20">
+  return <footer id="about-us" className="bg-PED-yellow py-20">
     <div className="mx-auto flex max-w-4xl flex-col items-center px-8">
       <FooterHeading/>
       <p className="mt-8 text-center font-light">ped4you คือ แพลตฟอร์มที่ช่วยให้ผู้มีสิทธิ์เลือกตั้งครั้งแรกได้เข้าใจระบบการเลือกตั้งผ่านประสบการณ์เลือกตั้งเสมือนจริง

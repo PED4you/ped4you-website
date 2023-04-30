@@ -13,10 +13,14 @@ export const Navigation = () => {
         </div>
       </Link>
       <div className="hidden items-center space-x-8 text-lg text-white lg:flex">
-        <a>ลองเลือกตั้ง</a>
-        <a>สิ่งที่ควรรู้</a>
-        <a>เกี่ยวกับการเลือกตั้ง</a>
-        <a>About Us</a>
+        <Link href="/simulator">
+          ลองเลือกตั้ง
+        </Link>
+        <a href="/#infos">สิ่งที่ควรรู้</a>
+        <Link href="/blog">
+          เกี่ยวกับการเลือกตั้ง
+        </Link>
+        <a href="#about-us">About Us</a>
       </div>
       <div className="lg:hidden">
         <Bars3Icon strokeWidth={0.6} stroke={"currentColor"} className="h-8 w-8 text-white"/>

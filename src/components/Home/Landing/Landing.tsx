@@ -3,6 +3,9 @@ import {DuckSplash} from "@/components/Home/Landing/DuckSplash"
 import {LandingHeading} from "@/components/Home/Landing/LandingHeading"
 
 export const Landing = () => {
+
+  const daysLeft = Math.floor(((1683997200 * 1000) - new Date().getTime()) / (24 * 60 * 60 * 1000))
+
   return (
     <section className="space-y-8 bg-PED-yellow py-12 md:space-y-14 md:py-16">
       <div className="flex flex-col items-center justify-center md:flex-row">
@@ -28,7 +31,7 @@ export const Landing = () => {
         <ButtonText/>
         <div className="mt-3 space-x-3 text-2xl font-semibold text-white">
           <span>อีก</span>
-          <span className="text-4xl">30</span>
+          <span className="w-[50px] text-center text-4xl">{daysLeft}</span>
           <span>วัน</span>
         </div>
       </button>
