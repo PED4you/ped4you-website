@@ -31,7 +31,7 @@ export default function ShowID() {
         className="mx-auto w-full max-w-xs"
       />
 
-      <div className="relative -top-4 flex justify-end">
+      <div className="absolute right-4 bottom-10 flex justify-end sm:relative">
         <Button text="ต่อไป" onClick={() => setPage("7")} />
       </div>
     </section>

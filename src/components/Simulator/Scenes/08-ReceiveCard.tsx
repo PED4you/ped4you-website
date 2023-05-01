@@ -166,14 +166,14 @@ export default function ReceiveCard() {
 
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-2 text-lg text-PED-purple sm:flex-row sm:text-base">
-              <p className="w-16 font-medium">ใบสีม่วง</p>
+              <p className="font-medium sm:w-16">ใบสีม่วง</p>
               <p className="font-light">
                 บัตรเลือกตั้ง ส.ส. แบบ <span className="font-medium">แบ่งเขตการเลือกตั้ง</span>
               </p>
             </div>
 
             <div className="flex flex-col gap-2 text-lg text-PED-green sm:flex-row sm:text-base">
-              <p className="w-16 font-medium">ใบสีเขียว</p>
+              <p className="font-medium sm:w-16">ใบสีเขียว</p>
               <p className="font-light">
                 บัตรเลือกตั้ง ส.ส. แบบ <span className="font-medium">บัญชีรายชื่อ</span>
               </p>

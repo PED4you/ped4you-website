@@ -24,7 +24,7 @@ export const usePage = (): PageContextType => {
 }
 
 const DEBUG = false
-const DEBUG_PAGE = "8"
+const DEBUG_PAGE = "6"
 
 export function PageProvider({ children }: { children: ReactNode }) {
   const [page, setPage] = useState(DEBUG ? DEBUG_PAGE : "0")
