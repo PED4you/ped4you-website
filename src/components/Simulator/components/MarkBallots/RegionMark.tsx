@@ -3,6 +3,7 @@ import { useRef, useState } from "react"
 import { ReactSketchCanvas, ReactSketchCanvasRef } from "react-sketch-canvas"
 
 import { usePage } from "../../PageProvider"
+import FYIMarking from "./FYIMarking"
 
 export default function RegionMark({ nextPage }: { nextPage: () => void }) {
   const { userData } = usePage()
@@ -31,18 +32,18 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
           </div>
 
           <div className="flex flex-col items-center gap-4">
-            <div className="mt-4 flex flex-col">
+            {/* <div className="mt-4 flex flex-col">
               <p className="text-lg font-normal">คุณกำลังลงคะแนนเสียงให้</p>
 
               <h2 className="text-2xl font-medium">หมายเลข{userData.regionVote.no}</h2>
               <p className="text-lg font-medium">{userData.regionVote.candidate}</p>
               <p className="text-lg font-medium">พรรค{userData.regionVote.party}</p>
-            </div>
+            </div> */}
 
-            <Button text="ต่อไป" onClick={() => nextPage()} />
+            {/* <Button text="ต่อไป" onClick={() => nextPage()} /> */}
             <div className="flex items-center gap-4">
               <Button
-                text="Clear"
+                text="ยกเลิก"
                 onClick={() => {
                   canvasRef.current?.clearCanvas()
                 }}
@@ -50,46 +51,29 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
               />
 
               <Button
-                text="Submit"
+                text="ต่อไป"
                 onClick={() => {
-                  canvasRef?.current
-                    ?.exportImage("png")
-                    .then((data) => {
-                      // setSubmitting(true)
-                      // post to api route /upload
-                      // fetch("/api/upload", {
-                      //   method: "POST",
-                      //   body: JSON.stringify({
-                      //     good: isGood,
-                      //     data,
-                      //   }),
-                      // })
-                      //   .then((res) => {
-                      //     if (res.status === 200) {
-                      //       console.log("Success")
-                      //       refetch()
-                      //     }
-                      //   })
-                      //   .catch((e) => {
-                      //     console.error("Error", e)
-                      //   })
-                      //   .finally(() => {
-                      //     canvasRef?.current?.clearCanvas()
-                      //     setSubmitting(false)
-                      //   })
-                    })
-                    .catch((e) => {
-                      console.log(e)
-                    })
+                  nextPage()
+                  // canvasRef?.current
+                  //   ?.exportImage("png")
+                  //   .then((data) => {
+                  //     // do something with data
+                  //   })
+                  //   .catch((e) => {
+                  //     console.log(e)
+                  //   })
                 }}
               />
             </div>
 
-            <p className="mt-8 text-sm font-light">
+            {/* <p className="mt-8 text-sm font-light">
               หมายเหตุ : เป็นการประเมินโดย AI เท่านั้น
               <br />
               การตัดสินจริง ๆ อยู่ที่กรรมการประจำหน่วยเลือกตั้ง
-            </p>
+            </p> */}
+            <div className="mx-auto mt-4 w-full max-w-sm sm:mt-10">
+              <FYIMarking />
+            </div>
           </div>
         </div>
       </div>

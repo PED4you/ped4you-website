@@ -37,28 +37,26 @@ export default function Signature() {
         </AnimatePresence>
       </div>
 
-      <div className="flex flex-col gap-2 overflow-hidden rounded-md bg-gradient-to-b from-[#FCFCFC] to-[#F3F1FF] p-4 text-center shadow-lg">
-        <div className="grid grid-cols-5 items-center">
-          <div className="col-span-2 flex h-full w-full items-center justify-center px-6 py-2">
-            <h2 className="text-center text-xl font-medium">ชื่อตัว-ชื่อสกุล</h2>
+      <div className="relative flex flex-col gap-2 overflow-hidden rounded-md bg-gradient-to-b from-[#FCFCFC] to-[#F3F1FF] p-4 text-center shadow-lg">
+        <div className="relative grid grid-cols-5 items-center">
+          <div className="col-span-2 h-full w-full p-6">
+            <p className="text-center text-xl font-medium">ชื่อตัว-ชื่อสกุล</p>
           </div>
 
-          <div className="col-span-1 flex h-full w-full items-center justify-center px-6 py-2">
-            <h2 className="text-center text-xl font-medium">ลำดับที่</h2>
+          <div className="relative col-span-1 h-full w-full p-6">
+            <p className="text-center text-xl font-medium">ลำดับที่</p>
           </div>
 
-          <div className="col-span-2 flex h-full w-full items-center justify-center px-6 py-2">
-            <h2 className="text-center text-base font-medium">
+          <div className="col-span-2 h-full w-full p-6">
+            <p className="text-center text-xl font-medium">
               ลายมือชื่อหรือ
               <br />
               ลายพิมพ์นิ้วมือ
-            </h2>
+            </p>
           </div>
-        </div>
 
-        <hr className="my-4 border border-slate-200" />
+          <hr className="relative col-span-5 my-4 border border-slate-200" />
 
-        <div className="grid grid-cols-5 items-center">
           <div className="col-span-2 h-full w-full p-6">
             <p className="text-left text-lg font-medium">
               {userData.title}
@@ -101,7 +99,7 @@ export default function Signature() {
             </AnimatePresence>
           </div>
 
-          {Array(10)
+          {Array(5)
             .fill("")
             .map((_, i) => (
               <Fragment key={i}>

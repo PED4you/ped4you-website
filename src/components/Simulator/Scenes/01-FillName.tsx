@@ -84,7 +84,7 @@ export default function FillName() {
                     name="name"
                     type="text"
                     placeholder="จำลอง เลือกตั้ง"
-                    className="w-full rounded-md bg-PED-yellow px-4 py-3 text-base font-normal text-PED-purple-secondary placeholder:text-PED-purple-secondary/50 focus:outline-none focus:ring-2 focus:ring-PED-green"
+                    className="h-full w-full rounded-md bg-PED-yellow px-4 py-3 text-base font-normal text-PED-purple-secondary placeholder:text-PED-purple-secondary/50 focus:outline-none focus:ring-2 focus:ring-PED-green"
                   />
                 </div>
               </div>

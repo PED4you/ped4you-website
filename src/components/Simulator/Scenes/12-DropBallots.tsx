@@ -65,6 +65,10 @@ export default function DropBallots() {
                 : "from-[#31b16c] to-[#1f7957]",
               "absolute -top-16 left-1/2 h-[10rem] w-[4rem] -translate-x-1/2 -rotate-12 bg-gradient-to-b"
             )}
+            onClick={() => {
+              if (type === "purple") setType("purple-fall")
+              else if (type === "green") setType("green-fall")
+            }}
           />
 
           <motion.div

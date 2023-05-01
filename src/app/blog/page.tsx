@@ -1,9 +1,11 @@
-import {MiscData} from "@/components/Home/MiscData/MiscData"
+import { MiscData } from "@/components/Home/MiscData/MiscData"
 
 const Page = () => {
-  return (<div>
-    <MiscData hideButton={true}/>
-  </div>)
+  return (
+    <div>
+      <MiscData hideButton={true} />
+    </div>
+  )
 }
 
 export default Page
