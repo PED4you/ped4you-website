@@ -1,2 +1,2 @@
 export const DEBUG = false
-export const DEBUG_PAGE = "4"
+export const DEBUG_PAGE = "8"
