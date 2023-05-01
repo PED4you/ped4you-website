@@ -23,7 +23,7 @@ export const usePage = (): PageContextType => {
   return context
 }
 
-const DEBUG = Boolean(process.env?.NEXT_PUBLIC_PRODUCTION)
+const DEBUG = !Boolean(process.env?.NEXT_PUBLIC_PRODUCTION)
 const DEBUG_PAGE = "4"
 
 export function PageProvider({ children }: { children: ReactNode }) {
