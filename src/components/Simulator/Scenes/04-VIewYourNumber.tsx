@@ -63,7 +63,7 @@ export default function ViewYourNumber() {
             </p>
           </div>
 
-          <div className="relative col-span-1 h-full w-full p-6">
+          <div className="relative col-span-1 flex h-full w-full items-center justify-center p-6">
             <p className="text-center text-lg font-medium">145</p>
 
             {/* circle */}
@@ -123,11 +123,11 @@ export default function ViewYourNumber() {
             .fill("")
             .map((_, i) => (
               <Fragment key={i}>
-                <div className="col-span-2 h-full w-full p-6 blur-sm">
+                <div className="col-span-2 flex h-full w-full items-center justify-center p-6 blur-sm">
                   <p className="text-left text-lg font-medium">นายเลือกตั้ง จำลอง</p>
                 </div>
 
-                <div className="col-span-1 h-full w-full p-6 blur-sm">
+                <div className="col-span-1 flex h-full w-full items-center justify-center p-6 blur-sm">
                   <p className="text-center text-lg font-medium">{146 + i}</p>
                 </div>
 
