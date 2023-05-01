@@ -47,7 +47,7 @@ export default function Elgibility() {
         </div>
       </div>
 
-      <div className="absolute bottom-4 mx-auto w-full max-w-sm rounded-xl bg-PED-yellow px-10 py-6 text-center text-base font-light text-PED-purple-secondary">
+      <div className="absolute bottom-4 mx-auto w-full max-w-sm rounded-xl bg-PED-yellow px-10 py-6 text-center text-base font-light text-PED-purple-secondary md:relative md:mt-10">
         <p className="">
           สามารถตรวจสอบข้อมูลผู้มีสิทธิ์เลือกตั้งได้ที่เว็บไซต์ของกรมการปกครอง
           <br />

@@ -68,7 +68,7 @@ export default function ViewYourNumber() {
 
             {/* circle */}
             <svg
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[calc(-50%-0.5rem)]"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
               width="107"
               height="60"
               viewBox="0 0 107 60"
