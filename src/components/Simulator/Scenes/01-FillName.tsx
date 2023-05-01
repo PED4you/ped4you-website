@@ -20,7 +20,7 @@ export default function FillName() {
 
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-medium text-PED-green-secondary">ตรวจสอบสิทธิ์เลือกตั้ง</h1>
-        <p className="text-lg font-light text-PED-green">
+        <p className="text-lg font-light text-PED-orange">
           ข้อมูลที่กรอกไปจะใช้เพื่อการจำลองเลือกตั้งเท่านั้น จะไม่มีการเก็บข้อมูลส่วนตัวใด ๆ
         </p>
       </div>
