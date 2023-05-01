@@ -8,6 +8,7 @@ specifiers:
   '@types/react': 18.0.14
   '@typescript-eslint/eslint-plugin': ^5.30.6
   '@typescript-eslint/parser': ^5.30.6
+  '@vercel/analytics': ^1.0.0
   autoprefixer: ^10.4.7
   classnames: ^2.3.2
   eslint: 8.18.0
@@ -32,6 +33,7 @@ specifiers:
 
 dependencies:
   '@heroicons/react': 2.0.17_react@18.2.0
+  '@vercel/analytics': 1.0.0_react@18.2.0
   classnames: 2.3.2
   formik: 2.2.9_react@18.2.0
   framer-motion: 10.12.4_biqbaboplfbrettd7655fr4n2y
@@ -1783,6 +1785,14 @@ packages:
       '@typescript-eslint/types': 5.58.0
       eslint-visitor-keys: 3.3.0
     dev: true
+
+  /@vercel/analytics/1.0.0_react@18.2.0:
+    resolution: {integrity: sha512-RQmj7pv82JwGDHrnKeRc6TtSw2U7rWNubc2IH0ernTzWTj02yr9zvIYiYJeztsBzrJtWv7m8Nz6vxxb+cdEtJw==}
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /acorn-jsx/5.3.2_acorn@8.8.0:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}

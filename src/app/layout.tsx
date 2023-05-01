@@ -1,5 +1,6 @@
 import { ReactNode } from "react"
 
+import { Analytics } from "@vercel/analytics/react"
 import { Mitr } from "next/font/google"
 
 import "@/styles/globals.css"
@@ -31,6 +32,8 @@ export default function RootLayout({
 
         <meta name="msapplication-TileColor" content="#5438DC" />
         <meta name="theme-color" content="#ffffff" />
+
+        <Analytics />
       </head>
       <body className={mitr.className}>
         <>{children}</>
