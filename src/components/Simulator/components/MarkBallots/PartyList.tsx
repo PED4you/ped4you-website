@@ -1,3 +1,5 @@
+import { sarabun } from "@/app/fonts"
+import classNames from "classnames"
 import Image from "next/image"
 import { Fragment } from "react"
 import { usePage } from "../../PageProvider"
@@ -34,7 +36,12 @@ export default function PartyListBallot({ nextPage }: { nextPage: () => void }) 
   return (
     <section className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col gap-4 overflow-hidden py-10">
       <p className="py-4 text-center text-lg font-light">คลิกที่หมายเลขผู้สมัครที่คุณต้องการลงคะแนนเสียง</p>
-      <div className="flex min-h-[32rem] flex-col items-center justify-between gap-4 bg-gradient-to-br from-[#59CD90] to-[#2D936C]">
+      <div
+        className={classNames(
+          sarabun.className,
+          "flex min-h-[32rem] flex-col items-center justify-between gap-4 bg-gradient-to-br from-[#59CD90] to-[#2D936C]"
+        )}
+      >
         <div className="flex flex-col items-center gap-4 py-4 text-center">
           <p>
             บัตรเลือกตั้งสมาชิกสภาผู้แทนราษฎรแบบแบ่งเขตเลือกตั้ง

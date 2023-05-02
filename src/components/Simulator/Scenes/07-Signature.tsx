@@ -1,8 +1,10 @@
 import { Fragment, useState } from "react"
 
 import { StarIcon } from "@heroicons/react/24/solid"
+import classNames from "classnames"
 import { AnimatePresence, motion } from "framer-motion"
 
+import { mitr, sarabun } from "@/app/fonts"
 import { Button } from "@/components/common/Home/Button"
 
 import { usePage } from "../PageProvider"
@@ -37,18 +39,23 @@ export default function Signature() {
         </AnimatePresence>
       </div>
 
-      <div className="relative flex flex-col gap-2 overflow-hidden rounded-md bg-gradient-to-b from-[#FCFCFC] to-[#F3F1FF] p-4 text-center shadow-lg">
+      <div
+        className={classNames(
+          sarabun.className,
+          "relative flex flex-col gap-2 overflow-hidden rounded-md bg-gradient-to-b from-[#FCFCFC] to-[#F3F1FF] p-4 text-center shadow-lg"
+        )}
+      >
         <div className="relative grid grid-cols-5 items-center">
           <div className="col-span-2 h-full w-full p-6">
-            <p className="text-center text-xl font-medium">ชื่อตัว-ชื่อสกุล</p>
+            <p className="text-center text-xl font-semibold">ชื่อตัว-ชื่อสกุล</p>
           </div>
 
           <div className="relative col-span-1 h-full w-full p-6">
-            <p className="text-center text-xl font-medium">ลำดับที่</p>
+            <p className="text-center text-xl font-semibold">ลำดับที่</p>
           </div>
 
           <div className="col-span-2 h-full w-full p-6">
-            <p className="text-center text-xl font-medium">
+            <p className="text-center text-xl font-semibold">
               ลายมือชื่อหรือ
               <br />
               ลายพิมพ์นิ้วมือ
@@ -73,7 +80,10 @@ export default function Signature() {
               {!signed ? (
                 <button
                   onClick={() => setSigned(true)}
-                  className="animate-pulse text-center font-light text-black transition-colors hover:text-slate-500"
+                  className={classNames(
+                    mitr.className,
+                    "animate-pulse text-center font-light text-PED-orange transition-colors hover:text-slate-500"
+                  )}
                 >
                   แตะเพื่อลงลายมือชื่อ
                 </button>

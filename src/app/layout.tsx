@@ -1,17 +1,9 @@
 import { ReactNode } from "react"
 
 import { Analytics } from "@vercel/analytics/react"
-import { Mitr } from "next/font/google"
 
 import "@/styles/globals.css"
-
-const mitr = Mitr({
-  weight: ["300", "400", "500", "600"],
-  style: ["normal"],
-  subsets: ["latin", "latin-ext", "thai"],
-  display: "swap",
-  fallback: ["system-ui", "Sukhumvit Set", "arial"],
-})
+import { mitr } from "./fonts"
 
 export default function RootLayout({
   // Layouts must accept a children prop.

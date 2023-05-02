@@ -1,3 +1,5 @@
+import { sarabun } from "@/app/fonts"
+import classNames from "classnames"
 import { usePage } from "../../PageProvider"
 import { RegionVote } from "../../types"
 import { chunkArray } from "../../utils"
@@ -24,7 +26,12 @@ export default function RegionBallot({ nextPage }: { nextPage: () => void }) {
   return (
     <section className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col gap-4 overflow-hidden py-10">
       <p className="py-4 text-center text-lg font-light">คลิกที่หมายเลขผู้สมัครที่คุณต้องการลงคะแนนเสียง</p>
-      <div className="flex min-h-[32rem] flex-col items-center justify-between gap-4 bg-gradient-to-br from-[#e0a5fb] to-[#a54ac6]">
+      <div
+        className={classNames(
+          sarabun.className,
+          "flex min-h-[32rem] flex-col items-center justify-between gap-4 bg-gradient-to-br from-[#e0a5fb] to-[#a54ac6]"
+        )}
+      >
         <div className="flex flex-col items-center gap-4 py-4 text-center">
           <p>
             บัตรเลือกตั้งสมาชิกสภาผู้แทนราษฎรแบบแบ่งเขตเลือกตั้ง
