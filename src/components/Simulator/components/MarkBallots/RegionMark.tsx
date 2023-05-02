@@ -18,9 +18,10 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
 
   const [count, setCount] = useState(0)
   const [isGood, setIsGood] = useState(false)
+  const [empty, setEmpty] = useState(true)
 
   useEffect(() => {
-    if (isCoolingDown) {
+    if (isCoolingDown && !empty) {
       if (timerIdRef.current) {
         clearTimeout(timerIdRef.current)
       }
@@ -79,7 +80,7 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
         clearTimeout(timerIdRef.current)
       }
     }
-  }, [isCoolingDown, pathInput])
+  }, [isCoolingDown, pathInput, empty])
 
   return (
     <section className="min-h-screen w-full bg-gradient-to-br from-[#CD82F0] to-[#70268A] text-white">
@@ -104,6 +105,9 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
           <div className="">
             <ReactSketchCanvas
               onChange={(updatedPaths: CanvasPath[]) => {
+                if (updatedPaths.length === 0) setEmpty(true)
+                else setEmpty(false)
+
                 setPathInput(updatedPaths[0])
                 setIsCoolingDown(true)
               }}
