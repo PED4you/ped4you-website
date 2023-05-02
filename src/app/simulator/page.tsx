@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "ลองเลือกตั้งตามกติกาใหม่ก่อนไปกาจริง - จำลองขั้นตอนการเลือกตั้งตามกติกาใหม่ทุกขั้นตอน ตั้งแต่ตรวจสอบรายชื่อ กาบัตร จนถึงหย่อนบัตรลงกล่อง แถมรู้ผลด้วยว่ากาให้ใครไปบ้าง",
     type: "website",
-    url: "https://ped4you.com",
+    url: "https://ped4you.com/simulator",
     images: [
       {
         url: "https://ped4you.com/meta/ped4you-banner.png",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    site: "https://ped4you.com",
+    site: "https://ped4you.com/simulator",
     card: "summary_large_image",
     images: [
       {

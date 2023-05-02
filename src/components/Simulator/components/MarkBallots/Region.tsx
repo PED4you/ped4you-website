@@ -21,7 +21,7 @@ function RegionElectionSquare({ candidate, onClick }: { candidate: RegionVote; o
 
 export default function RegionBallot({ nextPage }: { nextPage: () => void }) {
   const { userData, setUserData } = usePage()
-  const [chunkedCandidates, maxLength] = chunkArray(userData.votingDistrict.candidates)
+  const [chunkedCandidates, maxLength] = chunkArray(userData.votingDistrict.candidates, 4)
 
   return (
     <section className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col gap-4 overflow-hidden py-10">

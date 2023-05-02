@@ -1,5 +1,9 @@
 import { BlogHeading } from "@/components/Blog/BlogHeading"
 import { BlogImage } from "@/components/Blog/BlogImage"
+import { generateMetaData } from "@/utils/generateMetaData"
+
+const metaData = generateMetaData("ส.ส. แบ่งเขต vs ส.ส. บัญชีรายชื่อ", "ส.ส. แบ่งเขต vs ส.ส. บัญชีรายชื่อ", "/blog/mps")
+export { metaData }
 
 const Page = () => {
   return (

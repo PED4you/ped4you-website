@@ -1,6 +1,7 @@
 import { ButtonText } from "@/components/Home/Landing/ButtonText"
 import { DuckSplash } from "@/components/Home/Landing/DuckSplash"
 import { LandingHeading } from "@/components/Home/Landing/LandingHeading"
+import Link from "next/link"
 
 export const Landing = () => {
   const daysLeft = Math.floor((1683997200 * 1000 - new Date().getTime()) / (24 * 60 * 60 * 1000))
@@ -27,14 +28,17 @@ export const Landing = () => {
         </div>
       </div>
       <div className="flex justify-center">
-        <div className="inline-flex items-center space-x-4 rounded-2xl bg-PED-orange px-5 pb-4 pt-2 ring-2 ring-PED-orange/25 transition-all duration-300 ease-out hover:scale-[101%] hover:ring-8">
+        <Link
+          href="/simulator"
+          className="inline-flex items-center space-x-4 rounded-2xl bg-PED-orange px-5 pb-4 pt-2 ring-2 ring-PED-orange/25 transition-all duration-300 ease-out hover:scale-[101%] hover:ring-8"
+        >
           <ButtonText />
-          <div className="mt-3 space-x-3 text-2xl font-semibold text-white">
+          <div className="mt-3 cursor-pointer space-x-3 text-2xl font-semibold text-white">
             <span>อีก</span>
             <span className="w-[50px] text-center text-4xl">{daysLeft}</span>
             <span>วัน</span>
           </div>
-        </div>
+        </Link>
       </div>
     </section>
   )
