@@ -21,6 +21,12 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
   const [empty, setEmpty] = useState(true)
 
   useEffect(() => {
+    fetch("https://api.ped4you.com/", {
+      method: "GET",
+    }) // warm start
+  }, [])
+
+  useEffect(() => {
     if (isCoolingDown && !empty) {
       if (timerIdRef.current) {
         clearTimeout(timerIdRef.current)
