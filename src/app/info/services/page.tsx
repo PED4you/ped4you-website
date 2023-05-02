@@ -1,12 +1,12 @@
 import { InfoTemplate } from "@/components/Info/InfoTemplate"
 import { generateMetaData } from "@/utils/generateMetaData"
 
-const metaData = generateMetaData(
+const metadata = generateMetaData(
   "สำหรับผู้สูงอายุ ทุพพลภาพ พิการ",
   "สำหรับผู้สูงอายุ ทุพพลภาพ พิการ",
   "/info/services"
 )
-export { metaData }
+export { metadata }
 
 const Page = () => {
   const [B, H] = [InfoTemplate.Bold, InfoTemplate.Highlight]

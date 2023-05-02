@@ -1,8 +1,8 @@
 import { InfoTemplate } from "@/components/Info/InfoTemplate"
 import { generateMetaData } from "@/utils/generateMetaData"
 
-const metaData = generateMetaData("การลงคะแนน ?", "วิธีการลงคะแนน", "/info/voting")
-export { metaData }
+const metadata = generateMetaData("การลงคะแนน ?", "วิธีการลงคะแนน", "/info/voting")
+export { metadata }
 
 const Page = () => {
   const { Bold, Link, Highlight } = InfoTemplate

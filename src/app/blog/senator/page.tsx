@@ -2,8 +2,8 @@ import { BlogHeading } from "@/components/Blog/BlogHeading"
 import { BlogImage } from "@/components/Blog/BlogImage"
 import { generateMetaData } from "@/utils/generateMetaData"
 
-const metaData = generateMetaData("ความสำคัญของ ส.ว.", "ความสำคัญของ ส.ว.", "/blog/senator")
-export { metaData }
+const metadata = generateMetaData("ความสำคัญของ ส.ว.", "ความสำคัญของ ส.ว.", "/blog/senator")
+export { metadata }
 
 const Page = () => {
   return (

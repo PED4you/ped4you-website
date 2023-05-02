@@ -2,8 +2,8 @@ import { BlogHeading } from "@/components/Blog/BlogHeading"
 import { BlogImage } from "@/components/Blog/BlogImage"
 import { generateMetaData } from "@/utils/generateMetaData"
 
-const metaData = generateMetaData("สูตรคำนวณ ส.ส. บัญชีรายชื่อ", "สูตรคำนวณ ส.ส. บัญชีรายชื่อ", "/blog/calculate")
-export { metaData }
+const metadata = generateMetaData("สูตรคำนวณ ส.ส. บัญชีรายชื่อ", "สูตรคำนวณ ส.ส. บัญชีรายชื่อ", "/blog/calculate")
+export { metadata }
 
 const Page = () => {
   return (

@@ -1,8 +1,8 @@
 import { InfoTemplate } from "@/components/Info/InfoTemplate"
 import { generateMetaData } from "@/utils/generateMetaData"
 
-const metaData = generateMetaData("ข้อห้ามที่ควรรู้", "ข้อห้ามที่ควรรู้", "/info/prohibition")
-export { metaData }
+const metadata = generateMetaData("ข้อห้ามที่ควรรู้", "ข้อห้ามที่ควรรู้", "/info/prohibition")
+export { metadata }
 
 const Page = () => {
   const H = InfoTemplate.Highlight

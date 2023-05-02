@@ -2,12 +2,12 @@ import { BlogHeading } from "@/components/Blog/BlogHeading"
 import { BlogImage } from "@/components/Blog/BlogImage"
 import { generateMetaData } from "@/utils/generateMetaData"
 
-const metaData = generateMetaData(
+const metadata = generateMetaData(
   "บทบาทนอกคูหาของประชาชนในการเลือกตั้ง",
   "บทบาทนอกคูหาของประชาชนในการเลือกตั้ง",
   "/blog/role"
 )
-export { metaData }
+export { metadata }
 
 const Page = () => {
   return (

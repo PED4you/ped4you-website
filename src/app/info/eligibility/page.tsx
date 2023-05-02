@@ -1,8 +1,8 @@
 import { InfoTemplate } from "@/components/Info/InfoTemplate"
 import { generateMetaData } from "@/utils/generateMetaData"
 
-const metaData = generateMetaData("ใครเลือกตั้งได้บ้าง ?", "ใครเลือกตั้งได้บ้าง ?", "/info/eligibility")
-export { metaData }
+const metadata = generateMetaData("ใครเลือกตั้งได้บ้าง ?", "ใครเลือกตั้งได้บ้าง ?", "/info/eligibility")
+export { metadata }
 
 const Eligibility = () => {
   return (

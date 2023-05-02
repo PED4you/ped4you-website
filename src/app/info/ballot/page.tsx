@@ -1,8 +1,8 @@
 import { InfoTemplate } from "@/components/Info/InfoTemplate"
 import { generateMetaData } from "@/utils/generateMetaData"
 
-const metaData = generateMetaData("บัตรเลือกตั้ง ?", "บัตรเลือกตั้ง 2 ใบ", "/info/ballot")
-export { metaData }
+const metadata = generateMetaData("บัตรเลือกตั้ง ?", "บัตรเลือกตั้ง 2 ใบ", "/info/ballot")
+export { metadata }
 
 const BallotInfoPage = () => {
   const { Bold, Highlight } = InfoTemplate

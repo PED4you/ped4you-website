@@ -19,8 +19,7 @@ export function generateMetaData(title: string, description: string, path: strin
       ],
     },
     twitter: {
-      card: "app",
-      site: "@ped4you",
+      card: "summary_large_image",
       images: [
         {
           url: "https://ped4you.com/meta/ped4you-banner.png",

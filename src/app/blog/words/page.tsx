@@ -4,8 +4,8 @@ import { BlogHeading } from "@/components/Blog/BlogHeading"
 import { BlogImage } from "@/components/Blog/BlogImage"
 import { generateMetaData } from "@/utils/generateMetaData"
 
-const metaData = generateMetaData("คำศัพท์เลือกตั้งที่น่าสนใจ", "คำศัพท์เลือกตั้งที่น่าสนใจ", "/blog/words")
-export { metaData }
+const metadata = generateMetaData("คำศัพท์เลือกตั้งที่น่าสนใจ", "คำศัพท์เลือกตั้งที่น่าสนใจ", "/blog/words")
+export { metadata }
 
 const Page = () => {
   const B: FC<{ children: ReactNode }> = ({ children }) => (

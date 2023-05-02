@@ -1,8 +1,8 @@
 import { InfoTemplate } from "@/components/Info/InfoTemplate"
 import { generateMetaData } from "@/utils/generateMetaData"
 
-const metaData = generateMetaData("บัตรดี / บัตรเสีย ?", "บัตรดี / บัตรเสีย ?", "/info/spoiling")
-export { metaData }
+export { metadata }
+const metadata = generateMetaData("บัตรดี / บัตรเสีย ?", "บัตรดี / บัตรเสีย ?", "/info/spoiling")
 
 const Page = () => {
   const { Bold, Highlight } = InfoTemplate

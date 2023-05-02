@@ -1,8 +1,8 @@
 import { InfoTemplate } from "@/components/Info/InfoTemplate"
 import { generateMetaData } from "@/utils/generateMetaData"
 
-const metaData = generateMetaData("หน่วยเลือกตั้ง ?", "หน่วยเลือกตั้ง ?", "/info/station")
-export { metaData }
+const metadata = generateMetaData("หน่วยเลือกตั้ง ?", "หน่วยเลือกตั้ง ?", "/info/station")
+export { metadata }
 
 const Page = () => {
   const { Link } = InfoTemplate

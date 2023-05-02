@@ -1,8 +1,8 @@
 import { InfoTemplate } from "@/components/Info/InfoTemplate"
 import { generateMetaData } from "@/utils/generateMetaData"
 
-const metaData = generateMetaData("การนับคะแนน", "การนับคะแนน", "/info/counting")
-export { metaData }
+const metadata = generateMetaData("การนับคะแนน", "การนับคะแนน", "/info/counting")
+export { metadata }
 
 const Counting = () => {
   return (
