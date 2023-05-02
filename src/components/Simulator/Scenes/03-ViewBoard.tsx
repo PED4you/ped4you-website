@@ -38,11 +38,11 @@ export default function ViewBoard() {
           type === "partylist" ? "from-PED-green to-PED-green-secondary" : "from-PED-purple-secondary to-PED-purple"
         )}
       >
-        <div className="flex justify-center pt-6 pb-3">
+        <div className="flex justify-center pt-6 pb-3 gap-4">
           <button
             className={classNames(
               "rounded-lg px-6 py-3 text-lg font-medium text-PED-purple-secondary shadow-md ring-2 ring-slate-100/25 transition-all duration-500 ease-out hover:ring-8",
-              type === "region" ? "bg-slate-200" : "bg-white"
+              type === "region" ? "bg-white" : " bg-slate-200"
             )}
             onClick={() => setType("region")}
           >
@@ -51,7 +51,7 @@ export default function ViewBoard() {
           <button
             className={classNames(
               "rounded-lg px-6 py-3 text-lg font-medium text-PED-green shadow-md ring-2 ring-slate-100/25 transition-all duration-500 ease-out hover:ring-8",
-              type === "partylist" ? "bg-slate-200" : "bg-white"
+              type === "partylist" ? "bg-white" : " bg-slate-200"
             )}
             onClick={() => setType("partylist")}
           >
