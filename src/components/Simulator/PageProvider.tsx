@@ -1,6 +1,7 @@
 "use client"
 import { ReactNode, createContext, useContext, useState } from "react"
 
+import { DEBUG, DEBUG_PAGE } from "./constants"
 import { BaseUser, MockUser } from "./mock"
 import { UserData } from "./types"
 
@@ -22,9 +23,6 @@ export const usePage = (): PageContextType => {
 
   return context
 }
-
-const DEBUG = true
-const DEBUG_PAGE = "10"
 
 export function PageProvider({ children }: { children: ReactNode }) {
   const [page, setPage] = useState(DEBUG ? DEBUG_PAGE : "0")

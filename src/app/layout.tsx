@@ -1,16 +1,9 @@
 import { ReactNode } from "react"
 
-import { Mitr } from "next/font/google"
+import { Analytics } from "@vercel/analytics/react"
 
 import "@/styles/globals.css"
-
-const mitr = Mitr({
-  weight: ["300", "400", "500", "600"],
-  style: ["normal"],
-  subsets: ["latin", "latin-ext", "thai"],
-  display: "swap",
-  fallback: ["system-ui", "Sukhumvit Set", "arial"],
-})
+import { mitr } from "./fonts"
 
 export default function RootLayout({
   // Layouts must accept a children prop.
@@ -31,6 +24,8 @@ export default function RootLayout({
 
         <meta name="msapplication-TileColor" content="#5438DC" />
         <meta name="theme-color" content="#ffffff" />
+
+        <Analytics />
       </head>
       <body className={mitr.className}>
         <>{children}</>

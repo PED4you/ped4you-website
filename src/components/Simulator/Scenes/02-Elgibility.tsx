@@ -10,7 +10,7 @@ export default function Elgibility() {
   const canVote = isAbleToVote(userData.birthdate)
 
   return (
-    <div className="relative -top-6 flex min-h-screen flex-col items-center justify-center gap-12 p-4">
+    <div className="relative flex min-h-screen flex-col items-center justify-center gap-12 p-4">
       <div className="flex flex-col gap-6">
         <h1
           className={classNames(
@@ -41,11 +41,13 @@ export default function Elgibility() {
             <>แต่คุณยังสามารถลองเลือกตั้งกับพวกเราได้นะ !</>
           )}
         </p>
+
+        <div className="flex justify-center">
+          <Button className="mx-auto" text="ไปดูบอร์ดกัน !" onClick={() => setPage("3")} />
+        </div>
       </div>
 
-      <Button text="ไปดูบอร์ดกัน !" onClick={() => setPage("3")} />
-
-      <div className="w-full rounded-xl bg-PED-yellow px-10 py-6 text-center text-lg font-light text-PED-purple-secondary">
+      <div className="absolute bottom-4 mx-auto w-full max-w-sm rounded-xl bg-PED-yellow px-10 py-6 text-center text-base font-light text-PED-purple-secondary md:relative md:mt-10">
         <p className="">
           สามารถตรวจสอบข้อมูลผู้มีสิทธิ์เลือกตั้งได้ที่เว็บไซต์ของกรมการปกครอง
           <br />

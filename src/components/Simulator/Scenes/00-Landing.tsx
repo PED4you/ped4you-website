@@ -44,6 +44,10 @@ export default function Landing() {
             ถ้าคุณสงสัยว่าขั้นตอนการเลือกตั้งเป็นอย่างไร มาลองเลือกตั้งกับพวกเราสิ !
           </p>
 
+          <p className="text-center text-sm font-light text-PED-orange">
+            *ข้อมูลที่กรอกทั้งหมดจะใช้เพื่อการจำลองเลือกตั้งเท่านั้น จะไม่มีการเก็บข้อมูลส่วนตัวใด ๆ
+          </p>
+
           <Button text={"เริ่มจำลองเลือกตั้ง"} onClick={() => setPage("1")} />
         </div>
       </section>

@@ -49,7 +49,7 @@ export default function Cubible() {
 
   return (
     <section className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col items-center justify-center overflow-hidden">
-      <Heading />
+      {type !== "ballot" && <Heading />}
 
       <div className="relative">
         <AnimatePresence>
@@ -161,23 +161,24 @@ export default function Cubible() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -300, opacity: 0 }}
               transition={{
-                // delay: 0.5,
+                delay: 0.5,
                 duration: 0.5,
                 staggerChildren: 0.5,
               }}
               className="relative pt-6"
             >
-              <Button
-                className="absolute -top-12 left-1/2 -translate-x-1/2"
-                text="ต่อไป"
-                onClick={() => setPage("10")}
-              />
+              
               <Image
                 src="/images/simulator/ballot/cubicle.png"
                 width={800}
                 height={600}
                 alt="Cubicle"
                 className="relative -top-8 mx-auto"
+              />
+              <Button
+                className="absolute -top-8 left-1/2 -translate-x-1/2"
+                text="ต่อไป"
+                onClick={() => setPage("10")}
               />
             </motion.div>
           )}

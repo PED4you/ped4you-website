@@ -9,8 +9,8 @@ export default function ReceiveCard() {
   const { setPage } = usePage()
 
   return (
-    <section className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col gap-4 overflow-hidden px-4 py-10">
-      <div className="absolute left-1/2 -bottom-24 -translate-x-1/2 sm:-top-48 sm:bottom-auto">
+    <section className="relative mx-auto flex w-full max-w-xl flex-col items-center justify-center gap-4 overflow-hidden px-4 py-10">
+      <div className="relative -top-24 sm:-top-48">
         <motion.svg
           initial={{ y: -250, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -153,7 +153,7 @@ export default function ReceiveCard() {
         </motion.svg>
       </div>
 
-      <div className="absolute top-24 sm:top-auto sm:bottom-16">
+      <div className="relative -top-72 sm:-top-72">
         <div className="flex items-center gap-2">
           <StarIcon className="h-6 w-6 text-PED-orange" />
           <span className="text-xl font-medium text-PED-orange">ขั้นที่ 7</span>
@@ -166,14 +166,14 @@ export default function ReceiveCard() {
 
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-2 text-lg text-PED-purple sm:flex-row sm:text-base">
-              <p className="w-16 font-medium">ใบสีม่วง</p>
+              <p className="font-medium sm:w-16">ใบสีม่วง</p>
               <p className="font-light">
                 บัตรเลือกตั้ง ส.ส. แบบ <span className="font-medium">แบ่งเขตการเลือกตั้ง</span>
               </p>
             </div>
 
             <div className="flex flex-col gap-2 text-lg text-PED-green sm:flex-row sm:text-base">
-              <p className="w-16 font-medium">ใบสีเขียว</p>
+              <p className="font-medium sm:w-16">ใบสีเขียว</p>
               <p className="font-light">
                 บัตรเลือกตั้ง ส.ส. แบบ <span className="font-medium">บัญชีรายชื่อ</span>
               </p>
