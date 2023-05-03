@@ -167,17 +167,17 @@ export default function Cubible() {
               }}
               className="relative pt-6"
             >
-              <Button
-                className="absolute -top-12 left-1/2 -translate-x-1/2"
-                text="ต่อไป"
-                onClick={() => setPage("10")}
-              />
               <Image
                 src="/images/simulator/ballot/cubicle.png"
                 width={800}
                 height={600}
                 alt="Cubicle"
                 className="relative -top-8 mx-auto"
+              />
+              <Button
+                className="absolute -top-8 left-1/2 -translate-x-1/2"
+                text="ต่อไป"
+                onClick={() => setPage("10")}
               />
             </motion.div>
           )}

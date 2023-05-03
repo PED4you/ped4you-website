@@ -38,7 +38,7 @@ export default function ViewBoard() {
           type === "partylist" ? "from-PED-green to-PED-green-secondary" : "from-PED-purple-secondary to-PED-purple"
         )}
       >
-        <div className="flex justify-center pt-6 pb-3">
+        <div className="flex justify-center gap-4 pt-6 pb-3">
           <button
             className={classNames(
               "rounded-lg px-6 py-3 text-lg font-medium shadow-md ring-2 ring-slate-100/25 transition-all duration-500 ease-out hover:ring-8",

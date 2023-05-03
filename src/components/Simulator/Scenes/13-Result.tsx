@@ -62,9 +62,10 @@ export default function Result() {
             {formatDate(userData.startDate).thMonth} {formatDate(userData.startDate).year + 543}
           </div>
 
-          <p className="mt-2 text-sm">
-            อย่าลืมไปใช้สิทธิ์เลือกตั้งในวันที่ 14 พฤษภาคม 2566 (หรือวันที่ 7 พฤษภาคมสำหรับผู้ที่เลือกตั้งล่วงหน้า)
-          </p>
+          <div className="mt-2 text-center text-sm">
+            <p>อย่าลืมไปใช้สิทธิ์เลือกตั้งในวันที่</p> 14 พฤษภาคม 2566{" "}
+            <p>(หรือวันที่ 7 พฤษภาคมสำหรับผู้ที่เลือกตั้งล่วงหน้า)</p>
+          </div>
         </div>
 
         <Button text="ต่อไป" onClick={() => setPage("14")} />
