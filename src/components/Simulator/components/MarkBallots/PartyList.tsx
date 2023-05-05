@@ -44,7 +44,7 @@ export default function PartyListBallot({ nextPage }: { nextPage: () => void }) 
       >
         <div className="flex flex-col items-center gap-4 py-4 text-center">
           <p>
-            บัตรเลือกตั้งสมาชิกสภาผู้แทนราษฎรแบบแบ่งเขตเลือกตั้ง
+            บัตรเลือกตั้งสมาชิกสภาผู้แทนราษฎรแบบแบ่งบัญชีรายชื่อ
             <br />
             ให้ทำเครื่องหมาย “X” ภายใน “ช่องทำเครื่องหมาย” ไม่เกินหนึ่งหมายเลข
           </p>
