@@ -35,7 +35,7 @@ export const Landing = () => {
           <ButtonText />
           <div className="mt-3 cursor-pointer space-x-3 text-2xl font-semibold text-white">
             <span>อีก</span>
-            <span className="w-[50px] text-center text-4xl">{daysLeft}</span>
+            <span className="w-[50px] text-center text-4xl">5</span>
             <span>วัน</span>
           </div>
         </Link>
