@@ -2,7 +2,9 @@ import { useEffect, useMemo, useState } from "react"
 
 import { Field } from "formik"
 
-import ProvinceData from "@/data/provinces.json"
+import ElectionData from "@/data/data_new.json"
+
+const ProvinceData = ElectionData.provinces
 
 export default function AddressSelect({
   selectedProvince,

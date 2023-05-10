@@ -1,5 +1,5 @@
-import ElectionData from "@/data/election_data.json"
-import ProvinceData from "@/data/provinces.json"
+import ElectionData from "@/data/data_new.json"
+const ProvinceData = ElectionData.provinces
 
 import { VotingDistrict } from "./types"
 
@@ -14,7 +14,7 @@ export function getVotingDistrict(province: string, district: string, subDistric
   return (
     ProvinceData.find((p) => p.name === province)
       ?.districts.find((d) => d.name === district)
-      ?.subdistricts.find((s) => s.name === subDistrict)?.votingDistrict ?? ""
+      ?.subdistricts.find((s) => s.name === subDistrict)?.votingDistricts[0].code ?? ""
   )
 }
 
@@ -26,7 +26,9 @@ export function getDistrictData(votingDistrict: string): VotingDistrict {
   const allVotingDistricts =
     ProvinceData.find((p) => p.name === province)
       ?.districts.map((d) => {
-        const subDistricts = d.subdistricts.filter((s) => s.votingDistrict === votingDistrict)
+        const subDistricts = d.subdistricts
+          .filter((s) => s.votingDistricts[0].code === votingDistrict)
+          .map((s) => ({ name: s.name, votingDistrict: s.votingDistricts[0].code }))
 
         return subDistricts
       })
@@ -51,7 +53,7 @@ export function getDistrictData(votingDistrict: string): VotingDistrict {
     province,
     code: order,
     districts: allVotingDistricts,
-    candidates: allCandidates,
+    candidates: allCandidates.sort((a, b) => +a.no - +b.no),
   }
 }
 
