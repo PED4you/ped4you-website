@@ -1,10 +1,20 @@
+"use client"
+import {useEffect, useState} from "react"
+
+import Link from "next/link"
+
 import { ButtonText } from "@/components/Home/Landing/ButtonText"
 import { DuckSplash } from "@/components/Home/Landing/DuckSplash"
 import { LandingHeading } from "@/components/Home/Landing/LandingHeading"
-import Link from "next/link"
 
 export const Landing = () => {
-  const daysLeft = Math.floor((1683997200 * 1000 - new Date().getTime()) / (24 * 60 * 60 * 1000))
+
+  const [daysLeft, setDL] = useState(0)
+
+  useEffect(() => {
+    const daysLeft = Math.ceil((1683997200 * 1000 - new Date().getTime()) / (24 * 60 * 60 * 1000))
+    setDL(daysLeft)
+  }, [])
 
   return (
     <section className="space-y-8 bg-PED-yellow py-12 md:space-y-14 md:py-16">
@@ -35,7 +45,7 @@ export const Landing = () => {
           <ButtonText />
           <div className="mt-3 cursor-pointer space-x-3 text-2xl font-semibold text-white">
             <span>อีก</span>
-            <span className="w-[50px] text-center text-4xl">3</span>
+            <span className="w-[50px] text-center text-4xl">{daysLeft}</span>
             <span>วัน</span>
           </div>
         </Link>
