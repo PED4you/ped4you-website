@@ -23,7 +23,7 @@ export default function ViewYourNumber() {
       </div>
 
       <div className="mb-4 grid w-full grid-cols-5 items-center justify-between sm:flex">
-        <div className="relative col-span-3 text-left text-sm font-light text-PED-orange sm:w-64 ">
+        <div className="relative col-span-3 text-left text-base font-medium text-PED-orange sm:w-64 ">
           <p>
             หมายเหตุ : เลขนี้เป็นเพียงเลขสมมติ
             <br />
