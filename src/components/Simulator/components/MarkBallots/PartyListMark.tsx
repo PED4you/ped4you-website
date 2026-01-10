@@ -63,8 +63,8 @@ export default function PartyListMark({ nextPage }: { nextPage: () => void }) {
                     // if (responseData.prediction === "positive") setIsGood(true)
                     // else if (responseData.prediction === "negative") setIsGood(false)
                     // Always set as good regardless of API response
-                    setIsGood(true)
                   }
+                  setIsGood(true)
                 })
                 .catch((e) => {
                   console.error("Error", e)
