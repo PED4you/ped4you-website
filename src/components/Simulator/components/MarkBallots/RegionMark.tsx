@@ -50,29 +50,30 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
               formData.append("file", blobValue)
 
               // post to api route /upload
-              fetch("https://api.ped4you.com/inference", {
-                method: "POST",
-                headers: {
-                  // "Content-Type": "multipart/form-data",
-                },
-                body: formData,
-              })
-                .then(async (res) => {
-                  if (res.status === 200 && res.body) {
-                    const responseData = await res.json()
-                    // if (responseData.prediction === "positive") setIsGood(true)
-                    // else if (responseData.prediction === "negative") setIsGood(false)
-                    // Always set as good regardless of API response
-                  }
-                  setIsGood(true)
-                })
-                .catch((e) => {
-                  console.error("Error", e)
-                })
-                .finally(() => {
-                  setSubmitting(false)
-                  setIsCoolingDown(false)
-                })
+              // fetch("https://api.ped4you.com/inference", {
+              //   method: "POST",
+              //   headers: {
+              //     // "Content-Type": "multipart/form-data",
+              //   },
+              //   body: formData,
+              // })
+              //   .then(async (res) => {
+              //     if (res.status === 200 && res.body) {
+              //       const responseData = await res.json()
+              //       // if (responseData.prediction === "positive") setIsGood(true)
+              //       // else if (responseData.prediction === "negative") setIsGood(false)
+              //       // Always set as good regardless of API response
+              //     }
+              //     setIsGood(true)
+              //   })
+              //   .catch((e) => {
+              //     console.error("Error", e)
+              //   })
+              //   .finally(() => {
+              //     setSubmitting(false)
+              //     setIsCoolingDown(false)
+              //   })
+              setIsGood(true)
             })
           })
           .catch((e) => {
