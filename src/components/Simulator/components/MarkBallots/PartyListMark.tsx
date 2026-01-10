@@ -74,7 +74,7 @@ export default function PartyListMark({ nextPage }: { nextPage: () => void }) {
             //       setSubmitting(false)
             //       setIsCoolingDown(false)
             //     })
-            // })
+            })
           })
           .catch((e) => {
             console.log(e)
