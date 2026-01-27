@@ -3,8 +3,10 @@ import { useEffect, useRef, useState } from "react"
 import { CanvasPath, ReactSketchCanvas, ReactSketchCanvasRef } from "react-sketch-canvas"
 
 import { Button } from "@/components/common/Home/Button"
+import {useOnnxInference} from "@/utils/useOnnx"
 
 import FYIMarking from "./FYIMarking"
+
 
 export default function RegionMark({ nextPage }: { nextPage: () => void }) {
   const canvasRef = useRef<ReactSketchCanvasRef | null>(null)
@@ -20,6 +22,8 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
   const [isGood, setIsGood] = useState(false)
   const [empty, setEmpty] = useState(true)
 
+  const { predict, sessionReady } = useOnnxInference('onnx_model.onnx');
+
   useEffect(() => {
     fetch("https://api.ped4you.com/", {
       method: "GET",
@@ -31,57 +35,26 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
       if (timerIdRef.current) {
         clearTimeout(timerIdRef.current)
       }
+      setSubmitting(true);
 
       timerIdRef.current = setTimeout(() => {
-        // perform fetch request here
-        setCount((count) => count + 1)
+        canvasRef.current?.exportImage("png").then(async (data: string) => {
 
-        canvasRef?.current
-          ?.exportImage("png")
-          .then((data) => {
-            setSubmitting(true)
+          try {
+            const result = await predict(data);
 
-            const formData = new FormData()
-            // const blobValue = new Blob([data], { type: "image/png" })
-
-            fetch(data).then(async (base64) => {
-              const blobValue = await base64.blob()
-
-              formData.append("file", blobValue)
-
-              // post to api route /upload
-              // fetch("https://api.ped4you.com/inference", {
-              //   method: "POST",
-              //   headers: {
-              //     // "Content-Type": "multipart/form-data",
-              //   },
-              //   body: formData,
-              // })
-              //   .then(async (res) => {
-              //     if (res.status === 200 && res.body) {
-              //       const responseData = await res.json()
-              //       // if (responseData.prediction === "positive") setIsGood(true)
-              //       // else if (responseData.prediction === "negative") setIsGood(false)
-              //       // Always set as good regardless of API response
-              //     }
-              //     setIsGood(true)
-              //   })
-              //   .catch((e) => {
-              //     console.error("Error", e)
-              //   })
-              //   .finally(() => {
-              //     setSubmitting(false)
-              //     setIsCoolingDown(false)
-              //   })
-              setIsGood(true)
-            })
-          })
-          .catch((e) => {
-            console.log(e)
-          })
-
-        setIsCoolingDown(false)
-      }, 1500)
+            if (result) {
+              // Map prediction to your 'isGood' state
+              setIsGood(result.prediction === "positive");
+            }
+          } catch (e) {
+            console.error("Inference Error:", e);
+          } finally {
+            setSubmitting(false);
+            setIsCoolingDown(false);
+          }
+        });
+      }, 1500);
     }
 
     return () => {
@@ -100,7 +73,7 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
             <h2 className="text-4xl font-semibold">“ช่องลงคะแนนเสียง”</h2>
             {/* <p>fetch: {count}</p> */}
             {submitting && <p className="mt-4 animate-pulse">กำลังประมวลผล...</p>}
-            {count !== 0 && !submitting && (
+            {!submitting && (
               <div className="mt-4 rounded-full bg-white px-6 py-2 text-center shadow-lg">
                 {isGood ? (
                   <p className="text-PED-green">AI คิดว่าเป็นบัตรดี</p>
@@ -138,6 +111,7 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
                 text="ล้าง"
                 onClick={() => {
                   canvasRef.current?.clearCanvas()
+                  setSubmitting(true)
                 }}
                 secondary
               />
@@ -146,7 +120,6 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
                 text="ต่อไป"
                 disabled={!isGood}
                 onClick={() => {
-                  if (isGood) nextPage()
                 }}
               />
             </div>
