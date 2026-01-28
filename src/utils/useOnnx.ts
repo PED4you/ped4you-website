@@ -42,11 +42,27 @@ export const useOnnxInference = (modelPath: string) => {
           if (!ctx) return resolve(null)
 
           // FastAI standard dimensions
-          const width = 224
-          const height = 224
-          canvas.width = width
-          canvas.height = height
-          ctx.drawImage(img, 0, 0, width, height)
+          const targetSize = 224
+          canvas.width = targetSize
+          canvas.height = targetSize
+
+          // Fill with white background (for letterboxing)
+          ctx.fillStyle = "#FFFFFF"
+          ctx.fillRect(0, 0, targetSize, targetSize)
+
+          // Calculate scaling to fit image while preserving aspect ratio (object-contain)
+          const scale = Math.min(targetSize / img.width, targetSize / img.height)
+          const scaledWidth = img.width * scale
+          const scaledHeight = img.height * scale
+
+          // Center the image
+          const offsetX = (targetSize - scaledWidth) / 2
+          const offsetY = (targetSize - scaledHeight) / 2
+
+          ctx.drawImage(img, offsetX, offsetY, scaledWidth, scaledHeight)
+
+          const width = targetSize
+          const height = targetSize
 
           const imageData = ctx.getImageData(0, 0, width, height).data
           const red: number[] = []
