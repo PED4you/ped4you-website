@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import { RefObject, useCallback, useEffect, useRef, useState } from "react"
 
 import { ReactSketchCanvasRef } from "react-sketch-canvas"
 
@@ -10,7 +10,7 @@ interface UseBallotInferenceOptions {
 }
 
 interface UseBallotInferenceReturn {
-  canvasRef: React.RefObject<ReactSketchCanvasRef>
+  canvasRef: RefObject<ReactSketchCanvasRef>
   isGood: boolean
   submitting: boolean
   hasDrawn: boolean

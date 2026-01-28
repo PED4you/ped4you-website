@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react"
 
-// eslint-disable-next-line import/namespace
 import * as ort from "onnxruntime-web"
 
 interface InferenceResult {
@@ -21,12 +20,12 @@ export const useOnnxInference = (modelPath: string) => {
     async function initSession() {
       try {
         // Configure WASM paths for onnxruntime-web
+        // @ts-expect-error onnxruntime-web env types
         ort.env.wasm.wasmPaths = "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.23.2/dist/"
 
         // Create absolute URL for the model
         const absoluteModelPath = modelPath.startsWith("http") ? modelPath : `${window.location.origin}/${modelPath}`
 
-        // eslint-disable-next-line import/namespace
         const sess = await ort.InferenceSession.create(absoluteModelPath)
         setSession(sess)
       } catch (e) {
@@ -70,7 +69,6 @@ export const useOnnxInference = (modelPath: string) => {
           }
 
           const float32Data = new Float32Array([...red, ...green, ...blue])
-          // eslint-disable-next-line import/namespace
           const inputTensor = new ort.Tensor("float32", float32Data, [1, 3, width, height])
 
           // Run inference
