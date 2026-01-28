@@ -10,7 +10,7 @@ interface UseBallotInferenceOptions {
 }
 
 interface UseBallotInferenceReturn {
-  canvasRef: React.RefObject<ReactSketchCanvasRef | null>
+  canvasRef: React.RefObject<ReactSketchCanvasRef>
   isGood: boolean
   submitting: boolean
   hasDrawn: boolean
@@ -21,7 +21,7 @@ interface UseBallotInferenceReturn {
 export const useBallotInference = (options: UseBallotInferenceOptions = {}): UseBallotInferenceReturn => {
   const { debounceMs = 1500, modelPath = "onnx_model.onnx" } = options
 
-  const canvasRef = useRef<ReactSketchCanvasRef | null>(null)
+  const canvasRef = useRef<ReactSketchCanvasRef>(null!)
   const timerIdRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const [submitting, setSubmitting] = useState(false)
