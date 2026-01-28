@@ -1,68 +1,12 @@
-import { useEffect, useRef, useState } from "react"
-
-import { CanvasPath, ReactSketchCanvas, ReactSketchCanvasRef } from "react-sketch-canvas"
+import { ReactSketchCanvas } from "react-sketch-canvas"
 
 import { Button } from "@/components/common/Home/Button"
-import {useOnnxInference} from "@/utils/useOnnx"
+import { useBallotInference } from "@/utils/useBallotInference"
 
 import FYIMarking from "./FYIMarking"
 
-
 export default function RegionMark({ nextPage }: { nextPage: () => void }) {
-  const canvasRef = useRef<ReactSketchCanvasRef | null>(null)
-
-  // add cooldown timeout
-  const [isCoolingDown, setIsCoolingDown] = useState(false)
-  const [submitting, setSubmitting] = useState(false)
-  const timerIdRef = useRef<any>(null)
-
-  const [pathInput, setPathInput] = useState<CanvasPath | null>(null)
-
-  const [count, setCount] = useState(0)
-  const [isGood, setIsGood] = useState(false)
-  const [empty, setEmpty] = useState(true)
-
-  const { predict, sessionReady } = useOnnxInference('onnx_model.onnx');
-
-  useEffect(() => {
-    fetch("https://api.ped4you.com/", {
-      method: "GET",
-    }) // warm start
-  }, [])
-
-  useEffect(() => {
-    if (isCoolingDown && !empty) {
-      if (timerIdRef.current) {
-        clearTimeout(timerIdRef.current)
-      }
-      setSubmitting(true);
-
-      timerIdRef.current = setTimeout(() => {
-        canvasRef.current?.exportImage("png").then(async (data: string) => {
-
-          try {
-            const result = await predict(data);
-
-            if (result) {
-              // Map prediction to your 'isGood' state
-              setIsGood(result.prediction === "positive");
-            }
-          } catch (e) {
-            console.error("Inference Error:", e);
-          } finally {
-            setSubmitting(false);
-            setIsCoolingDown(false);
-          }
-        });
-      }, 1500);
-    }
-
-    return () => {
-      if (timerIdRef.current) {
-        clearTimeout(timerIdRef.current)
-      }
-    }
-  }, [isCoolingDown, pathInput, empty])
+  const { canvasRef, isGood, submitting, hasDrawn, clearCanvas, onCanvasChange } = useBallotInference()
 
   return (
     <section className="min-h-screen w-full bg-gradient-to-br from-[#CD82F0] to-[#70268A] text-white">
@@ -70,10 +14,9 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
         <div className="flex flex-col items-center gap-4">
           <div className="mb-4 flex flex-col items-center justify-center">
             <p className="text-lg font-light">กากบาทลงใน</p>
-            <h2 className="text-4xl font-semibold">“ช่องลงคะแนนเสียง”</h2>
-            {/* <p>fetch: {count}</p> */}
+            <h2 className="text-4xl font-semibold">"ช่องลงคะแนนเสียง"</h2>
             {submitting && <p className="mt-4 animate-pulse">กำลังประมวลผล...</p>}
-            {!submitting && (
+            {hasDrawn && !submitting && (
               <div className="mt-4 rounded-full bg-white px-6 py-2 text-center shadow-lg">
                 {isGood ? (
                   <p className="text-PED-green">AI คิดว่าเป็นบัตรดี</p>
@@ -86,13 +29,7 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
 
           <div className="">
             <ReactSketchCanvas
-              onChange={(updatedPaths: CanvasPath[]) => {
-                if (updatedPaths.length === 0) setEmpty(true)
-                else setEmpty(false)
-
-                setPathInput(updatedPaths[0])
-                setIsCoolingDown(true)
-              }}
+              onChange={onCanvasChange}
               style={{
                 borderRadius: "0.75rem",
                 overflow: "hidden",
@@ -105,21 +42,14 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
           </div>
 
           <div className="flex flex-col items-center gap-4">
-            {/* <Button text="ต่อไป" onClick={() => nextPage()} /> */}
             <div className="flex items-center gap-4">
-              <Button
-                text="ล้าง"
-                onClick={() => {
-                  canvasRef.current?.clearCanvas()
-                  setSubmitting(true)
-                }}
-                secondary
-              />
+              <Button text="ล้าง" onClick={clearCanvas} secondary />
 
               <Button
                 text="ต่อไป"
                 disabled={!isGood}
                 onClick={() => {
+                  if (isGood) nextPage()
                 }}
               />
             </div>
