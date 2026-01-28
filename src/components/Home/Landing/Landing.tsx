@@ -1,5 +1,5 @@
 "use client"
-import {useEffect, useState} from "react"
+import { useEffect, useState } from "react"
 
 import Link from "next/link"
 
@@ -7,13 +7,28 @@ import { ButtonText } from "@/components/Home/Landing/ButtonText"
 import { DuckSplash } from "@/components/Home/Landing/DuckSplash"
 import { LandingHeading } from "@/components/Home/Landing/LandingHeading"
 
-export const Landing = () => {
+type ElectionStatus = "before" | "during" | "after"
 
-  const [daysLeft, setDL] = useState(0)
+export const Landing = () => {
+  const [daysCount, setDaysCount] = useState(0)
+  const [status, setStatus] = useState<ElectionStatus>("before")
 
   useEffect(() => {
-    const daysLeft = Math.ceil((1683997200 * 1000 - new Date().getTime()) / (24 * 60 * 60 * 1000))
-    setDL(daysLeft)
+    const ELECTION_START = 1770512400 * 1000 // 8 Feb 2026 - 8:00 AM
+    const ELECTION_END = 1770544800 * 1000 // 8 Feb 2026 - 5:00 PM (17:00)
+    const now = new Date().getTime()
+
+    if (now < ELECTION_START) {
+      const days = Math.ceil((ELECTION_START - now) / (24 * 60 * 60 * 1000))
+      setDaysCount(days)
+      setStatus("before")
+    } else if (now >= ELECTION_START && now <= ELECTION_END) {
+      setStatus("during")
+    } else {
+      const days = Math.floor((now - ELECTION_END) / (24 * 60 * 60 * 1000))
+      setDaysCount(days)
+      setStatus("after")
+    }
   }, [])
 
   return (
@@ -44,9 +59,21 @@ export const Landing = () => {
         >
           <ButtonText />
           <div className="mt-3 cursor-pointer space-x-3 text-2xl font-semibold text-white">
-            <span>อีก</span>
-            <span className="w-[50px] text-center text-4xl">{daysLeft}</span>
-            <span>วัน</span>
+            {status === "before" && (
+              <>
+                <span>อีก</span>
+                <span className="w-[50px] text-center text-4xl">{daysCount}</span>
+                <span>วัน</span>
+              </>
+            )}
+            {status === "during" && <span>ออกไปเลือกตั้งกัน!</span>}
+            {status === "after" && (
+              <>
+                <span>เลือกตั้งผ่านมาแล้ว</span>
+                <span className="w-[50px] text-center text-4xl">{daysCount}</span>
+                <span>วัน</span>
+              </>
+            )}
           </div>
         </Link>
       </div>
