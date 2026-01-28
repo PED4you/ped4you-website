@@ -14,7 +14,7 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
         <div className="flex flex-col items-center gap-4">
           <div className="mb-4 flex flex-col items-center justify-center">
             <p className="text-lg font-light">กากบาทลงใน</p>
-            <h2 className="text-4xl font-semibold">"ช่องลงคะแนนเสียง"</h2>
+            <h2 className="text-4xl font-semibold">&ldquo;ช่องลงคะแนนเสียง&rdquo;</h2>
             {submitting && <p className="mt-4 animate-pulse">กำลังประมวลผล...</p>}
             {hasDrawn && !submitting && (
               <div className="mt-4 rounded-full bg-white px-6 py-2 text-center shadow-lg">
