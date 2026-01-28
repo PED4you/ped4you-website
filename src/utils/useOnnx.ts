@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-// eslint-disable-next-line import/namespace
-import * as ort from 'onnxruntime-web';
+
 
 interface InferenceResult {
   prediction: 'positive' | 'negative';
@@ -10,7 +9,7 @@ interface InferenceResult {
 }
 
 export const useOnnxInference = (modelPath: string) => {
-  const [session, setSession] = useState<ort.InferenceSession | null>(null);
+  const [session, setSession] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -20,6 +19,7 @@ export const useOnnxInference = (modelPath: string) => {
         // ort.env.wasm.wasmPaths = '/path-to-wasm-files/';
 
         // eslint-disable-next-line import/namespace
+        const ort = await import('onnxruntime-web');
         const sess = await ort.InferenceSession.create(modelPath);
         setSession(sess);
       } catch (e) {
@@ -63,6 +63,7 @@ export const useOnnxInference = (modelPath: string) => {
 
         const float32Data = new Float32Array([...red, ...green, ...blue]);
         // eslint-disable-next-line import/namespace
+        const ort = await import('onnxruntime-web');
         const inputTensor = new ort.Tensor('float32', float32Data, [1, 3, width, height]);
 
         // Run inference
