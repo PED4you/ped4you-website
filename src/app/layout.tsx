@@ -3,6 +3,8 @@ import { ReactNode } from "react"
 import { Analytics } from "@vercel/analytics/react"
 
 import "@/styles/globals.css"
+import Script from "next/dist/client/script"
+
 import { mitr } from "./fonts"
 
 export default function RootLayout({
@@ -29,6 +31,11 @@ export default function RootLayout({
       </head>
       <body className={mitr.className}>
         <>{children}</>
+        <Script
+          src="/lib/onnx/ort.js"
+          strategy="beforeInteractive"
+          type="module" // Crucial because it's an .mjs file
+        />
       </body>
     </html>
   )

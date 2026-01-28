@@ -1,25 +1,26 @@
 /** @type {import('next').NextConfig} */
-const withPWA = require("next-pwa")({
-  dest: "public",
-  swSrc: "service-worker.js",
-})
 
 const { join } = require("path")
 
-module.exports = withPWA({
+module.exports = {
   reactStrictMode: true,
-  webpack(config, options) {
+  transpilePackages: ["onnxruntime-web"],
+  webpack(config, {webpack, isServer}) {
+    if (!isServer) {
+      // Next.js externals is an array. We push our mapping into it.
+      config.externals.push({
+        "onnxruntime-web": "ort",
+      });
+    }
     config.resolve.alias = {
       ...config.resolve.alias,
       "@": join(__dirname, "src"),
+      "onnxruntime-web": false,
+      "onnxruntime-web/node": false,
     }
 
-    // Handle onnxruntime-web - copy wasm files to static folder and don't process .mjs files
-    config.module.rules.push({
-      test: /\.mjs$/,
-      include: /node_modules[\\/]onnxruntime-web/,
-      type: "javascript/auto",
-    })
+
+    config.module.noParse = [/ort\.wasm\.bundle\.min\.mjs$/];
 
     // Fallback for browser environments
     config.resolve.fallback = {
@@ -31,6 +32,4 @@ module.exports = withPWA({
 
     return config
   },
-  // Transpile onnxruntime-web package
-  transpilePackages: ["onnxruntime-web"],
-})
+}
