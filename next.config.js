@@ -14,9 +14,23 @@ module.exports = withPWA({
       "@": join(__dirname, "src"),
     }
 
+    // Handle onnxruntime-web - copy wasm files to static folder and don't process .mjs files
+    config.module.rules.push({
+      test: /\.mjs$/,
+      include: /node_modules[\\/]onnxruntime-web/,
+      type: "javascript/auto",
+    })
+
+    // Fallback for browser environments
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      path: false,
+      crypto: false,
+    }
+
     return config
   },
-  experimental: {
-    appDir: true,
-  },
+  // Transpile onnxruntime-web package
+  transpilePackages: ["onnxruntime-web"],
 })
