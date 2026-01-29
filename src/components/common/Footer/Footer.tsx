@@ -23,7 +23,13 @@ export const Footer = () => {
         {/*<div className="mt-14 w-[100px]">
           <DuckSplash />
         </div>*/}
-        <Image src="/images/all_logos.svg" height={72} width={1080} className="h-28 w-full object-contain px-8 pt-12" />
+        <Image
+          alt="All partner logos"
+          src="/images/all_logos.svg"
+          height={72}
+          width={1080}
+          className="h-28 w-full object-contain px-8 pt-12"
+        />
         <div className="mt-8 flex flex-wrap items-center justify-center space-x-8">
           {/*<Link href="https://www.facebook.com/profile.php?id=100091240677745&mibextid=LQQJ4d">
             <div className="m-1 flex items-center space-x-2">
