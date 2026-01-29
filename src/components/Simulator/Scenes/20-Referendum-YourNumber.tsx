@@ -1,6 +1,5 @@
 import { useState } from "react"
 
-import { StarIcon } from "@heroicons/react/24/solid"
 import classNames from "classnames"
 
 import { Button } from "@/components/common/Home/Button"
@@ -13,49 +12,38 @@ export default function ReferendumYourNumber() {
   const { setPage } = usePage()
 
   return (
-    <section className="mx-auto flex w-full max-w-xl flex-col gap-4 px-4 py-10">
-      <div className="flex items-center gap-2">
-        <StarIcon className="h-6 w-6 text-PED-orange" />
-        <span className="text-xl font-medium text-PED-orange">ขั้นที่ 4</span>
-      </div>
-
+    <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4 px-6">
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-medium text-PED-green-secondary">แจ้งเลขลำดับของตนเองกับเจ้าหน้าที่</h1>
+        <h1 className="text-4xl font-medium text-PED-green-secondary">แจ้งเลขลำดับของตนเองกับเจ้าหน้าที่</h1>
       </div>
 
-      <div className="mt-8 overflow-hidden rounded-2xl shadow-lg">
-        <div
-          className={classNames(
-            "py-6 text-center text-2xl font-medium text-white",
-            error ? "bg-PED-orange" : "bg-PED-purple"
-          )}
-        >
-          <p className="">เลขลำดับของคุณคือ...</p>
-        </div>
-
-        <div className="flex flex-col items-center justify-center gap-6 bg-white py-12 px-6">
-          <input
-            type="text"
-            value={numberInput}
-            onChange={(e) => setNumberInput(e.target.value)}
-            placeholder="กรอกเลขลำดับของคุณ"
-            className="w-3/4 rounded-md bg-PED-yellow px-4 py-3 text-base font-normal text-PED-purple-secondary ring-2 ring-PED-purple/10 transition-all duration-500 ease-out placeholder:text-PED-purple-secondary/50 focus:outline-none focus:ring-8"
-          />
-
-          {error && <span className="text-center text-PED-orange">ไม่ถูกต้อง เลขลำดับที่ถูกต้องคือ 145</span>}
-
-          <Button
-            text="ตกลง"
-            onClick={() => {
-              if (numberInput !== "145") {
-                setError(true)
-              } else {
-                setPage("21")
-              }
-            }}
-          />
-        </div>
+      <div
+        className={classNames(
+          "p-6 px-10 text-left mt-6 max-w-md mx-auto text-2xl font-medium shadow-lg rounded-3xl text-white",
+          error ? "bg-PED-orange" : "bg-[#FC60A8]"
+        )}
+      >
+        <p className="">เลขลำดับของคุณคือ...</p>
+        <input
+          type="text"
+          value={numberInput}
+          onChange={(e) => setNumberInput(e.target.value)}
+          className="my-10 w-full appearance-none border-b border-white bg-transparent text-[100px] font-normal"
+        />
       </div>
+      {error && <span className="text-center text-PED-orange">ไม่ถูกต้อง เลขลำดับที่ถูกต้องคือ 145</span>}
+      <Button
+        text="ต่อไป"
+        className="max-w-lg"
+        onClick={() => {
+          // validate
+          if (numberInput !== "145") {
+            setError(true)
+          } else {
+            setPage("21")
+          }
+        }}
+      />
     </section>
   )
 }

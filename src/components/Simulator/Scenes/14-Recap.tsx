@@ -31,7 +31,7 @@ export default function Recap() {
 
           <Button
             className="px-2 py-1.5 text-center text-base sm:px-10 sm:py-2.5 sm:text-lg"
-            onClick={() => setPage("15")}
+            onClick={() => setPage("19")}
             text="ต่อไป: ประชามติ"
           />
         </div>
@@ -53,7 +53,7 @@ export default function Recap() {
 
           <div className="mx-auto flex w-full max-w-sm flex-col gap-2 rounded-xl bg-PED-purple-secondary p-6 text-white shadow-2xl ring-1 ring-PED-purple-secondary/10 transition-all duration-500 ease-out hover:scale-[101%] hover:ring-8 md:max-w-full">
             <div className="flex items-center justify-center gap-2 font-medium text-PED-yellow">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-PED-orange text-lg font-medium text-white">
+              <div className="flex size-8 items-center justify-center rounded-full bg-PED-orange text-lg font-medium text-white">
                 ?
               </div>
 

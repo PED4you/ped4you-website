@@ -42,7 +42,7 @@ function getStepForGeneralPage(page: string): number {
 function getStepForReferendumPage(page: string): number {
   const pageNum = parseInt(page)
   // Same mapping but offset by 15
-  return getStepForGeneralPage(String(pageNum - 15))
+  return getStepForGeneralPage(String(pageNum - 19))
 }
 
 export interface ProcessState {

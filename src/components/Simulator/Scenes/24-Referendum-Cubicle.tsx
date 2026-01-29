@@ -1,74 +1,67 @@
-import { useEffect, useState } from "react"
+import {useEffect, useState} from "react"
 
 import Image from "next/image"
 
-import { StarIcon } from "@heroicons/react/24/solid"
-import { AnimatePresence, motion } from "framer-motion"
+import {AnimatePresence, motion} from "framer-motion"
 
-import { Button } from "@/components/common/Home/Button"
-
-import { usePage } from "../PageProvider"
+import {Button} from "@/components/common/Home/Button"
+import {usePage} from "@/components/Simulator/PageProvider"
 
 function Heading() {
   return (
-    <div className="flex flex-col gap-4 px-8 py-10">
-      <div className="flex items-center gap-2">
-        <StarIcon className="h-6 w-6 text-PED-orange" />
-        <span className="text-xl font-medium text-PED-orange">ขั้นที่ 8</span>
-      </div>
+    <div className="flex flex-col gap-4 p-4 px-6">
 
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-medium text-PED-green-secondary">
-          เซ็นชื่อและลงลายมือชื่อหรือลายพิมพ์นิ้วมือที่ต้นขั้ว
+        <h1 className="text-4xl font-medium text-PED-green-secondary">
+          เซ็นชื่อและลงลายมือชื่อ<br/>หรือลายพิมพ์นิ้วมือ<br/>ที่ต้นขั้ว
         </h1>
-        <p className="text-lg font-light text-PED-green">และฉีกต้นขั้วออกให้กับกรรมการประจำหน่วย</p>
+        <p className="text-lg font-light text-PED-green">และฉีกต้นขั้วออกให้กับกรรมการประจำหน่วยเลือกตั้ง</p>
       </div>
     </div>
   )
 }
 
-export default function ReferendumCubicle() {
+export default function Cubible() {
   const [signed, setSigned] = useState(false)
-  const [type, setType] = useState<"ballot" | "ballot-signed" | "cubicle">("ballot")
+  const [type, setType] = useState<"green" | "purple" | "ballot">("green")
   const { setPage } = usePage()
 
   useEffect(() => {
-    if (signed && type === "ballot") {
-      setTimeout(() => {
-        setType("ballot-signed")
-      }, 500)
+    if (signed) {
+      if (type === "green") {
+        setTimeout(() => {
+          setSigned(false)
+          setType("ballot")
+        }, 1000)
+      } else if (type === "purple") {
+        setTimeout(() => {
+          setType("ballot")
+        }, 1000)
+      }
     }
-    if (type === "ballot-signed") {
-      setTimeout(() => {
-        setType("cubicle")
-      }, 1000)
-    }
-  }, [signed, type])
+  }, [signed, setPage, type])
 
   return (
-    <section className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col items-center justify-center overflow-hidden">
-      {type !== "cubicle" && <Heading />}
+    <section className="relative mx-auto flex w-full max-w-xl grow flex-col items-center justify-center overflow-hidden">
+      {type !== "ballot" && <Heading />}
 
       <div className="relative">
         <AnimatePresence>
-          {(type === "ballot" || type === "ballot-signed") && (
-            <motion.div
-              initial={{ x: -300, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 300, opacity: 0 }}
-              className="flex flex-col items-center gap-4"
-            >
-              <div className="relative h-[300px] w-[200px] rounded-lg bg-gradient-to-b from-orange-300 to-orange-500 p-4 shadow-lg">
-                <div className="absolute top-2 left-2 right-2 h-16 rounded bg-white" />
-                <div className="absolute bottom-2 left-2 right-2 h-8 rounded bg-orange-700" />
-              </div>
-
-              <div className="mt-4">
+          {type === "green" && (
+            <motion.div initial={{ x: -300, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: 300, opacity: 0 }}>
+              <Image
+                src="/images/simulator/ballot/yellow-r-new.png"
+                width={400}
+                height={600}
+                alt="Green Ballot"
+                className=""
+              />
+              <div className="absolute left-1/2 top-[365px] -translate-x-1/2">
                 <AnimatePresence>
                   {!signed ? (
                     <button
                       onClick={() => setSigned(true)}
-                      className="animate-pulse text-center font-light text-PED-orange"
+                      className="relative top-4 animate-pulse text-center font-light text-PED-orange"
                     >
                       แตะเพื่อลงลายมือชื่อ
                     </button>
@@ -98,7 +91,7 @@ export default function ReferendumCubicle() {
         </AnimatePresence>
 
         <AnimatePresence>
-          {type === "cubicle" && (
+          {type === "ballot" && (
             <motion.div
               initial={{ y: 300, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -106,18 +99,19 @@ export default function ReferendumCubicle() {
               transition={{
                 delay: 0.5,
                 duration: 0.5,
+                staggerChildren: 0.5,
               }}
-              className="relative pt-6"
+              className="relative my-auto  px-2"
             >
               <Image
                 src="/images/simulator/ballot/cubicle.png"
                 width={800}
                 height={600}
                 alt="Cubicle"
-                className="relative -top-8 mx-auto"
+                className="relative mx-auto"
               />
               <Button
-                className="absolute -top-8 left-1/2 -translate-x-1/2"
+                className="absolute  left-1/2 -translate-x-1/2"
                 text="ต่อไป"
                 onClick={() => setPage("25")}
               />

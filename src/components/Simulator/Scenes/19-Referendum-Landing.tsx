@@ -1,4 +1,3 @@
-import Image from "next/image"
 
 import { Button } from "../../common/Home/Button"
 import SimulatorHeading from "../Heading/SimulatorHeading"
@@ -24,7 +23,7 @@ export default function ReferendumLanding() {
           *ข้อมูลที่กรอกทั้งหมดจะใช้เพื่อการจำลองเท่านั้น จะไม่มีการเก็บข้อมูลส่วนตัวใด ๆ
         </p>
 
-        <Button text={"เริ่มจำลองประชามติ"} onClick={() => setPage("16")} />
+        <Button text={"เริ่มจำลองประชามติ"} onClick={() => setPage("20")} />
       </div>
     </section>
   )

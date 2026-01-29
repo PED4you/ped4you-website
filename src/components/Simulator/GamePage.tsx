@@ -1,4 +1,6 @@
 "use client"
+import ReferendumLanding from "@/components/Simulator/Scenes/19-Referendum-Landing"
+
 import ProgressBar from "./components/ProgressBar"
 import { getProgressState } from "./components/progressConfig"
 import { usePage } from "./PageProvider"
@@ -21,11 +23,6 @@ import Result from "./Scenes/13-Result"
 import Recap from "./Scenes/14-Recap"
 
 // Referendum (ประชาธิ) Scenes
-import ReferendumLanding from "./Scenes/15-Referendum-Landing"
-import ReferendumFillName from "./Scenes/16-Referendum-FillName"
-import ReferendumEligibility from "./Scenes/17-Referendum-Eligibility"
-import ReferendumViewBoard from "./Scenes/18-Referendum-ViewBoard"
-import ReferendumViewYourNumber from "./Scenes/19-Referendum-ViewYourNumber"
 import ReferendumYourNumber from "./Scenes/20-Referendum-YourNumber"
 import ReferendumShowID from "./Scenes/21-Referendum-ShowID"
 import ReferendumSignature from "./Scenes/22-Referendum-Signature"
@@ -71,16 +68,8 @@ function PageContent({ page }: { page: string }) {
     case "14":
       return <Recap />
     // Referendum (ประชามติ) Pages
-    case "15":
-      return <ReferendumLanding />
-    case "16":
-      return <ReferendumFillName />
-    case "17":
-      return <ReferendumEligibility />
-    case "18":
-      return <ReferendumViewBoard />
     case "19":
-      return <ReferendumViewYourNumber />
+      return <ReferendumLanding />
     case "20":
       return <ReferendumYourNumber />
     case "21":
@@ -111,7 +100,7 @@ export default function PageRenderer() {
   const progressState = getProgressState(page)
 
   // Don't show progress bar on landing pages
-  const showProgressBar = page !== "0" && page !== "15"
+  const showProgressBar = page !== "0" && page !== "19"
 
   return (
     <div className="flex min-h-screen flex-col">
