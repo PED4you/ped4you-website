@@ -154,6 +154,9 @@ export const MockUser: UserData = {
     no: "31",
     party: "ก้าวไกล",
   },
+  referendumVote: {
+    choice: "approve",
+  },
   startDate: new Date(),
 }
 
@@ -179,6 +182,9 @@ export const BaseUser: UserData = {
   partylistVote: {
     no: "",
     party: "",
+  },
+  referendumVote: {
+    choice: null,
   },
   startDate: new Date(),
 }

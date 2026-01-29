@@ -1,12 +1,10 @@
 import Image from "next/image"
 
-import { Button } from "@/components/common/Home/Button"
-
-import { usePage } from "../PageProvider"
+import { LinkButton } from "@/components/common/Home/Button"
 
 const InfoSteps = [
-  { no: 1, title: "ตรวจสอบสิทธิ์การเลือกตั้ง" },
-  { no: 2, title: "จดจำหมายเลขของผู้สมัครรับเลือกตั้งประเภทต่าง ๆ" },
+  { no: 1, title: "ตรวจสอบสิทธิ์การลงประชามติ" },
+  { no: 2, title: "ทำความเข้าใจคำถามประชามติ" },
   { no: 3, title: "ตรวจชื่อ-สกุลและจดจำเลขลำดับของตน" },
   { no: 4, title: "แจ้งเลขลำดับของตนเองให้กับเจ้าหน้าที่" },
   {
@@ -15,24 +13,22 @@ const InfoSteps = [
     description: "(บัตรประชาชน/ใบขับขี่/พาสปอร์ต/บัตรจากแอป ThaiID)",
   },
   { no: 6, title: "ลงลายมือชื่อหรือพิมพ์ลายนิ้วหัวแม่มือ" },
-  { no: 7, title: "คุณจะได้บัตรลงคะแนนเสียงมา 2 ใบ เข้าคูหาเพื่อกา" },
+  { no: 7, title: "รับบัตรลงประชามติ 1 ใบ เข้าคูหาเพื่อกา" },
   { no: 8, title: "พับบัตรเพื่อหย่อนลงในหีบใส่บัตร", description: "พับให้มิดชิด ห้ามทำสัญลักษณ์" },
   { no: 9, title: "นำบัตรที่พับหย่อนลงในหีบใส่บัตร" },
 ]
 
-export default function Recap() {
-  const { setPage } = usePage()
-
+export default function ReferendumRecap() {
   return (
-    <section className="min-h-screen w-full bg-PED-green">
+    <section className="min-h-screen w-full bg-PED-yellow">
       <div className="mx-auto flex w-full flex-col gap-4 px-4 py-12 md:px-10">
         <div className="mb-4 grid w-full grid-cols-2 items-end justify-between sm:flex">
-          <h1 className="pr-4 text-2xl font-medium text-white md:text-3xl">ขั้นตอนการลงคะแนนเสียง</h1>
+          <h1 className="pr-4 text-2xl font-medium text-PED-purple md:text-3xl">ขั้นตอนการลงประชามติ</h1>
 
-          <Button
-            className="px-2 py-1.5 text-center text-base sm:px-10 sm:py-2.5 sm:text-lg"
-            onClick={() => setPage("15")}
-            text="ต่อไป: ประชามติ"
+          <LinkButton
+            className="bg-PED-purple px-2 py-1.5 text-center text-base text-white ring-PED-purple/25 sm:px-10 sm:py-2.5 sm:text-lg"
+            link="/"
+            text="เข้าใจแล้ว !"
           />
         </div>
 
@@ -43,7 +39,7 @@ export default function Recap() {
                 key={step.no}
                 className="flex flex-col items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-center shadow-2xl ring-1 ring-PED-purple-secondary/10 transition-all duration-500 ease-out hover:scale-[101%] hover:ring-8"
               >
-                <p className="text-xl font-medium text-PED-orange">{step.no}</p>
+                <p className="text-xl font-medium text-PED-yellow-secondary">{step.no}</p>
 
                 <p className="text-lg font-medium text-PED-purple">{step.title}</p>
                 {step.description && <p className="text-sm font-light text-PED-purple">{step.description}</p>}
@@ -53,7 +49,7 @@ export default function Recap() {
 
           <div className="mx-auto flex w-full max-w-sm flex-col gap-2 rounded-xl bg-PED-purple-secondary p-6 text-white shadow-2xl ring-1 ring-PED-purple-secondary/10 transition-all duration-500 ease-out hover:scale-[101%] hover:ring-8 md:max-w-full">
             <div className="flex items-center justify-center gap-2 font-medium text-PED-yellow">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-PED-orange text-lg font-medium text-white">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-PED-yellow text-lg font-medium text-PED-purple">
                 ?
               </div>
 
@@ -61,7 +57,7 @@ export default function Recap() {
             </div>
 
             <div className="mt-3 flex flex-col gap-3 text-sm font-light text-white">
-              <p className="font-normal">หลักการทำเครื่องหมายลงบนบัตรเลือกตั้ง</p>
+              <p className="font-normal">หลักการทำเครื่องหมายลงบนบัตรประชามติ</p>
 
               <ol className="list-decimal px-4">
                 <li>
@@ -69,7 +65,7 @@ export default function Recap() {
                 </li>
                 <li>
                   ห้ามทำเครื่องหมายอื่นหรือเขียนข้อความอื่นนอกจาก <span className="font-medium">กากบาท</span>{" "}
-                  ลงบนบัตรเลือกตั้ง
+                  ลงบนบัตรประชามติ
                 </li>
               </ol>
             </div>
@@ -89,7 +85,7 @@ export default function Recap() {
             </div>
 
             <div className="my-2 flex flex-col gap-2">
-              <span className="rounded-full bg-PED-orange px-3 py-2 text-center text-sm font-normal text-white">
+              <span className="rounded-full bg-red-600 px-3 py-2 text-center text-sm font-normal text-white">
                 ตัวอย่างการกากบาทที่ผิด
               </span>
 

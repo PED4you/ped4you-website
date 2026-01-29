@@ -1,5 +1,9 @@
 "use client"
 import { usePage } from "./PageProvider"
+import ProgressBar from "./components/ProgressBar"
+import { getProgressState } from "./components/progressConfig"
+
+// General (ทั่วไป) Scenes
 import Landing from "./Scenes/00-Landing"
 import FillName from "./Scenes/01-FillName"
 import Elgibility from "./Scenes/02-Elgibility"
@@ -16,10 +20,26 @@ import DropBallots from "./Scenes/12-DropBallots"
 import Result from "./Scenes/13-Result"
 import Recap from "./Scenes/14-Recap"
 
-export default function PageRenderer() {
-  const { page } = usePage()
+// Referendum (ประชาธิ) Scenes
+import ReferendumLanding from "./Scenes/15-Referendum-Landing"
+import ReferendumFillName from "./Scenes/16-Referendum-FillName"
+import ReferendumEligibility from "./Scenes/17-Referendum-Eligibility"
+import ReferendumViewBoard from "./Scenes/18-Referendum-ViewBoard"
+import ReferendumViewYourNumber from "./Scenes/19-Referendum-ViewYourNumber"
+import ReferendumYourNumber from "./Scenes/20-Referendum-YourNumber"
+import ReferendumShowID from "./Scenes/21-Referendum-ShowID"
+import ReferendumSignature from "./Scenes/22-Referendum-Signature"
+import ReferendumReceiveCard from "./Scenes/23-Referendum-ReceiveCard"
+import ReferendumCubicle from "./Scenes/24-Referendum-Cubicle"
+import ReferendumMarkBallots from "./Scenes/25-Referendum-MarkBallots"
+import ReferendumFolding from "./Scenes/26-Referendum-Folding"
+import ReferendumDropBallots from "./Scenes/27-Referendum-DropBallots"
+import ReferendumResult from "./Scenes/28-Referendum-Result"
+import ReferendumRecap from "./Scenes/29-Referendum-Recap"
 
+function PageContent({ page }: { page: string }) {
   switch (page) {
+    // General (ทั่วไป) Pages
     case "0":
       return <Landing />
     case "1":
@@ -50,7 +70,53 @@ export default function PageRenderer() {
       return <Result />
     case "14":
       return <Recap />
+    // Referendum (ประชามติ) Pages
+    case "15":
+      return <ReferendumLanding />
+    case "16":
+      return <ReferendumFillName />
+    case "17":
+      return <ReferendumEligibility />
+    case "18":
+      return <ReferendumViewBoard />
+    case "19":
+      return <ReferendumViewYourNumber />
+    case "20":
+      return <ReferendumYourNumber />
+    case "21":
+      return <ReferendumShowID />
+    case "22":
+      return <ReferendumSignature />
+    case "23":
+      return <ReferendumReceiveCard />
+    case "24":
+      return <ReferendumCubicle />
+    case "25":
+      return <ReferendumMarkBallots />
+    case "26":
+      return <ReferendumFolding />
+    case "27":
+      return <ReferendumDropBallots />
+    case "28":
+      return <ReferendumResult />
+    case "29":
+      return <ReferendumRecap />
     default:
       return <div />
   }
+}
+
+export default function PageRenderer() {
+  const { page } = usePage()
+  const progressState = getProgressState(page)
+
+  // Don't show progress bar on landing pages
+  const showProgressBar = page !== "0" && page !== "15"
+
+  return (
+    <div className="flex flex-col">
+      {showProgressBar && <ProgressBar processes={progressState} className="mx-4 mt-4" />}
+      <PageContent page={page} />
+    </div>
+  )
 }
