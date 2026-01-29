@@ -1,6 +1,8 @@
+import {ReactNode} from "react"
+
 import {PageProvider} from "@/components/Simulator/PageProvider"
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <PageProvider>
       {children}
