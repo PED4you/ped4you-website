@@ -2,10 +2,10 @@ import { useMemo, useState } from "react"
 
 import Image from "next/image"
 
-import { StarIcon } from "@heroicons/react/24/solid"
 import classNames from "classnames"
 
-import { Button } from "@/components/common/Home/Button"
+
+import {Button} from "@/components/common/Home/Button"
 
 import { usePage } from "../PageProvider"
 import { getPartyList } from "../utils"
@@ -17,32 +17,18 @@ export default function ViewBoard() {
   const partyListMembers = useMemo(() => getPartyList(), [])
 
   return (
-    <section className="mx-auto flex w-full max-w-xl flex-col gap-4 px-4 py-10">
-      <div className="flex items-center gap-2">
-        <StarIcon className="h-6 w-6 text-PED-orange" />
-        <span className="text-xl font-medium text-PED-orange">ขั้นที่ 2</span>
-      </div>
-
+    <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4">
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-medium text-PED-green-secondary">จดจำหมายเลขผู้สมัครและพรรคที่เราจะเลือก</h1>
+        <h1 className="text-4xl text-PED-green-secondary">จดจำหมายเลขผู้สมัคร<br/>และพรรคที่เราจะเลือก</h1>
         <p className="text-lg font-light text-PED-green">เพื่อใช้ในการลงคะแนนเสียง</p>
       </div>
 
-      <div className="relative -top-6 flex justify-end">
-        <Button text="ต่อไป" onClick={() => setPage("4")} />
-      </div>
-
-      <div
-        className={classNames(
-          "flex flex-col gap-2 rounded-md bg-gradient-to-b p-4 text-center",
-          type === "partylist" ? "from-PED-green to-PED-green-secondary" : "from-PED-purple-secondary to-PED-purple"
-        )}
-      >
-        <div className="flex justify-center gap-4 pt-6 pb-3">
+      <div className="flex items-center justify-center">
+        <div className="flex justify-center rounded-full bg-gray-200">
           <button
             className={classNames(
-              "rounded-lg px-6 py-3 text-lg font-medium shadow-md ring-2 ring-slate-100/25 transition-all duration-500 ease-out hover:ring-8",
-              type === "region" ? "bg-white text-PED-purple-secondary" : "bg-PED-purple-secondary/50 text-white"
+              "rounded-full px-6 py-3 text-lg text-gray-400 ring-2 ring-slate-100/25 transition-all duration-500 ease-out hover:ring-8",
+              type === "region"? "text-white bg-PED-green" : ""
             )}
             onClick={() => setType("region")}
           >
@@ -50,32 +36,41 @@ export default function ViewBoard() {
           </button>
           <button
             className={classNames(
-              "rounded-lg px-6 py-3 text-lg font-medium shadow-md ring-2 ring-slate-100/25 transition-all duration-500 ease-out hover:ring-8",
-              type === "partylist" ? "bg-white text-PED-green" : "bg-PED-green/50 text-white"
+              "rounded-full px-6 py-3 text-lg text-gray-400 ring-2 ring-slate-100/25 transition-all duration-500 ease-out hover:ring-8",
+              type === "partylist" ? "text-white bg-[#FC60A8]" : ""
             )}
             onClick={() => setType("partylist")}
           >
             บัญชีรายชื่อ
           </button>
         </div>
+      </div>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+      <div
+        className={classNames(
+          "flex flex-col gap-2 rounded-2xl mx-auto p-4 max-w-sm text-center",
+          type === "partylist" ? "bg-[#FC60A8]" : "bg-PED-green"
+        )}
+      >
+
+        <div className="grid max-h-[400px] grid-cols-2 gap-4 overflow-y-auto py-2 pr-4 ">
           {type === "region" &&
             userData.votingDistrict.candidates.map((candidate, index) => (
-              <div key={index} className="flex flex-col items-center gap-2 rounded-lg bg-white py-2">
-                <Image
-                  src={`/images/simulator/party/${candidate.party}.png`}
-                  alt={candidate.party}
-                  width={75}
-                  height={75}
-                />
-
+              <div key={index} className="flex flex-col items-center gap-2 rounded-2xl bg-white py-2">
+                <div className="flex w-full items-center justify-start space-x-4 px-4">
+                  <span className="text-4xl text-PED-green">{candidate.no}</span>
+                  <div className="relative size-[60px] shrink-0">
+                    <Image
+                      src={`/images/simulator/party/${candidate.party}.png`}
+                      alt={candidate.party}
+                      fill={true}
+                    />
+                  </div>
+                </div>
                 <div className="flex items-center gap-2 px-4">
-                  <p className="text-4xl font-medium">{candidate.no}</p>
-
-                  <div className="flex flex-col">
-                    <p className="text-left text-[0.85rem] font-light">{candidate.candidate}</p>
-                    <p className="text-left text-[0.65rem] font-light">{candidate.party}</p>
+                  <div className="flex flex-col items-start">
+                    <h2 className="text-left text-lg font-light leading-[24px]">{candidate.candidate}</h2>
+                    <p className="mt-1 text-sm font-light text-gray-500">{candidate.party}</p>
                   </div>
                 </div>
               </div>
@@ -83,17 +78,19 @@ export default function ViewBoard() {
 
           {type === "partylist" &&
             partyListMembers.map((member, index) => (
-              <div key={index} className="flex flex-col items-center gap-2 rounded-lg bg-white px-4 pb-2 pt-8">
+              <div key={index} className="flex flex-col items-center gap-2 rounded-lg bg-white p-4 pb-2">
+                <p className="text-left text-4xl font-medium text-[#FC60A8]">{member.no}</p>
                 <Image src={`/images/simulator/party/${member.party}.png`} alt={member.party} width={75} height={75} />
-
-                <div className="flex items-center gap-2">
-                  <p className="text-left text-[1.5rem] font-medium">{member.no}</p>
-
-                  <p className="text-left text-[0.85rem] font-light">พรรค{member.party}</p>
+                <div className="flex items-center">
+                  <p className="text-left font-light text-[#FC60A8]">พรรค{member.party}</p>
                 </div>
               </div>
             ))}
         </div>
+
+      </div>
+      <div className="relative flex justify-center">
+        <Button text="ต่อไป" onClick={() => setPage("4")} />
       </div>
     </section>
   )

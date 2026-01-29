@@ -1,11 +1,10 @@
 import { Fragment, useState } from "react"
 
-import { StarIcon } from "@heroicons/react/24/solid"
 import classNames from "classnames"
 import { AnimatePresence, motion } from "framer-motion"
 
 import { mitr, sarabun } from "@/app/fonts"
-import { Button } from "@/components/common/Home/Button"
+import {Button} from "@/components/common/Home/Button"
 
 import { usePage } from "../PageProvider"
 
@@ -14,48 +13,31 @@ export default function Signature() {
   const { userData, setPage } = usePage()
 
   return (
-    <section className="mx-auto flex w-full max-w-xl flex-col gap-4 px-4 py-10">
-      <div className="flex items-center gap-2">
-        <StarIcon className="h-6 w-6 text-PED-orange" />
-        <span className="text-xl font-medium text-PED-orange">ขั้นที่ 6</span>
-      </div>
+    <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4 px-6">
 
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-medium text-PED-green-secondary">ลงลายมือชื่อหรือพิมพ์ลายนิ้วหัวแม่มือ</h1>
         <p className="text-lg font-light text-PED-green">เพื่อเป็นการยืนยันตัวตน</p>
       </div>
-
-      <div className="relative flex justify-end">
-        <AnimatePresence>
-          {signed && (
-            <motion.div
-              className="absolute -top-16"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-            >
-              <Button text="ต่อไป" onClick={() => setPage("8")} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+      
 
       <div
         className={classNames(
           sarabun.className,
-          "relative flex flex-col gap-2 overflow-hidden rounded-md bg-gradient-to-b from-[#FCFCFC] to-[#F3F1FF] p-4 text-center shadow-lg"
+          "relative flex flex-col mt-6 gap-2 overflow-hidden rounded-md bg-gradient-to-b from-[#FCFCFC] to-[#F3F1FF] p-4 text-center shadow-lg"
         )}
       >
         <div className="relative grid grid-cols-5 items-center">
-          <div className="col-span-2 h-full w-full p-6">
-            <p className="text-center text-xl font-semibold">ชื่อตัว-ชื่อสกุล</p>
+          <div className="col-span-2 size-full p-2 ">
+            <p className="text-center font-semibold">ชื่อตัว-ชื่อสกุล</p>
           </div>
 
-          <div className="relative col-span-1 h-full w-full p-6">
-            <p className="text-center text-xl font-semibold">ลำดับที่</p>
+          <div className="relative col-span-1 size-full p-2">
+            <p className="text-center font-semibold">ลำดับที่</p>
           </div>
 
-          <div className="col-span-2 h-full w-full p-6">
-            <p className="text-center text-xl font-semibold">
+          <div className="col-span-2 size-full p-2">
+            <p className="text-center font-semibold">
               ลายมือชื่อหรือ
               <br />
               ลายพิมพ์นิ้วมือ
@@ -64,18 +46,18 @@ export default function Signature() {
 
           <hr className="relative col-span-5 my-4 border border-slate-200" />
 
-          <div className="col-span-2 h-full w-full p-6">
-            <p className="text-left text-lg font-medium">
+          <div className="col-span-2 size-full p-2 py-4">
+            <p className="text-left font-medium">
               {userData.title}
               {userData.name}
             </p>
           </div>
 
-          <div className="relative col-span-1 h-full w-full p-6">
-            <p className="text-center text-lg font-medium">145</p>
+          <div className="relative col-span-1 size-full p-2 py-4">
+            <p className="text-center font-medium">145</p>
           </div>
 
-          <div className="col-span-2 h-full w-full p-6">
+          <div className="col-span-2 size-full p-2 py-4">
             <AnimatePresence>
               {!signed ? (
                 <button
@@ -90,7 +72,7 @@ export default function Signature() {
               ) : (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                   <svg
-                    className="mx-auto"
+                    className="mx-auto -mt-2"
                     width="89"
                     height="40"
                     viewBox="0 0 89 40"
@@ -109,22 +91,35 @@ export default function Signature() {
             </AnimatePresence>
           </div>
 
-          {Array(5)
+          {Array(4)
             .fill("")
             .map((_, i) => (
               <Fragment key={i}>
-                <div className="col-span-2 h-full w-full p-6 blur-sm">
-                  <p className="text-left text-lg font-medium">นายเลือกตั้ง จำลอง</p>
+                <div className="col-span-2 flex size-full items-center justify-center p-2 py-4 blur-sm">
+                  <p className="text-left  font-medium">นายเลือกตั้ง จำลอง</p>
                 </div>
 
-                <div className="col-span-1 h-full w-full p-6 blur-sm">
-                  <p className="text-center text-lg font-medium">{146 + i}</p>
+                <div className="col-span-1 flex size-full items-center justify-center p-2 py-4 blur-sm">
+                  <p className="text-center font-medium">{146 + i}</p>
                 </div>
 
-                <div className="col-span-2 h-full w-full p-6"></div>
+                <div className="col-span-2 size-full p-2 py-4"></div>
               </Fragment>
             ))}
         </div>
+      </div>
+      <div className="flex justify-center">
+        <AnimatePresence>
+          {signed && (
+            <motion.div
+              className=""
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+            >
+              <Button text="ต่อไป" onClick={() => setPage("8")} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   )

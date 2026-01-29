@@ -9,7 +9,7 @@ export default function RegionMark({ nextPage }: { nextPage: () => void }) {
   const { canvasRef, isGood, submitting, hasDrawn, clearCanvas, onCanvasChange } = useBallotInference()
 
   return (
-    <section className="min-h-screen w-full bg-gradient-to-br from-[#CD82F0] to-[#70268A] text-white">
+    <section className="min-h-screen w-full bg-PED-green text-white">
       <div className="mx-auto flex w-full flex-col gap-4 px-4 py-12 md:px-10">
         <div className="flex flex-col items-center gap-4">
           <div className="mb-4 flex flex-col items-center justify-center">

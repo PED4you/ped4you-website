@@ -1,5 +1,7 @@
-import { sarabun } from "@/app/fonts"
 import classNames from "classnames"
+
+import { sarabun } from "@/app/fonts"
+
 import { usePage } from "../../PageProvider"
 import { RegionVote } from "../../types"
 import { chunkArray } from "../../utils"
@@ -8,7 +10,7 @@ function RegionElectionSquare({ candidate, onClick }: { candidate: RegionVote; o
   return (
     <>
       <div className="flex items-center justify-center border border-black bg-black p-2 text-white">
-        <p className="text-center text-sm font-light">{candidate.no}</p>
+        <p className="text-center text-2xl font-medium">{candidate.no}</p>
       </div>
 
       <button
@@ -24,28 +26,27 @@ export default function RegionBallot({ nextPage }: { nextPage: () => void }) {
   const [chunkedCandidates, maxLength] = chunkArray(userData.votingDistrict.candidates, 4)
 
   return (
-    <section className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col gap-4 overflow-hidden py-10">
-      <p className="py-4 text-center text-lg font-light">คลิกที่หมายเลขผู้สมัครที่คุณต้องการลงคะแนนเสียง</p>
+    <section className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col gap-4 overflow-hidden p-4 px-6">
+      <p className="py-4 text-center text-xl font-light text-gray-500">คลิกที่หมายเลขผู้สมัคร<br/>ที่คุณต้องการลงคะแนนเสียง</p>
       <div
         className={classNames(
           sarabun.className,
-          "flex min-h-[32rem] flex-col items-center justify-between gap-4 bg-gradient-to-br from-[#e0a5fb] to-[#a54ac6]"
+          "flex min-h-[32rem] w-full mx-auto max-w-sm flex-col items-center justify-between gap-4 bg-PED-green"
         )}
       >
-        <div className="flex flex-col items-center gap-4 py-4 text-center">
+        <div className="flex flex-col items-center gap-4 py-4 text-center text-lg font-medium">
           <p>
-            บัตรเลือกตั้งสมาชิกสภาผู้แทนราษฎรแบบแบ่งเขตเลือกตั้ง
-            <br />
-            ให้ทำเครื่องหมาย “X” ภายใน “ช่องทำเครื่องหมาย” ไม่เกินหนึ่งหมายเลข
+            บัตรเลือกตั้งสมาชิกสภาผู้แทนราษฎร            <br />แบบแบ่งเขตเลือกตั้ง
+            ให้ทำเครื่องหมาย “X”             <br />ภายใน “ช่องทำเครื่องหมาย”             <br />ไม่เกินหนึ่งหมายเลข
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 px-10 sm:grid-cols-4">
+        <div className="grid max-h-[400px] grid-cols-2 gap-8  overflow-auto px-10 ">
           {chunkedCandidates.map((candidates, i) => {
             return (
               <div key={i} className="grid grid-cols-2 gap-2">
                 <div className="flex items-center justify-center border border-black bg-white p-2">
-                  <p className="text-center text-sm font-light">หมายเลขฯ</p>
+                  <p className="shrink-0 text-center text-[0.74rem] font-medium">หมายเลขฯ</p>
                 </div>
                 <div className="flex items-center justify-center border border-black bg-white p-2">
                   <svg width="44" height="49" viewBox="0 0 44 49" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +54,7 @@ export default function RegionBallot({ nextPage }: { nextPage: () => void }) {
                       fillRule="evenodd"
                       clipRule="evenodd"
                       d="M36.0912 0H7.92203V27.7003H0.0509033L22.0066 48.8271L43.9622 27.7003H36.0912V0Z"
-                      fill="#CD82F0"
+                      fill="#54C78B"
                     />
                   </svg>
                 </div>
@@ -79,11 +80,10 @@ export default function RegionBallot({ nextPage }: { nextPage: () => void }) {
           })}
         </div>
 
-        <div className="flex w-full items-center justify-center gap-6 bg-[#70268A] p-6 text-white">
-          <p className="text-center text-sm font-light">
-            ถ้าประสงค์ออกเสียงลงคะแนน “ไม่เลือกผู้สมัครผู้ใด”
-            <br />
-            ให้ทำเครื่องหมายกากบาท “X” ในช่องสี่เหลี่ยมนี้
+        <div className="flex w-full items-center justify-center gap-6 bg-[#2D936C] p-6 text-white">
+          <p className="text-sm font-light">
+            ถ้าประสงค์ออกเสียงลงคะแนน            <br />“ไม่เลือกผู้สมัครผู้ใด”
+            ให้ทำเครื่องหมายกากบาท “X”            <br /> ในช่องสี่เหลี่ยมนี้
           </p>
 
           <div className="flex items-center gap-4">
@@ -114,7 +114,7 @@ export default function RegionBallot({ nextPage }: { nextPage: () => void }) {
                 })
                 nextPage()
               }}
-              className="flex h-12 w-12 items-center justify-center border border-black bg-white p-2 text-black transition-colors duration-500 ease-out hover:bg-PED-green-secondary"
+              className="flex size-12 items-center justify-center border border-black bg-white p-2 text-black transition-colors duration-500 ease-out hover:bg-PED-green-secondary"
             ></button>
           </div>
         </div>

@@ -1,7 +1,7 @@
 "use client"
-import { usePage } from "./PageProvider"
 import ProgressBar from "./components/ProgressBar"
 import { getProgressState } from "./components/progressConfig"
+import { usePage } from "./PageProvider"
 
 // General (ทั่วไป) Scenes
 import Landing from "./Scenes/00-Landing"
@@ -114,7 +114,7 @@ export default function PageRenderer() {
   const showProgressBar = page !== "0" && page !== "15"
 
   return (
-    <div className="flex flex-col">
+    <div className="flex min-h-screen flex-col">
       {showProgressBar && <ProgressBar processes={progressState} className="mx-4 mt-4" />}
       <PageContent page={page} />
     </div>

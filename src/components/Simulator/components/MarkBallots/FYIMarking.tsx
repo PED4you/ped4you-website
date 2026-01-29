@@ -2,16 +2,16 @@ import Image from "next/image"
 
 export default function FYIMarking() {
   return (
-    <div className="mx-auto flex w-full max-w-sm flex-col gap-2 rounded-xl bg-PED-purple-secondary p-6 text-white shadow-2xl ring-1 ring-PED-purple-secondary/10 transition-all duration-500 ease-out hover:scale-[101%] hover:ring-8 md:max-w-full">
-      <div className="flex items-center justify-center gap-2 font-medium text-PED-yellow">
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-PED-orange text-lg font-medium text-white">
+    <div className="mx-auto flex w-full max-w-sm flex-col gap-2 rounded-xl bg-PED-yellow p-6 text-white shadow-2xl ring-1 ring-PED-purple-secondary/10 transition-all duration-500 ease-out hover:scale-[101%] hover:ring-8 md:max-w-full">
+      <div className="flex items-center justify-center gap-2 font-medium text-PED-orange">
+        <div className="flex size-8 items-center justify-center rounded-full bg-PED-orange text-lg font-medium text-white">
           ?
         </div>
 
         <p className="text-base">กายังไงไม่ให้บัตรเสีย</p>
       </div>
 
-      <div className="mt-3 flex flex-col gap-3 text-sm font-light text-white">
+      <div className="mt-3 flex flex-col gap-3 text-sm font-light text-black">
         <p className="font-normal">หลักการทำเครื่องหมายลงบนบัตรเลือกตั้ง</p>
 
         <ol className="list-decimal px-4">
