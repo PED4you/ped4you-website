@@ -4,7 +4,7 @@ interface AILoadingProps {
 }
 
 export default function AILoading({ loading, loadingProgress }: AILoadingProps) {
-  // if (!loading) return null
+  if (!loading) return null
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/50 text-white backdrop-blur-sm">
