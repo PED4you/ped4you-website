@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
 
+// import { ComingSoon } from "@/components/ComingSoon/ComingSoon"
+//
+//
 import { Footer } from "@/components/common/Footer/Footer"
 import { Navigation } from "@/components/common/Navigation/Navigation"
 import { FYI } from "@/components/Home/FYI/FYI"
