@@ -48,16 +48,16 @@ export default function Elgibility() {
         </div>
       </div>
 
-      <div className="mx-auto w-full rounded-t-2xl bg-PED-yellow px-10 py-6 text-center text-base font-light text-PED-purple-secondary">
-        <p className="">
+      <div className="mx-auto w-full rounded-t-2xl bg-PED-yellow px-4 py-6 text-center text-sm font-light text-PED-purple-secondary sm:px-10 sm:text-base">
+        <p className="w-full break-words">
           สามารถตรวจสอบข้อมูลผู้มีสิทธิ์เลือกตั้งได้ที่เว็บไซต์ของกรมการปกครอง
           <br />
           <a
-            className="break-words underline hover:no-underline"
+            className="break-all underline hover:no-underline"
             href="https://boraservices.bora.dopa.go.th/election/enqelection/"
             target="_blank"
           >
-            https://boraservices.bora.dopa.go.th/election/enqelection/
+            boraservices.bora.dopa.go.th
           </a>
         </p>
       </div>
