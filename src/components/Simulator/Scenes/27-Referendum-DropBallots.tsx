@@ -64,7 +64,7 @@ export default function ReferendumDropBallots() {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: 200, opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="relative z-20 h-[16rem] w-[18rem] bg-gradient-to-b from-yellow-300 to-yellow-500 sm:w-[32rem]"
+            className="relative z-20 h-[16rem] w-[18rem] bg-gradient-to-b from-[#59CD90] to-[#2D936C] sm:w-[32rem]"
           />
         </div>
       </div>

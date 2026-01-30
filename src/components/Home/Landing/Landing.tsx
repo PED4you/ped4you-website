@@ -39,7 +39,7 @@ export const Landing = () => {
         </div>
         <div className="mt-6 flex flex-col items-center text-center md:mt-0 md:items-start md:text-left">
           <LandingHeading />
-          <p className="md:text-sub-heading text-2xl font-medium">
+          <p className="md:text-sub-heading text-2xl font-bold">
             ช่วยทุกคน <br />
             กาบัตรเลือกตั้งของตัวเอง <br />
             ได้อย่างมั่นใจ !

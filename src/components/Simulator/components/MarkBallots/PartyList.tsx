@@ -6,7 +6,6 @@ import classNames from "classnames"
 
 import { sarabun } from "@/app/fonts"
 
-
 import { usePage } from "../../PageProvider"
 import { PartyListVote } from "../../types"
 import { getPartyList } from "../../utils"
@@ -19,7 +18,13 @@ function PartyListElectionSquare({ party, onClick }: { party: PartyListVote; onC
       </div>
 
       <div className="flex items-center justify-center border border-black bg-white p-2 text-black">
-        <Image src={`/images/simulator/party/${party.party}.png`} alt={party.party} width={50} height={50} />
+        <Image
+          className="grayscale"
+          src={`/images/simulator/party/${party.party}.png`}
+          alt={party.party}
+          width={50}
+          height={50}
+        />
       </div>
 
       <div className="col-span-3 flex items-center justify-center border border-black bg-white p-2 text-black">
@@ -40,17 +45,22 @@ export default function PartyListBallot({ nextPage }: { nextPage: () => void }) 
 
   return (
     <section className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col gap-4 overflow-hidden p-4 px-6">
-      <p className="py-4 text-center text-xl font-light text-gray-500">คลิกที่หมายเลขผู้สมัคร<br/>ที่คุณต้องการลงคะแนนเสียง</p>
+      <p className="py-4 text-center text-xl font-light text-gray-500">
+        คลิกที่หมายเลขผู้สมัคร
+        <br />
+        ที่คุณต้องการลงคะแนนเสียง
+      </p>
       <div
         className={classNames(
           sarabun.className,
-          "flex min-h-[32rem] w-full mx-auto max-w-sm flex-col items-center justify-between gap-4 bg-[#FFD6E9]"
+          "mx-auto flex min-h-[32rem] w-full max-w-sm flex-col items-center justify-between gap-4 bg-[#FFD6E9]"
         )}
       >
         <div className="flex flex-col items-center gap-4 p-4 text-center text-lg font-medium">
           <p>
-            บัตรเลือกตั้งสมาชิกสภาผู้แทนราษฎร            <br />แบบแบ่งบัญชีรายชื่อ
-            ให้ทำเครื่องหมาย “X”             <br />ภายใน “ช่องทำเครื่องหมาย”            <br /> ไม่เกินหนึ่งหมายเลข
+            บัตรเลือกตั้งสมาชิกสภาผู้แทนราษฎร <br />
+            แบบแบ่งบัญชีรายชื่อ ให้ทำเครื่องหมาย “X” <br />
+            ภายใน “ช่องทำเครื่องหมาย” <br /> ไม่เกินหนึ่งหมายเลข
           </p>
         </div>
 
@@ -59,7 +69,7 @@ export default function PartyListBallot({ nextPage }: { nextPage: () => void }) 
             <p className="text-center text-sm font-light">หมายเลขฯ</p>
           </div>
           <div className="flex items-center justify-center border border-black bg-white p-2">
-            <p className="text-center text-sm font-light">สัญลักษณ์</p>
+            <p className="text-center text-[0.75rem] font-light">สัญลักษณ์</p>
           </div>
           <div className="col-span-3 flex items-center justify-center border border-black bg-white p-2">
             <p className="text-center text-sm font-light">ชื่อพรรคการเมือง</p>
@@ -91,8 +101,8 @@ export default function PartyListBallot({ nextPage }: { nextPage: () => void }) 
 
         <div className="flex w-full items-center justify-center gap-6 bg-[#FC60A8] p-6 px-4 text-white">
           <p className="text-left text-sm font-light">
-            ถ้าประสงค์ออกเสียงลงคะแนน          <br />“ไม่เลือกบัญชีรายชื่อของพรรคการเมืองใด”
-            ให้ทำเครื่องหมายกากบาท “X” ในช่องสี่เหลี่ยมนี้
+            ถ้าประสงค์ออกเสียงลงคะแนน <br />
+            “ไม่เลือกบัญชีรายชื่อของพรรคการเมืองใด” ให้ทำเครื่องหมายกากบาท “X” ในช่องสี่เหลี่ยมนี้
           </p>
 
           <div className="flex items-center gap-4">

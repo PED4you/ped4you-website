@@ -1,6 +1,5 @@
 import { useState } from "react"
 
-
 import classNames from "classnames"
 
 import { Button } from "@/components/common/Home/Button"
@@ -14,15 +13,18 @@ export default function YourNumber() {
 
   return (
     <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4 px-6">
-
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl font-medium text-PED-green-secondary">แจ้งเลขลำดับของตน<br/>เองกับเจ้าหน้าที่</h1>
+        <h1 className="text-4xl font-medium text-PED-green-secondary">
+          แจ้งเลขลำดับของตน
+          <br />
+          เองกับเจ้าหน้าที่
+        </h1>
       </div>
 
       <div
         className={classNames(
-          "p-6 px-10 text-left mt-6 max-w-md mx-auto text-2xl font-medium shadow-lg rounded-3xl text-white",
-          error ? "bg-PED-orange" : "bg-[#FC60A8]"
+          "mx-auto mt-6 max-w-md rounded-3xl p-6 px-10 text-left text-2xl font-medium text-white",
+          error ? "bg-PED-orange" : "bg-gradient-to-b from-PED-purple to-PED-purple-secondary"
         )}
       >
         <p className="">เลขลำดับของคุณคือ...</p>

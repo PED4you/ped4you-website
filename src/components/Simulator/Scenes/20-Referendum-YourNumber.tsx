@@ -19,8 +19,8 @@ export default function ReferendumYourNumber() {
 
       <div
         className={classNames(
-          "p-6 px-10 text-left mt-6 max-w-md mx-auto text-2xl font-medium shadow-lg rounded-3xl text-white",
-          error ? "bg-PED-orange" : "bg-[#FC60A8]"
+          "mx-auto mt-6 max-w-md rounded-3xl p-6 px-10 text-left text-2xl font-medium text-white",
+          error ? "bg-PED-orange" : "bg-gradient-to-b from-PED-purple to-PED-purple-secondary"
         )}
       >
         <p className="">เลขลำดับของคุณคือ...</p>
