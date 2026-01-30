@@ -36,12 +36,7 @@ export const MiscData: FC<MiscDataProps> = ({ hideButton }) => {
             thumbnail={"thumb-6.jpg"}
             url={"/blog/priminister"}
           />
-          <ArticleCard
-            title={<span>ความสำคัญของ ส.ว.</span>}
-            date="24 เม.ย. 66"
-            thumbnail={"thumb-2.jpg"}
-            url={"/blog/senator"}
-          />
+
           <ArticleCard
             title={
               <span>
