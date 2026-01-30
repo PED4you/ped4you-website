@@ -57,7 +57,7 @@ export default function Elgibility() {
             href="https://boraservices.bora.dopa.go.th/election/enqelection/"
             target="_blank"
           >
-            boraservices.bora.dopa.go.th
+            boraservices.bora.dopa.go.th/election/enqelection/
           </a>
         </p>
       </div>
