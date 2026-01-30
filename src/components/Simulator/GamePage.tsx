@@ -33,6 +33,7 @@ import ReferendumFolding from "./Scenes/26-Referendum-Folding"
 import ReferendumDropBallots from "./Scenes/27-Referendum-DropBallots"
 import ReferendumResult from "./Scenes/28-Referendum-Result"
 import ReferendumRecap from "./Scenes/29-Referendum-Recap"
+import Summary from "./Scenes/30-Summary"
 
 function PageContent({ page }: { page: string }) {
   switch (page) {
@@ -90,6 +91,8 @@ function PageContent({ page }: { page: string }) {
       return <ReferendumResult />
     case "29":
       return <ReferendumRecap />
+    case "30":
+      return <Summary />
     default:
       return <div />
   }
@@ -99,8 +102,8 @@ export default function PageRenderer() {
   const { page } = usePage()
   const progressState = getProgressState(page)
 
-  // Don't show progress bar on landing pages
-  const showProgressBar = page !== "0" && page !== "19"
+  // Don't show progress bar on landing pages and summary page
+  const showProgressBar = page !== "0" && page !== "19" && page !== "30"
 
   return (
     <div className="flex min-h-screen flex-col">

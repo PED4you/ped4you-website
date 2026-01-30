@@ -1,2 +1,2 @@
-export const DEBUG = false
-export const DEBUG_PAGE = "3"
+export const DEBUG = true
+export const DEBUG_PAGE = "30"

@@ -29,7 +29,7 @@ export default function RootLayout({
 
         <Analytics />
       </head>
-      <body className={mitr.className}>
+      <body className={`${mitr.className}`}>
         <>{children}</>
         <Script
           src="/lib/onnx/ort.js"

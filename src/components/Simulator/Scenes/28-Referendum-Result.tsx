@@ -52,15 +52,13 @@ export default function ReferendumResult() {
         <span className="rounded-full bg-PED-green px-8 py-1.5 text-center text-2xl font-medium text-white">
           {userData.votingDistrict.province} เขต {userData.votingDistrict.code}
         </span>
-        <p className="text-center text-sm text-PED-green">
-          {getDistrictText(userData.votingDistrict)}
-        </p>
+        <p className="text-center text-sm text-PED-green">{getDistrictText(userData.votingDistrict)}</p>
       </div>
 
       <div className="mx-auto mt-6 flex w-full max-w-sm flex-col gap-4 rounded-[2rem] bg-[#F4F4F4] p-10 shadow-xl ring-1 ring-black/5">
-         <span className="rounded-full bg-PED-yellow px-10 py-2 text-center text-xl  text-white">
-            การออกเสียงประชามติ
-          </span>
+        <span className="rounded-full bg-PED-yellow px-10 py-2 text-center text-xl  text-white">
+          การออกเสียงประชามติ
+        </span>
         <div className="mt-4 flex flex-col gap-1">
           <p className={`text-xl font-medium ${getChoiceColor(userData.referendumVote?.choice)}`}>
             {getChoiceText(userData.referendumVote?.choice)}
@@ -97,7 +95,7 @@ export default function ReferendumResult() {
         <Button
           text="เสร็จสิ้น"
           className="!mt-0 rounded-[2rem] px-16 py-4 text-2xl font-bold"
-          onClick={() => setPage("29")}
+          onClick={() => setPage("30")}
         />
       </div>
     </section>

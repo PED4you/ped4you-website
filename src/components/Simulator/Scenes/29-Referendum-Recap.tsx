@@ -1,6 +1,8 @@
 import Image from "next/image"
 
-import { LinkButton } from "@/components/common/Home/Button"
+import { Button } from "@/components/common/Home/Button"
+
+import { usePage } from "../PageProvider"
 
 const InfoSteps = [
   { no: 1, title: "ตรวจสอบสิทธิ์การลงประชามติ" },
@@ -19,16 +21,18 @@ const InfoSteps = [
 ]
 
 export default function ReferendumRecap() {
+  const { setPage } = usePage()
+
   return (
     <section className="min-h-screen w-full bg-PED-yellow">
       <div className="mx-auto flex w-full flex-col gap-4 px-4 py-12 md:px-10">
         <div className="mb-4 grid w-full grid-cols-2 items-end justify-between sm:flex">
           <h1 className="pr-4 text-2xl font-medium text-PED-purple md:text-3xl">ขั้นตอนการลงประชามติ</h1>
 
-          <LinkButton
+          <Button
             className="bg-PED-purple px-2 py-1.5 text-center text-base text-white ring-PED-purple/25 sm:px-10 sm:py-2.5 sm:text-lg"
-            link="/"
-            text="เข้าใจแล้ว !"
+            onClick={() => setPage("30")}
+            text="ต่อไป: สรุป"
           />
         </div>
 
