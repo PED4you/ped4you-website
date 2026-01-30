@@ -1,16 +1,26 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
 import Datepicker from "tailwind-datepicker-react"
 
+const DEFAULT_DATE = new Date("2008-02-08")
+
+function formatDateToBE(date: Date): string {
+  return `${date.getFullYear() + 543}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(
+    2,
+    "0"
+  )}`
+}
+
 export default function BirthDatePicker({ onChange }: { onChange: (newDate: string) => void }) {
   const [show, setShow] = useState<boolean>(false)
+
+  useEffect(() => {
+    onChange(formatDateToBE(DEFAULT_DATE))
+  }, [])
+
   const handleChange = (selectedDate: Date) => {
-    onChange(
-      `${selectedDate.getFullYear() + 543}-${String(selectedDate.getMonth() + 1).padStart(2, "0")}-${String(
-        selectedDate.getDate()
-      ).padStart(2, "0")}`
-    )
+    onChange(formatDateToBE(selectedDate))
   }
   const handleClose = (state: boolean) => {
     setShow(state)
@@ -51,7 +61,7 @@ export default function BirthDatePicker({ onChange }: { onChange: (newDate: stri
             ),
           },
           datepickerClassNames: "",
-          defaultDate: new Date("2008-02-08"),
+          defaultDate: DEFAULT_DATE,
           language: "th",
         }}
         onChange={handleChange}

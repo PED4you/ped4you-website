@@ -31,7 +31,9 @@ export default function Elgibility() {
             <div className="flex flex-col items-center">
               <h3>เขตการเลือกตั้งของคุณคือ</h3>
 
-              <span className="my-4 rounded-full bg-PED-green px-4 pb-1.5 pt-1 text-2xl text-white">{userData.votingDistrict.province} เขต {userData.votingDistrict.code}</span>
+              <span className="my-4 rounded-full bg-PED-green px-4 pb-1.5 pt-1 text-2xl text-white">
+                {userData.votingDistrict.province} เขต {userData.votingDistrict.code}
+              </span>
               <span className="text-sm font-light">
                 ({userData.votingDistrict.districts.map((d) => `${d.name}`).join(" ")})
               </span>

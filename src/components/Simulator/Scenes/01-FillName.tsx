@@ -35,22 +35,22 @@ export default function FillName() {
 
           // Validate age - must be 18 or older by Feb 8, 2026 (election day)
           // Cutoff: born on or before Feb 8, 2008 (Buddhist year 2551)
-          if (values.birthdate) {
-            const [yearBE, month, day] = values.birthdate.split("-").map(Number)
-            const cutoffYearBE = 2551
-            const cutoffMonth = 2
-            const cutoffDay = 8
+          // if (values.birthdate) {
+          //   const [yearBE, month, day] = values.birthdate.split("-").map(Number)
+          //   const cutoffYearBE = 2551
+          //   const cutoffMonth = 2
+          //   const cutoffDay = 8
 
-            const isUnder18 =
-              yearBE > cutoffYearBE ||
-              (yearBE === cutoffYearBE && month > cutoffMonth) ||
-              (yearBE === cutoffYearBE && month === cutoffMonth && day > cutoffDay)
+          //   const isUnder18 =
+          //     yearBE > cutoffYearBE ||
+          //     (yearBE === cutoffYearBE && month > cutoffMonth) ||
+          //     (yearBE === cutoffYearBE && month === cutoffMonth && day > cutoffDay)
 
-            if (isUnder18) {
-              errors.birthdate =
-                "ผู้มีสิทธิ์เลือกตั้งในประเทศไทยต้องมีอายุไม่ต่ำกว่า 18 ปีบริบูรณ์ในวันเลือกตั้ง โดยนับอายุถึงวันเลือกตั้ง"
-            }
-          }
+          //   if (isUnder18) {
+          //     errors.birthdate =
+          //       "ผู้มีสิทธิ์เลือกตั้งในประเทศไทยต้องมีอายุไม่ต่ำกว่า 18 ปีบริบูรณ์ในวันเลือกตั้ง โดยนับอายุถึงวันเลือกตั้ง"
+          //   }
+          // }
 
           return errors
         }}

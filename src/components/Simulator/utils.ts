@@ -9,7 +9,7 @@ export function isAbleToVote(birthDate: string) {
   return birthDate <= ageThresholdDate
 }
 
-export function getVotingDistrict(province: string, district: string, subDistrict: string) {
+export function getVotingDistrict(province: string, district: string, subDistrict: string): string {
   // search voting district from location data
   return (
     ProvinceData.find((p) => p.name === province)

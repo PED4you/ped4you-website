@@ -4,8 +4,7 @@ import Image from "next/image"
 
 import classNames from "classnames"
 
-
-import {Button} from "@/components/common/Home/Button"
+import { Button } from "@/components/common/Home/Button"
 
 import { usePage } from "../PageProvider"
 import { getPartyList } from "../utils"
@@ -19,7 +18,11 @@ export default function ViewBoard() {
   return (
     <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4">
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl text-PED-green-secondary">จดจำหมายเลขผู้สมัคร<br/>และพรรคที่เราจะเลือก</h1>
+        <h1 className="text-4xl text-PED-green-secondary">
+          จดจำหมายเลขผู้สมัคร
+          <br />
+          และพรรคที่เราจะเลือก
+        </h1>
         <p className="text-lg font-light text-PED-green">เพื่อใช้ในการลงคะแนนเสียง</p>
       </div>
 
@@ -28,7 +31,7 @@ export default function ViewBoard() {
           <button
             className={classNames(
               "rounded-full px-6 py-3 text-lg text-gray-400 ring-2 ring-slate-100/25 transition-all duration-500 ease-out hover:ring-8",
-              type === "region"? "text-white bg-PED-green" : ""
+              type === "region" ? "bg-PED-green text-white" : ""
             )}
             onClick={() => setType("region")}
           >
@@ -37,7 +40,7 @@ export default function ViewBoard() {
           <button
             className={classNames(
               "rounded-full px-6 py-3 text-lg text-gray-400 ring-2 ring-slate-100/25 transition-all duration-500 ease-out hover:ring-8",
-              type === "partylist" ? "text-white bg-[#FC60A8]" : ""
+              type === "partylist" ? "bg-[#FC60A8] text-white" : ""
             )}
             onClick={() => setType("partylist")}
           >
@@ -48,23 +51,18 @@ export default function ViewBoard() {
 
       <div
         className={classNames(
-          "flex flex-col gap-2 rounded-2xl mx-auto p-4 max-w-sm text-center",
+          "mx-auto flex max-w-sm flex-col gap-2 rounded-2xl p-4 text-center",
           type === "partylist" ? "bg-[#FC60A8]" : "bg-PED-green"
         )}
       >
-
-        <div className="grid max-h-[400px] grid-cols-2 gap-4 overflow-y-auto py-2 pr-4 ">
+        <div className="grid max-h-[400px] grid-cols-2 gap-4 overflow-y-auto py-2 pr-4 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-white [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-2">
           {type === "region" &&
             userData.votingDistrict.candidates.map((candidate, index) => (
               <div key={index} className="flex flex-col items-center gap-2 rounded-2xl bg-white py-2">
                 <div className="flex w-full items-center justify-start space-x-4 px-4">
                   <span className="text-4xl text-PED-green">{candidate.no}</span>
                   <div className="relative size-[60px] shrink-0">
-                    <Image
-                      src={`/images/simulator/party/${candidate.party}.png`}
-                      alt={candidate.party}
-                      fill={true}
-                    />
+                    <Image src={`/images/simulator/party/${candidate.party}.png`} alt={candidate.party} fill={true} />
                   </div>
                 </div>
                 <div className="flex items-center gap-2 px-4">
@@ -87,7 +85,6 @@ export default function ViewBoard() {
               </div>
             ))}
         </div>
-
       </div>
       <div className="relative flex justify-center">
         <Button text="ต่อไป" onClick={() => setPage("4")} />
