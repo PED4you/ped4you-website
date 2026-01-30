@@ -49,7 +49,8 @@ async function fetchWithProgress(
       chunks.push(value)
       loaded += value.length
       if (total) {
-        onProgress(Math.round((loaded / total) * 100))
+        const capped = Math.min(Math.round((loaded / total) * 100), 100)
+        onProgress(capped)
       }
     }
 
