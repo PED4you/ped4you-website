@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 
-import { StarIcon } from "@heroicons/react/24/solid"
 import classNames from "classnames"
 import { AnimatePresence, motion } from "framer-motion"
 
@@ -17,14 +16,10 @@ export default function DropBallots() {
   }, [type, setPage])
 
   return (
-    <section className="mx-auto flex w-full max-w-xl flex-col gap-4 px-4 py-10">
-      <div className="flex items-center gap-2">
-        <StarIcon className="h-6 w-6 text-PED-orange" />
-        <span className="text-xl font-medium text-PED-orange">ขั้นที่ 10</span>
-      </div>
+    <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4 py-6">
 
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-medium text-PED-green-secondary">หย่อนบัตรลงหีบใส่บัตรด้วยตนเอง</h1>
+        <h1 className="text-4xl font-medium text-PED-green-secondary">หย่อนบัตรลงหีบใส่บัตรด้วยตนเอง</h1>
         <p className="text-lg font-light text-PED-green">โดยแยกหย่อนบัตรตามประเภทของบัตร</p>
       </div>
 
@@ -40,7 +35,7 @@ export default function DropBallots() {
                   if (type === "purple") setType("purple-fall")
                   else if (type === "green") setType("green-fall")
                 }}
-                className="absolute top-0 left-1/2 -translate-x-1/2 animate-pulse text-center font-light text-black"
+                className="absolute left-1/2 top-0 -translate-x-1/2 animate-pulse text-center font-light text-black"
               >
                 แตะเพื่อหย่อนบัตร
               </motion.button>
@@ -61,8 +56,8 @@ export default function DropBallots() {
             transition={{ duration: 0.2, delay: 0.2, ease: "easeOut" }}
             className={classNames(
               type === "purple" || type === "purple-fall"
-                ? "from-[#CD82F0] to-[#70268A]"
-                : "from-[#31b16c] to-[#1f7957]",
+                ? "from-[#31b16c] to-[#1f7957]"
+                : "from-[#FFD5FF] to-[#FC60A8]",
               "absolute -top-16 left-1/2 h-[10rem] w-[4rem] -translate-x-1/2 -rotate-12 bg-gradient-to-b"
             )}
             onClick={() => {
@@ -76,7 +71,7 @@ export default function DropBallots() {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: 200, opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="relative z-20 h-[16rem] w-[18rem] bg-gradient-to-b from-[#59CD90] to-[#2D936C] sm:w-[32rem]"
+            className="relative z-20 h-64 w-72 bg-gradient-to-b from-[#59CD90] to-[#2D936C] sm:w-[32rem]"
           />
         </div>
       </div>

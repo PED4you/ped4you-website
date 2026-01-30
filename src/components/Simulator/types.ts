@@ -9,6 +9,7 @@ export interface UserData {
   votingDistrict: VotingDistrict
   regionVote: RegionVote
   partylistVote: PartyListVote
+  referendumVote: ReferendumVote
 }
 
 export interface VotingDistrict {
@@ -37,4 +38,8 @@ export interface RegionVote {
 export interface PartyListVote {
   no: string
   party: string
+}
+
+export interface ReferendumVote {
+  choice: "approve" | "disapprove" | "abstain" | null
 }

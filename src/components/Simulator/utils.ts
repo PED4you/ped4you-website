@@ -4,12 +4,12 @@ const ProvinceData = ElectionData.provinces
 import { VotingDistrict } from "./types"
 
 export function isAbleToVote(birthDate: string) {
-  const ageThresholdDate = "2548-05-14"
+  const ageThresholdDate = "2551-02-08"
 
   return birthDate <= ageThresholdDate
 }
 
-export function getVotingDistrict(province: string, district: string, subDistrict: string) {
+export function getVotingDistrict(province: string, district: string, subDistrict: string): string {
   // search voting district from location data
   return (
     ProvinceData.find((p) => p.name === province)
@@ -59,7 +59,7 @@ export function getDistrictData(votingDistrict: string): VotingDistrict {
 
 export function getPartyList() {
   return ElectionData.votables
-    .filter((c) => c.electionType === "ส.ส.บัญชีรายชื่อ")
+    .filter((c) => c.electionType === "สส.บัญชีรายชื่อ")
     .map((c) => {
       return {
         no: c.no,

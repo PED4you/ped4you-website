@@ -10,8 +10,8 @@ export default function Elgibility() {
   const canVote = isAbleToVote(userData.birthdate)
 
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center gap-12 p-4">
-      <div className="flex flex-col gap-6">
+    <div className="relative mx-auto flex h-full max-w-xl grow flex-col items-center justify-between">
+      <div className="flex grow flex-col justify-center gap-6">
         <h1
           className={classNames(
             "text-center text-4xl font-medium",
@@ -24,19 +24,20 @@ export default function Elgibility() {
         <p
           className={classNames(
             "px-6 text-center text-base font-normal",
-            canVote ? "text-PED-green" : "text-PED-orange-secondary"
+            canVote ? "text-PED-green" : "text-PED-orange"
           )}
         >
           {canVote ? (
-            <>
-              เขตการเลือกตั้งของคุณคือ
-              <br />
-              {userData.votingDistrict.province} เขต {userData.votingDistrict.code}
-              <br />
+            <div className="flex flex-col items-center">
+              <h3>เขตการเลือกตั้งของคุณคือ</h3>
+
+              <span className="my-4 rounded-full bg-PED-green px-4 pb-1.5 pt-1 text-2xl text-white">
+                {userData.votingDistrict.province} เขต {userData.votingDistrict.code}
+              </span>
               <span className="text-sm font-light">
                 ({userData.votingDistrict.districts.map((d) => `${d.name}`).join(" ")})
               </span>
-            </>
+            </div>
           ) : (
             <>แต่คุณยังสามารถลองเลือกตั้งกับพวกเราได้นะ !</>
           )}
@@ -47,7 +48,7 @@ export default function Elgibility() {
         </div>
       </div>
 
-      <div className="absolute bottom-4 mx-auto w-full max-w-sm rounded-xl bg-PED-yellow px-10 py-6 text-center text-base font-light text-PED-purple-secondary md:relative md:mt-10">
+      <div className="mx-auto w-full rounded-t-2xl bg-PED-yellow px-10 py-6 text-center text-base font-light text-PED-purple-secondary">
         <p className="">
           สามารถตรวจสอบข้อมูลผู้มีสิทธิ์เลือกตั้งได้ที่เว็บไซต์ของกรมการปกครอง
           <br />

@@ -1,10 +1,9 @@
 import { Fragment } from "react"
 
-import { StarIcon } from "@heroicons/react/24/solid"
 import classNames from "classnames"
 
 import { sarabun } from "@/app/fonts"
-import { Button } from "@/components/common/Home/Button"
+import {Button} from "@/components/common/Home/Button"
 
 import { usePage } from "../PageProvider"
 
@@ -12,30 +11,18 @@ export default function ViewYourNumber() {
   const { userData, setPage } = usePage()
 
   return (
-    <section className="mx-auto flex w-full max-w-xl flex-col gap-4 px-4 py-10">
-      <div className="flex items-center gap-2">
-        <StarIcon className="h-6 w-6 text-PED-orange" />
-        <span className="text-xl font-medium text-PED-orange">ขั้นที่ 3</span>
-      </div>
+    <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4 px-6">
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-medium text-PED-green-secondary">ตรวจสอบชื่อ-สกุลและจดจำลำดับของตนเอง</h1>
+        <h1 className="text-4xl text-PED-green-secondary">ตรวจสอบชื่อ-สกุลและ<br/>จดจำลำดับของตนเอง</h1>
         <p className="text-lg font-light text-PED-green">เพื่อนำเลขลำดับของตนเองไปแจ้งกับเจ้าหน้าที่</p>
       </div>
 
-      <div className="mb-4 grid w-full grid-cols-5 items-center justify-between sm:flex">
-        <div className="relative col-span-3 text-left text-base font-medium text-PED-orange sm:w-64 ">
-          <p>
-            หมายเหตุ : เลขนี้เป็นเพียงเลขสมมติ
-            <br />
-            ในวันจริงจะต้องดูที่บอร์ดของหน่วยเลือกตั้ง
-            <br />
-            หรือดูที่เว็บไซต์ของกรมการปกครอง
-          </p>
-        </div>
-
-        <div className="relative col-span-2 mb-4 flex justify-end">
-          <Button className="" text="ต่อไป" onClick={() => setPage("5")} />
-        </div>
+      <div className="mb-4 text-left text-base font-medium text-PED-orange">
+        <p>
+          หมายเหตุ : เลขนี้เป็นเพียงเลขสมมติ
+          ในวันจริงจะต้องดูที่บอร์ดของหน่วยเลือกตั้ง
+          หรือดูที่เว็บไซต์ของกรมการปกครอง
+        </p>
       </div>
 
       <div
@@ -45,16 +32,16 @@ export default function ViewYourNumber() {
         )}
       >
         <div className="relative grid grid-cols-5 items-center">
-          <div className="col-span-2 h-full w-full p-6">
-            <p className="text-center text-lg font-semibold">ชื่อตัว-ชื่อสกุล</p>
+          <div className="col-span-2 size-full p-2 ">
+            <p className="text-center font-semibold">ชื่อตัว-ชื่อสกุล</p>
           </div>
 
-          <div className="relative col-span-1 h-full w-full p-6">
-            <p className="text-center text-lg font-semibold">ลำดับที่</p>
+          <div className="relative col-span-1 size-full p-2">
+            <p className="text-center font-semibold">ลำดับที่</p>
           </div>
 
-          <div className="col-span-2 h-full w-full p-6">
-            <p className="text-center text-lg font-semibold">
+          <div className="col-span-2 size-full p-2">
+            <p className="text-center font-semibold">
               ลายมือชื่อหรือ
               <br />
               ลายพิมพ์นิ้วมือ
@@ -63,19 +50,19 @@ export default function ViewYourNumber() {
 
           <hr className="relative col-span-5 my-4 border border-slate-200" />
 
-          <div className="col-span-2 h-full w-full p-6">
-            <p className="text-left text-lg font-medium">
+          <div className="col-span-2 size-full p-2 py-4">
+            <p className="text-left font-medium">
               {userData.title}
               {userData.name}
             </p>
           </div>
 
-          <div className="relative col-span-1 flex h-full w-full items-center justify-center p-6">
-            <p className="text-center text-lg font-semibold">145</p>
+          <div className="relative col-span-1 flex size-full items-center justify-center p-2 py-4">
+            <p className="text-center font-semibold">145</p>
 
             {/* circle */}
             <svg
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
               width="107"
               height="60"
               viewBox="0 0 107 60"
@@ -92,7 +79,7 @@ export default function ViewYourNumber() {
 
             {/* arrow & text */}
             <svg
-              className="absolute -top-6 left-14 sm:top-4 sm:left-28"
+              className="absolute -top-6 left-14 sm:left-28 sm:top-4"
               width="147"
               height="72"
               viewBox="0 0 147 72"
@@ -124,24 +111,27 @@ export default function ViewYourNumber() {
             </svg>
           </div>
 
-          <div className="col-span-2 h-full w-full p-6"></div>
+          <div className="col-span-2 size-full p-2 py-4"></div>
 
-          {Array(5)
+          {Array(3)
             .fill("")
             .map((_, i) => (
               <Fragment key={i}>
-                <div className="col-span-2 flex h-full w-full items-center justify-center p-6 blur-sm">
-                  <p className="text-left text-lg font-medium">นายเลือกตั้ง จำลอง</p>
+                <div className="col-span-2 flex size-full items-center justify-center p-2 py-4 blur-sm">
+                  <p className="text-left  font-medium">นายเลือกตั้ง จำลอง</p>
                 </div>
 
-                <div className="col-span-1 flex h-full w-full items-center justify-center p-6 blur-sm">
-                  <p className="text-center text-lg font-medium">{146 + i}</p>
+                <div className="col-span-1 flex size-full items-center justify-center p-2 py-4 blur-sm">
+                  <p className="text-center font-medium">{146 + i}</p>
                 </div>
 
-                <div className="col-span-2 h-full w-full p-6"></div>
+                <div className="col-span-2 size-full p-2 py-4"></div>
               </Fragment>
             ))}
         </div>
+      </div>
+      <div className="relative col-span-2 mb-4 flex justify-center">
+        <Button className="" text="ต่อไป" onClick={() => setPage("5")} />
       </div>
     </section>
   )

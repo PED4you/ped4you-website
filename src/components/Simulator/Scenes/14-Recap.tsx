@@ -1,5 +1,8 @@
-import { LinkButton } from "@/components/common/Home/Button"
 import Image from "next/image"
+
+import { Button } from "@/components/common/Home/Button"
+
+import { usePage } from "../PageProvider"
 
 const InfoSteps = [
   { no: 1, title: "ตรวจสอบสิทธิ์การเลือกตั้ง" },
@@ -18,16 +21,18 @@ const InfoSteps = [
 ]
 
 export default function Recap() {
+  const { setPage } = usePage()
+
   return (
     <section className="min-h-screen w-full bg-PED-green">
       <div className="mx-auto flex w-full flex-col gap-4 px-4 py-12 md:px-10">
         <div className="mb-4 grid w-full grid-cols-2 items-end justify-between sm:flex">
           <h1 className="pr-4 text-2xl font-medium text-white md:text-3xl">ขั้นตอนการลงคะแนนเสียง</h1>
 
-          <LinkButton
-            className="px-2 py-1.5 text-center text-base sm:py-2.5 sm:px-10 sm:text-lg"
-            link="/"
-            text="เข้าใจแล้ว !"
+          <Button
+            className="px-2 py-1.5 text-center text-base sm:px-10 sm:py-2.5 sm:text-lg"
+            onClick={() => setPage("19")}
+            text="ต่อไป: ประชามติ"
           />
         </div>
 
@@ -48,7 +53,7 @@ export default function Recap() {
 
           <div className="mx-auto flex w-full max-w-sm flex-col gap-2 rounded-xl bg-PED-purple-secondary p-6 text-white shadow-2xl ring-1 ring-PED-purple-secondary/10 transition-all duration-500 ease-out hover:scale-[101%] hover:ring-8 md:max-w-full">
             <div className="flex items-center justify-center gap-2 font-medium text-PED-yellow">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-PED-orange text-lg font-medium text-white">
+              <div className="flex size-8 items-center justify-center rounded-full bg-PED-orange text-lg font-medium text-white">
                 ?
               </div>
 

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 
 import Image from "next/image"
 
-import { StarIcon } from "@heroicons/react/24/solid"
 import { AnimatePresence, motion } from "framer-motion"
 
 import { Button } from "@/components/common/Home/Button"
@@ -11,15 +10,11 @@ import { usePage } from "../PageProvider"
 
 function Heading() {
   return (
-    <div className="flex flex-col gap-4 px-8 py-10">
-      <div className="flex items-center gap-2">
-        <StarIcon className="h-6 w-6 text-PED-orange" />
-        <span className="text-xl font-medium text-PED-orange">ขั้นที่ 8</span>
-      </div>
+    <div className="flex flex-col gap-4 p-4 px-6">
 
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-medium text-PED-green-secondary">
-          เซ็นชื่อและลงลายมือชื่อหรือลายพิมพ์นิ้วมือที่ต้นขั้ว
+        <h1 className="text-4xl font-medium text-PED-green-secondary">
+          เซ็นชื่อและลงลายมือชื่อ<br/>หรือลายพิมพ์นิ้วมือ<br/>ที่ต้นขั้ว
         </h1>
         <p className="text-lg font-light text-PED-green">และฉีกต้นขั้วออกให้กับกรรมการประจำหน่วยเลือกตั้ง</p>
       </div>
@@ -48,7 +43,7 @@ export default function Cubible() {
   }, [signed, setPage, type])
 
   return (
-    <section className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col items-center justify-center overflow-hidden">
+    <section className="relative mx-auto flex w-full max-w-xl grow flex-col items-center justify-center overflow-hidden">
       {type !== "ballot" && <Heading />}
 
       <div className="relative">
@@ -56,20 +51,13 @@ export default function Cubible() {
           {type === "green" && (
             <motion.div initial={{ x: -300, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: 300, opacity: 0 }}>
               <Image
-                src="/images/simulator/ballot/green-desktop.png"
-                width={800}
-                height={600}
-                alt="Green Ballot"
-                className="mx-auto hidden sm:block"
-              />
-              <Image
-                src="/images/simulator/ballot/green-mobile.png"
+                src="/images/simulator/ballot/green-all.jpg"
                 width={400}
                 height={600}
                 alt="Green Ballot"
-                className="mx-auto block sm:hidden"
+                className=""
               />
-              <div className="absolute top-[16rem] left-1/2 -translate-x-1/2 sm:left-[calc(50%+8.05rem)] sm:top-[7.25rem] sm:text-sm">
+              <div className="absolute left-1/2 top-[390px] -translate-x-1/2">
                 <AnimatePresence>
                   {!signed ? (
                     <button
@@ -107,20 +95,13 @@ export default function Cubible() {
           {type === "purple" && (
             <motion.div initial={{ x: -300, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: 300, opacity: 0 }}>
               <Image
-                src="/images/simulator/ballot/purple-desktop.png"
-                width={800}
-                height={600}
-                alt="Purple Ballot"
-                className="mx-auto hidden sm:block"
-              />
-              <Image
-                src="/images/simulator/ballot/purple-mobile.png"
+                src="/images/simulator/ballot/pinknew.png"
                 width={400}
                 height={600}
-                alt="Purple Ballot"
-                className="mx-auto block sm:hidden"
+                alt="pink ballot"
+                className=""
               />
-              <div className="absolute top-[16rem] left-1/2 -translate-x-1/2 sm:left-[calc(50%+8.05rem)] sm:top-[7.25rem] sm:text-sm">
+              <div className="absolute left-1/2 top-[390px] -translate-x-1/2">
                 <AnimatePresence>
                   {!signed ? (
                     <button
@@ -165,17 +146,17 @@ export default function Cubible() {
                 duration: 0.5,
                 staggerChildren: 0.5,
               }}
-              className="relative pt-6"
+              className="relative my-auto  px-2"
             >
               <Image
                 src="/images/simulator/ballot/cubicle.png"
                 width={800}
                 height={600}
                 alt="Cubicle"
-                className="relative -top-8 mx-auto"
+                className="relative mx-auto"
               />
               <Button
-                className="absolute -top-8 left-1/2 -translate-x-1/2"
+                className="absolute  left-1/2 -translate-x-1/2"
                 text="ต่อไป"
                 onClick={() => setPage("10")}
               />

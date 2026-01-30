@@ -1,4 +1,4 @@
-import {FC} from "react"
+import { FC } from "react"
 
 import { LinkButton } from "@/components/common/Home/Button"
 import { ArticleCard } from "@/components/Home/MiscData/ArticleCard"
@@ -8,7 +8,7 @@ interface MiscDataProps {
   hideButton?: boolean
 }
 
-export const MiscData: FC<MiscDataProps> = ({hideButton}) => {
+export const MiscData: FC<MiscDataProps> = ({ hideButton }) => {
   return (
     <section>
       <div className="flex flex-col items-center py-20">
@@ -18,6 +18,12 @@ export const MiscData: FC<MiscDataProps> = ({hideButton}) => {
         </div>
 
         <div className="my-12 flex w-full max-w-4xl flex-wrap items-center justify-center sm:px-4">
+          <ArticleCard
+            title={<span>ประชามติ?</span>}
+            date="30 ม.ค. 69"
+            thumbnail={"thumb-7.jpg"}
+            url={"/blog/referendum"}
+          />
           <ArticleCard
             title={
               <span>
@@ -30,7 +36,7 @@ export const MiscData: FC<MiscDataProps> = ({hideButton}) => {
             thumbnail={"thumb-6.jpg"}
             url={"/blog/priminister"}
           />
-          <ArticleCard title={<span>ความสำคัญของ ส.ว.</span>} date="24 เม.ย. 66" thumbnail={"thumb-2.jpg"} url={"/blog/senator"}/>
+
           <ArticleCard
             title={
               <span>
@@ -82,7 +88,7 @@ export const MiscData: FC<MiscDataProps> = ({hideButton}) => {
             thumbnail={"thumb-5.jpg"}
           />
         </div>
-        {!hideButton && <LinkButton link="/blog" text={"ดูข้อมูลทั้งหมด"}/>}
+        {!hideButton && <LinkButton link="/blog" text={"ดูข้อมูลทั้งหมด"} />}
       </div>
     </section>
   )
