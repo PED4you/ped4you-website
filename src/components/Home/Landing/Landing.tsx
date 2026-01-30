@@ -49,7 +49,7 @@ export const Landing = () => {
             และรวบรวมข้อมูลที่จำเป็นต่าง ๆ <br />
             เกี่ยวกับการเลือกตั้ง
           </p>
-          <a className="mt-2 underline">โดย First Voter</a>
+          {/*<a className="mt-2 underline">โดย First Voter</a>*/}
         </div>
       </div>
       <div className="flex justify-center">
