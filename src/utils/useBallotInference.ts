@@ -14,6 +14,8 @@ interface UseBallotInferenceReturn {
   isGood: boolean
   submitting: boolean
   hasDrawn: boolean
+  loading: boolean
+  loadingProgress: number
   clearCanvas: () => void
   onCanvasChange: () => void
 }
@@ -29,7 +31,7 @@ export const useBallotInference = (options: UseBallotInferenceOptions = {}): Use
   const [hasDrawn, setHasDrawn] = useState(false)
   const [pendingInference, setPendingInference] = useState(false)
 
-  const { predict, sessionReady } = useOnnxInference(modelPath)
+  const { predict, sessionReady, loadingProgress, loading } = useOnnxInference(modelPath)
 
   const runInference = useCallback(async () => {
     if (!canvasRef.current || !sessionReady) return
@@ -87,6 +89,8 @@ export const useBallotInference = (options: UseBallotInferenceOptions = {}): Use
     isGood,
     submitting,
     hasDrawn,
+    loading,
+    loadingProgress,
     clearCanvas,
     onCanvasChange,
   }

@@ -6,19 +6,90 @@ interface InferenceResult {
   allProbabilities: number[]
 }
 
+const CACHE_NAME = "onnx-model-cache"
+
+// Global map to track loading promises to avoid redundant fetches
+const loadingPromises: Record<string, Promise<ArrayBuffer>> = {}
+
+async function fetchWithProgress(
+  url: string,
+  onProgress: (progress: number) => void
+): Promise<ArrayBuffer> {
+  // Check if we already have a loading promise for this URL
+  if (await loadingPromises[url]) {
+    return loadingPromises[url]
+  }
+
+  const fetchPromise = (async () => {
+    // 1. Try Cache API first
+    const cache = await caches.open(CACHE_NAME)
+    const cachedResponse = await cache.match(url)
+
+    if (cachedResponse) {
+      onProgress(100)
+      return await cachedResponse.arrayBuffer()
+    }
+
+    // 2. Fetch with progress
+    const response = await fetch(url)
+    if (!response.ok) throw new Error(`Failed to fetch model: ${response.statusText}`)
+
+    const contentLength = response.headers.get("content-length")
+    const total = contentLength ? parseInt(contentLength, 10) : 0
+    let loaded = 0
+
+    const reader = response.body?.getReader()
+    if (!reader) throw new Error("ReadableStream not supported")
+
+    const chunks: Uint8Array[] = []
+    // eslint-disable-next-line no-constant-condition
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) break
+      chunks.push(value)
+      loaded += value.length
+      if (total) {
+        onProgress(Math.round((loaded / total) * 100))
+      }
+    }
+
+    const blob = new Blob(chunks)
+    const buffer = await blob.arrayBuffer()
+
+    // 3. Store in cache for next time
+    // We clone the response-like object to store it
+    await cache.put(url, new Response(blob))
+
+    return buffer
+  })()
+
+  loadingPromises[url] = fetchPromise
+
+  try {
+    return await fetchPromise
+  } finally {
+    // We keep the promise in the map so subsequent calls get the same result immediately
+    // but you might want to clear it on error if you want to retry
+  }
+}
+
 export const useOnnxInference = (modelPath: string) => {
   const [session, setSession] = useState<any>(null)
   const [loading, setLoading] = useState<boolean>(true)
+  const [loadingProgress, setLoadingProgress] = useState<number>(0)
 
   useEffect(() => {
     async function initSession() {
       try {
-        // Set WASM paths if they aren't in the root (optional depending on your setup)
-        // ort.env.wasm.wasmPaths = '/path-to-wasm-files/';
-
+        setLoading(true)
         // eslint-disable-next-line import/namespace
         const ort = await import("onnxruntime-web")
-        const sess = await ort.InferenceSession.create(modelPath)
+
+        const modelBuffer = await fetchWithProgress(modelPath, (p) => {
+          setLoadingProgress(p)
+        })
+
+        const sess = await ort.InferenceSession.create(modelBuffer)
         setSession(sess)
       } catch (e) {
         console.error("Failed to load ONNX model:", e)
@@ -109,5 +180,5 @@ export const useOnnxInference = (modelPath: string) => {
     [session]
   )
 
-  return { predict, loading, sessionReady: !!session }
+  return { predict, loading, loadingProgress, sessionReady: !!session }
 }

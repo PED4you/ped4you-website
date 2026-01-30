@@ -6,10 +6,25 @@ import { useBallotInference } from "@/utils/useBallotInference"
 import FYIMarking from "./FYIMarking"
 
 export default function RegionMark({ nextPage }: { nextPage: () => void }) {
-  const { canvasRef, isGood, submitting, hasDrawn, clearCanvas, onCanvasChange } = useBallotInference()
+  const { canvasRef, isGood, submitting, hasDrawn, clearCanvas, onCanvasChange, loading, loadingProgress  } = useBallotInference()
 
   return (
     <section className="min-h-screen w-full bg-PED-green text-white">
+      {loading && (
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/50 text-white backdrop-blur-sm">
+          <div className="flex flex-col items-center gap-4 rounded-2xl bg-white p-8 text-black shadow-2xl">
+            <div className="border-PED-blue size-12 animate-spin rounded-full border-4 border-t-transparent"></div>
+            <p className="text-xl font-semibold">กำลังโหลด AI Model...</p>
+            <div className="h-4 w-64 overflow-hidden rounded-full bg-gray-200">
+              <div
+                className="bg-PED-blue h-full transition-all duration-300"
+                style={{ width: `${loadingProgress}%` }}
+              ></div>
+            </div>
+            <p className="text-sm text-gray-500">{loadingProgress}%</p>
+          </div>
+        </div>
+      )}
       <div className="mx-auto flex w-full flex-col gap-4 px-4 py-12 md:px-10">
         <div className="flex flex-col items-center gap-4">
           <div className="mb-4 flex flex-col items-center justify-center">
