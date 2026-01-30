@@ -17,7 +17,7 @@ export default function BirthDatePicker({ onChange }: { onChange: (newDate: stri
   }
 
   return (
-    <div className="relative w-1/2">
+    <div className="relative w-full">
       <Datepicker
         options={{
           title: "เลือกวันเกิด",
@@ -27,35 +27,31 @@ export default function BirthDatePicker({ onChange }: { onChange: (newDate: stri
           maxDate: new Date("2030-01-01"),
           minDate: new Date("1950-01-01"),
           theme: {
-            // background: "bg-PED-purple dark:bg-PED-purple",
-            background: "",
+            background: "bg-white",
             todayBtn: "",
             clearBtn: "",
-            icons: "",
-            // text: "text-white",
-            text: "",
-            disabledText: "",
-            // disabledText: "text-PED-yellow-secondary",
-            input: "",
-            inputIcon: "",
-            selected: "",
-            // selected: "bg-white text-PED-purple-secondary dark:text-PED-purple-secondary",
+            icons: "bg-PED-purple hover:bg-PED-purple-secondary",
+            text: "text-PED-purple-secondary",
+            disabledText: "text-gray-400",
+            input:
+              "bg-PED-yellow text-PED-purple-secondary placeholder:text-PED-purple-secondary/50 focus:ring-2 focus:ring-PED-green border-0",
+            inputIcon: "text-PED-purple-secondary",
+            selected: "bg-PED-purple text-white",
           },
           icons: {
-            // () => ReactElement | JSX.Element
             prev: () => (
-              <span className="">
+              <span>
                 <ChevronLeftIcon className="h-5 w-5 text-white" />
               </span>
             ),
             next: () => (
-              <span className="">
+              <span>
                 <ChevronRightIcon className="h-5 w-5 text-white" />
               </span>
             ),
           },
-          datepickerClassNames: "text-white dark:text-white",
-          defaultDate: new Date("2005-01-01"),
+          datepickerClassNames: "",
+          defaultDate: new Date("2008-02-08"),
           language: "th",
         }}
         onChange={handleChange}
