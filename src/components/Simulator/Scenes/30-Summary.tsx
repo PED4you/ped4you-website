@@ -95,8 +95,8 @@ export default function Summary() {
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 px-4 py-8">
         {/* Header */}
         <div className="mb-2 text-center">
-          <h1 className="text-2xl font-semibold text-PED-green-secondary md:text-4xl">สรุปขั้นตอน</h1>
-          <h2 className="text-2xl font-semibold text-PED-green-secondary md:text-4xl">การลงคะแนนเสียง</h2>
+          <h1 className="text-4xl font-semibold text-PED-green-secondary">สรุปขั้นตอน</h1>
+          <h2 className="text-4xl font-semibold text-PED-green-secondary">การลงคะแนนเสียง</h2>
         </div>
 
         {/* Main content grid */}

@@ -28,7 +28,7 @@ export default function ReferendumYourNumber() {
           type="text"
           value={numberInput}
           onChange={(e) => setNumberInput(e.target.value)}
-          className="my-10 w-full appearance-none border-b border-white bg-transparent text-[100px] font-normal"
+          className="my-10 w-full appearance-none border-b border-white bg-transparent text-[100px] font-medium"
         />
       </div>
       {error && <span className="text-center text-PED-orange">ไม่ถูกต้อง เลขลำดับที่ถูกต้องคือ 145</span>}

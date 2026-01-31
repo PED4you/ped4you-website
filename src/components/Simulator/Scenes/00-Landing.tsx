@@ -40,11 +40,11 @@ export default function Landing() {
         <div className="relative flex flex-col items-center justify-center gap-4 overflow-hidden p-10 sm:mt-4">
           <SimulatorHeading className="h-32 sm:h-36" />
 
-          <p className="mt-4 text-center text-lg font-light text-PED-purple-secondary">
+          <p className="mt-4 text-center text-lg font-medium text-PED-purple-secondary">
             ถ้าคุณสงสัยว่าขั้นตอนการเลือกตั้งเป็นอย่างไร มาลองเลือกตั้งกับพวกเราสิ !
           </p>
 
-          <p className="text-center text-sm font-light text-PED-orange">
+          <p className="text-center text-sm font-medium text-PED-orange">
             *ข้อมูลที่กรอกทั้งหมดจะใช้เพื่อการจำลองเลือกตั้งเท่านั้น จะไม่มีการเก็บข้อมูลส่วนตัวใด ๆ
           </p>
 

@@ -15,7 +15,7 @@ function Heading() {
         <h1 className="text-4xl font-semibold text-PED-green-secondary">
           เซ็นชื่อและลงลายมือชื่อ<br/>หรือลายพิมพ์นิ้วมือ<br/>ที่ต้นขั้ว
         </h1>
-        <p className="text-lg font-light text-PED-green">และฉีกต้นขั้วออกให้กับกรรมการประจำหน่วยเลือกตั้ง</p>
+        <p className="text-lg font-medium text-PED-green">และฉีกต้นขั้วออกให้กับกรรมการประจำหน่วยเลือกตั้ง</p>
       </div>
     </div>
   )
@@ -61,7 +61,7 @@ export default function Cubible() {
                   {!signed ? (
                     <button
                       onClick={() => setSigned(true)}
-                      className="relative top-4 animate-pulse text-center font-light text-PED-orange"
+                      className="relative top-4 animate-pulse text-center font-medium text-PED-orange"
                     >
                       แตะเพื่อลงลายมือชื่อ
                     </button>

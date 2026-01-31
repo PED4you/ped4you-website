@@ -15,11 +15,11 @@ export default function ReferendumLanding() {
           ขั้นตอนที่ 2: ประชามติ
         </h2>
 
-        <p className="text-center text-lg font-light text-PED-purple-secondary">
+        <p className="text-center text-lg font-medium text-PED-purple-secondary">
           ต่อไปเราจะมาลองจำลองการลงประชามติกัน !
         </p>
 
-        <p className="text-center text-sm font-light text-PED-orange">
+        <p className="text-center text-sm font-medium text-PED-orange">
           *ข้อมูลที่กรอกทั้งหมดจะใช้เพื่อการจำลองเท่านั้น จะไม่มีการเก็บข้อมูลส่วนตัวใด ๆ
         </p>
 

@@ -20,7 +20,7 @@ export default function FillName() {
 
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-semibold text-PED-green-secondary">ตรวจสอบสิทธิ์เลือกตั้ง</h1>
-        <p className="text-lg font-light text-PED-orange">
+        <p className="text-lg font-medium text-PED-orange">
           ข้อมูลที่กรอกไปจะใช้เพื่อการจำลองเลือกตั้งเท่านั้น จะไม่มีการเก็บข้อมูลส่วนตัวใด ๆ
         </p>
       </div>
@@ -90,7 +90,7 @@ export default function FillName() {
                     placeholder="คำนำหน้าชืื่อ"
                     id="title"
                     name="title"
-                    className="w-full rounded-md border border-r-[0.75rem] border-PED-yellow bg-PED-yellow px-6 py-3 text-base font-normal text-PED-purple-secondary placeholder:text-PED-purple-secondary/50 focus:outline-none focus:ring-2 focus:ring-PED-green"
+                    className="w-full rounded-md border border-r-[0.75rem] border-PED-yellow bg-PED-yellow px-6 py-3 text-base font-medium text-PED-purple-secondary placeholder:text-PED-purple-secondary/50 focus:outline-none focus:ring-2 focus:ring-PED-green"
                   >
                     <option value="นาย">นาย</option>
                     <option value="นางสาว">นางสาว</option>
@@ -103,7 +103,7 @@ export default function FillName() {
                     name="name"
                     type="text"
                     placeholder="จำลอง เลือกตั้ง"
-                    className="h-full w-full rounded-md bg-PED-yellow px-4 py-3 text-base font-normal text-PED-purple-secondary placeholder:text-PED-purple-secondary/50 focus:outline-none focus:ring-2 focus:ring-PED-green"
+                    className="h-full w-full rounded-md bg-PED-yellow px-4 py-3 text-base font-medium text-PED-purple-secondary placeholder:text-PED-purple-secondary/50 focus:outline-none focus:ring-2 focus:ring-PED-green"
                   />
                 </div>
               </div>

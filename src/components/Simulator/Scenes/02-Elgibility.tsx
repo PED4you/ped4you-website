@@ -23,7 +23,7 @@ export default function Elgibility() {
 
         <p
           className={classNames(
-            "px-6 text-center text-base font-normal",
+            "px-6 text-center text-base font-medium",
             canVote ? "text-PED-green" : "text-PED-orange"
           )}
         >
@@ -34,7 +34,7 @@ export default function Elgibility() {
               <span className="my-4 rounded-full bg-PED-green px-4 pb-1.5 pt-1 text-2xl text-white">
                 {userData.votingDistrict.province} เขต {userData.votingDistrict.code}
               </span>
-              <span className="text-sm font-light">
+              <span className="text-sm font-medium">
                 ({userData.votingDistrict.districts.map((d) => `${d.name}`).join(" ")})
               </span>
             </div>
@@ -48,7 +48,7 @@ export default function Elgibility() {
         </div>
       </div>
 
-      <div className="mx-auto w-full rounded-t-2xl bg-PED-yellow px-4 py-6 text-center text-sm font-light text-PED-purple-secondary sm:px-10 sm:text-base">
+      <div className="mx-auto w-full rounded-t-2xl bg-PED-yellow px-4 py-6 text-center text-sm font-medium text-PED-purple-secondary sm:px-10 sm:text-base">
         <p className="w-full break-words">
           สามารถตรวจสอบข้อมูลผู้มีสิทธิ์เลือกตั้งได้ที่เว็บไซต์ของกรมการปกครอง
           <br />

@@ -21,7 +21,7 @@ export default function Result() {
           <span className="mb-4 rounded-full bg-PED-green px-4 pb-1.5 pt-1 text-2xl text-white">
             {userData.votingDistrict.province} เขต {userData.votingDistrict.code}
           </span>
-          <span className="text-center text-sm font-light text-PED-green">
+          <span className="text-center text-sm font-medium text-PED-green">
             ({userData.votingDistrict.districts.map((d) => `${d.name}`).join(" ")})
           </span>
         </div>
@@ -34,8 +34,8 @@ export default function Result() {
 
         <div className="flex flex-col">
           <p className="font-semibold text-PED-green-secondary">หมายเลข {userData.regionVote.no}</p>
-          <p className="font-light">{userData.regionVote.candidate}</p>
-          <p className="font-light">พรรค{userData.regionVote.party}</p>
+          <p className="font-medium">{userData.regionVote.candidate}</p>
+          <p className="font-medium">พรรค{userData.regionVote.party}</p>
         </div>
         <span className="w-full rounded-full bg-[#FC60A8] px-6 py-2 text-center text-xl text-white">
           แบบบัญชีรายชื่อ
@@ -43,12 +43,12 @@ export default function Result() {
 
         <div className="flex flex-col">
           <p className="font-semibold text-[#FC60A8]">หมายเลข {userData.partylistVote.no}</p>
-          <p className="font-light">พรรค{userData.partylistVote.party}</p>
+          <p className="font-medium">พรรค{userData.partylistVote.party}</p>
         </div>
 
         <hr className="my-2 border-black" />
 
-        <div className="flex flex-col gap-2 font-light">
+        <div className="flex flex-col gap-2 font-medium">
           <div className="flex items-center gap-2">
             เวลาที่ใช้สิทธิ์ {formatDate(userData.startDate)["hh-mm"]}-{formatDate(new Date())["hh-mm"]} น.
           </div>

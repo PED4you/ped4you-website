@@ -17,7 +17,7 @@ export default function Signature() {
 
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-semibold text-PED-green-secondary">ลงลายมือชื่อหรือพิมพ์ลายนิ้วหัวแม่มือ</h1>
-        <p className="text-lg font-light text-PED-green">เพื่อเป็นการยืนยันตัวตน</p>
+        <p className="text-lg font-medium text-PED-green">เพื่อเป็นการยืนยันตัวตน</p>
       </div>
       
 
@@ -64,7 +64,7 @@ export default function Signature() {
                   onClick={() => setSigned(true)}
                   className={classNames(
                     mitr.className,
-                    "animate-pulse text-center font-light text-PED-orange transition-colors hover:text-slate-500"
+                    "animate-pulse text-center font-medium text-PED-orange transition-colors hover:text-slate-500"
                   )}
                 >
                   แตะเพื่อลงลายมือชื่อ

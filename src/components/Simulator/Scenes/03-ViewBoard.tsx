@@ -18,12 +18,12 @@ export default function ViewBoard() {
   return (
     <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4">
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl text-PED-green-secondary">
+        <h1 className="text-4xl font-semibold text-PED-green-secondary">
           จดจำหมายเลขผู้สมัคร
           <br />
           และพรรคที่เราจะเลือก
         </h1>
-        <p className="text-lg font-light text-PED-green">เพื่อใช้ในการลงคะแนนเสียง</p>
+        <p className="text-lg font-medium text-PED-green">เพื่อใช้ในการลงคะแนนเสียง</p>
       </div>
 
       <div className="flex items-center justify-center">
@@ -67,8 +67,8 @@ export default function ViewBoard() {
                 </div>
                 <div className="flex items-center gap-2 px-4">
                   <div className="flex flex-col items-start">
-                    <h2 className="text-left text-lg font-light leading-[24px]">{candidate.candidate}</h2>
-                    <p className="mt-1 text-sm font-light text-gray-500">{candidate.party}</p>
+                    <h2 className="text-left text-lg font-medium leading-[24px]">{candidate.candidate}</h2>
+                    <p className="mt-1 text-sm font-medium text-gray-500">{candidate.party}</p>
                   </div>
                 </div>
               </div>
@@ -80,7 +80,7 @@ export default function ViewBoard() {
                 <p className="text-left text-4xl font-semibold text-[#FC60A8]">{member.no}</p>
                 <Image src={`/images/simulator/party/${member.party}.png`} alt={member.party} width={75} height={75} />
                 <div className="flex items-center">
-                  <p className="text-left font-light text-[#FC60A8]">พรรค{member.party}</p>
+                  <p className="text-left font-medium text-[#FC60A8]">พรรค{member.party}</p>
                 </div>
               </div>
             ))}

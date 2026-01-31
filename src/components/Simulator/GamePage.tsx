@@ -108,7 +108,7 @@ export default function PageRenderer() {
   const showProgressBar = page !== "0" && page !== "19" && page !== "30"
 
   return (
-    <div className={classNames("flex min-h-screen flex-col", ibmPlexSansThai.className)}>
+    <div className={classNames("flex min-h-screen flex-col font-medium", ibmPlexSansThai.className)}>
       {showProgressBar && <ProgressBar processes={progressState} className="mx-4 mt-4" />}
       <PageContent page={page} />
     </div>

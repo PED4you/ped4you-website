@@ -16,7 +16,7 @@ export default function Folding() {
     <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4 px-6">
       <div className="flex flex-col gap-2">
         <h1 className="text-4xl font-semibold text-PED-green-secondary">พับบัตรเพื่อหย่อนลง<br/>หีบใส่บัตร</h1>
-        <p className="text-lg font-light text-PED-green">
+        <p className="text-lg font-medium text-PED-green">
           การพับบัตรที่ดี คือ การพับให้มิดชิดและไม่มีการทำรอยหรือสัญลักษณ์พิเศษที่บ่งบอกถึงบัตรใบนั้น ๆ
         </p>
       </div>
@@ -81,7 +81,7 @@ export default function Folding() {
                     <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-PED-orange">
                       <p className="text-lg font-semibold text-white">1</p>
                     </div>
-                    <p className="font-light">
+                    <p className="font-medium">
                       พับครึ่งแนวตั้ง
                       <br />
                       ไม่ให้เห็นด้านช่องลงคะแนนเสียง
@@ -105,7 +105,7 @@ export default function Folding() {
                     <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-PED-orange">
                       <p className="text-lg font-semibold text-white">2</p>
                     </div>
-                    <p className="font-light">
+                    <p className="font-medium">
                       แบ่งพับจากล่างขึ้นบน
                       <br />
                       ให้เป็น 3 ส่วน
@@ -130,7 +130,7 @@ export default function Folding() {
                       <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-PED-orange">
                         <p className="text-lg font-semibold text-white">3</p>
                       </div>
-                      <p className="font-light">
+                      <p className="font-medium">
                         เรียบร้อย !
                         <br />
                         จะเห็นแค่หน้าบัตรเท่านั้น

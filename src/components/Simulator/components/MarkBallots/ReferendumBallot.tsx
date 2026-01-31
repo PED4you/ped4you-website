@@ -18,14 +18,14 @@ export default function ReferendumBallot({ onNext }: { onNext: (choice: Referend
     })
     // Give a small delay to show the "selection" if needed, but the user wants to go to mark page
     setTimeout(() => {
-        onNext(choice)
+      onNext(choice)
     }, 300)
   }
 
   return (
     <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4 px-6">
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl font-medium text-PED-green-secondary">ลงคะแนนประชามติ</h1>
+        <h1 className="text-4xl font-semibold text-PED-green-secondary">ลงคะแนนประชามติ</h1>
         <p className="mt-1 text-center text-lg font-light text-slate-500">
           คลิกช่องที่คุณ
           <br />

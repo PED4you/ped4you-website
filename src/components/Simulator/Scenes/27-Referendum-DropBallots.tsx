@@ -23,7 +23,7 @@ export default function ReferendumDropBallots() {
 
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-semibold text-PED-green-secondary">หย่อนบัตรลงหีบใส่บัตรด้วยตนเอง</h1>
-        <p className="text-lg font-light text-PED-green">หย่อนบัตรประชามติลงในหีบ</p>
+        <p className="text-lg font-medium text-PED-green">หย่อนบัตรประชามติลงในหีบ</p>
       </div>
 
       <div className="relative mt-16 flex flex-col">
@@ -34,7 +34,7 @@ export default function ReferendumDropBallots() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setType("ballot-fall")}
-              className="absolute left-1/2 top-0 -translate-x-1/2 animate-pulse text-center font-light text-black"
+              className="absolute left-1/2 top-0 -translate-x-1/2 animate-pulse text-center font-medium text-black"
             >
               แตะเพื่อหย่อนบัตร
             </motion.button>

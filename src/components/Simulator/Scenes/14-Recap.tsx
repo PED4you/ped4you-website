@@ -46,7 +46,7 @@ export default function Recap() {
                 <p className="text-xl font-semibold text-PED-orange">{step.no}</p>
 
                 <p className="text-lg font-semibold text-PED-purple">{step.title}</p>
-                {step.description && <p className="text-sm font-light text-PED-purple">{step.description}</p>}
+                {step.description && <p className="text-sm font-medium text-PED-purple">{step.description}</p>}
               </div>
             ))}
           </div>
@@ -60,8 +60,8 @@ export default function Recap() {
               <p className="text-base">กายังไงไม่ให้บัตรเสีย</p>
             </div>
 
-            <div className="mt-3 flex flex-col gap-3 text-sm font-light text-white">
-              <p className="font-normal">หลักการทำเครื่องหมายลงบนบัตรเลือกตั้ง</p>
+            <div className="mt-3 flex flex-col gap-3 text-sm font-medium text-white">
+              <p className="font-medium">หลักการทำเครื่องหมายลงบนบัตรเลือกตั้ง</p>
 
               <ol className="list-decimal px-4">
                 <li>
@@ -75,7 +75,7 @@ export default function Recap() {
             </div>
 
             <div className="my-4 flex flex-col gap-2">
-              <span className="rounded-full bg-PED-green px-1 py-2 text-center text-sm font-normal text-white">
+              <span className="rounded-full bg-PED-green px-1 py-2 text-center text-sm font-medium text-white">
                 ตัวอย่างการกากบาทที่ถูกต้อง
               </span>
 
@@ -89,7 +89,7 @@ export default function Recap() {
             </div>
 
             <div className="my-2 flex flex-col gap-2">
-              <span className="rounded-full bg-PED-orange px-3 py-2 text-center text-sm font-normal text-white">
+              <span className="rounded-full bg-PED-orange px-3 py-2 text-center text-sm font-medium text-white">
                 ตัวอย่างการกากบาทที่ผิด
               </span>
 

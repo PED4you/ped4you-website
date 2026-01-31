@@ -3,7 +3,7 @@ import { Fragment } from "react"
 import classNames from "classnames"
 
 import { sarabun } from "@/app/fonts"
-import {Button} from "@/components/common/Home/Button"
+import { Button } from "@/components/common/Home/Button"
 
 import { usePage } from "../PageProvider"
 
@@ -13,15 +13,17 @@ export default function ViewYourNumber() {
   return (
     <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4 px-6">
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl text-PED-green-secondary">ตรวจสอบชื่อ-สกุลและ<br/>จดจำลำดับของตนเอง</h1>
-        <p className="text-lg font-light text-PED-green">เพื่อนำเลขลำดับของตนเองไปแจ้งกับเจ้าหน้าที่</p>
+        <h1 className="text-4xl font-semibold text-PED-green-secondary">
+          ตรวจสอบชื่อ-สกุลและ
+          <br />
+          จดจำลำดับของตนเอง
+        </h1>
+        <p className="text-lg font-medium text-PED-green">เพื่อนำเลขลำดับของตนเองไปแจ้งกับเจ้าหน้าที่</p>
       </div>
 
       <div className="mb-4 text-left text-base font-semibold text-PED-orange">
         <p>
-          หมายเหตุ : เลขนี้เป็นเพียงเลขสมมติ
-          ในวันจริงจะต้องดูที่บอร์ดของหน่วยเลือกตั้ง
-          หรือดูที่เว็บไซต์ของกรมการปกครอง
+          หมายเหตุ : เลขนี้เป็นเพียงเลขสมมติ ในวันจริงจะต้องดูที่บอร์ดของหน่วยเลือกตั้ง หรือดูที่เว็บไซต์ของกรมการปกครอง
         </p>
       </div>
 
