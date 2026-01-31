@@ -39,7 +39,7 @@ export default function AddressSelect({
 
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor="address" className="text-lg font-medium text-PED-purple">
+      <label htmlFor="address" className="text-lg font-bold text-PED-purple">
         ที่อยู่ทะเบียนบ้าน
       </label>
 

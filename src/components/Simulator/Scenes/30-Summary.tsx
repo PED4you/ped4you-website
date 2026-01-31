@@ -65,13 +65,13 @@ function StepItem({
   return (
     <div className="flex items-start gap-3">
       <div
-        className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-sm font-medium text-white ${styles.numberBg}`}
+        className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-sm font-semibold text-white ${styles.numberBg}`}
       >
         {no}
       </div>
       <div className="flex flex-col">
-        <p className={`text-sm font-medium ${styles.titleColor}`}>{title}</p>
-        {description && <p className={`text-xs font-medium ${styles.descriptionColor}`}>{description}</p>}
+        <p className={`text-sm font-semibold ${styles.titleColor}`}>{title}</p>
+        {description && <p className={`text-xs font-semibold ${styles.descriptionColor}`}>{description}</p>}
       </div>
     </div>
   )
@@ -81,7 +81,7 @@ function SectionHeader({ number, bgColor }: { number: number; bgColor: string })
   return (
     <div className="flex justify-center">
       <div
-        className={`flex h-10 w-10 items-center justify-center rounded-full text-xl font-bold text-white ${bgColor}`}
+        className={`flex h-10 w-10 items-center justify-center rounded-full text-xl font-semibold text-white ${bgColor}`}
       >
         {number}
       </div>
@@ -95,8 +95,8 @@ export default function Summary() {
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 px-4 py-8">
         {/* Header */}
         <div className="mb-2 text-center">
-          <h1 className="text-2xl font-bold text-PED-green-secondary md:text-4xl">สรุปขั้นตอน</h1>
-          <h2 className="text-2xl font-bold text-PED-green-secondary md:text-4xl">การลงคะแนนเสียง</h2>
+          <h1 className="text-2xl font-semibold text-PED-green-secondary md:text-4xl">สรุปขั้นตอน</h1>
+          <h2 className="text-2xl font-semibold text-PED-green-secondary md:text-4xl">การลงคะแนนเสียง</h2>
         </div>
 
         {/* Main content grid */}
@@ -104,7 +104,7 @@ export default function Summary() {
           {/* Section 1: General Election */}
           <div className="flex flex-col gap-4 rounded-2xl bg-white p-4">
             <SectionHeader number={1} bgColor="bg-PED-green" />
-            <h3 className="bg-[#AAECC9] py-2 text-center text-lg font-medium text-[#2D936C]">เลือกตั้งทั่วไป</h3>
+            <h3 className="bg-[#AAECC9] py-2 text-center text-lg font-semibold text-[#2D936C]">เลือกตั้งทั่วไป</h3>
 
             <div className="flex flex-col gap-3">
               {ElectionSteps.map((step) => (
@@ -140,34 +140,34 @@ export default function Summary() {
           {/* Section 3: How to mark correctly */}
           <div className="flex flex-col gap-4 rounded-2xl bg-PED-yellow p-4 md:col-span-2 lg:col-span-1">
             <div className="flex items-center justify-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-PED-orange text-2xl font-bold text-white">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-PED-orange text-2xl font-semibold text-white">
                 ?
               </div>
-              <h3 className="text-2xl font-bold text-PED-orange">กายังไงไม่ให้บัตรเสีย</h3>
+              <h3 className="text-2xl font-semibold text-PED-orange">กายังไงไม่ให้บัตรเสีย</h3>
             </div>
 
-            <div className="flex flex-col gap-2 text-center text-sm font-medium text-black">
+            <div className="flex flex-col gap-2 text-center text-sm font-semibold text-black">
               <p>
-                1. ให้ทำเครื่องหมาย <span className="font-bold">กากบาท</span>
+                1. ให้ทำเครื่องหมาย <span className="font-semibold">กากบาท</span>
                 <br />
                 ลงในช่องที่กำหนด เพียง 1 ช่องเท่านั้น
               </p>
               <p>
                 2. ห้ามทำเครื่องหมายหรือเขียนข้อความอื่น
                 <br />
-                นอกจาก <span className="font-bold">กากบาท</span> ลงบนบัตรเลือกตั้ง
+                นอกจาก <span className="font-semibold">กากบาท</span> ลงบนบัตรเลือกตั้ง
               </p>
             </div>
 
             <div className="flex flex-col gap-2">
-              <span className="rounded-full bg-[#5FCFA4] px-3 py-1.5 text-center text-sm font-medium text-white">
+              <span className="rounded-full bg-[#5FCFA4] px-3 py-1.5 text-center text-sm font-semibold text-white">
                 ตัวอย่างการกากบาทที่ถูกต้อง
               </span>
               <Image src="/images/simulator/marking/good.png" width={600} height={200} alt="good marking" />
             </div>
 
             <div className="flex flex-col gap-2">
-              <span className="rounded-full bg-PED-orange px-3 py-1.5 text-center text-sm font-medium text-white">
+              <span className="rounded-full bg-PED-orange px-3 py-1.5 text-center text-sm font-semibold text-white">
                 ตัวอย่างการกากบาทที่ผิด
               </span>
               <Image src="/images/simulator/marking/bad.png" width={600} height={200} alt="bad marking" />

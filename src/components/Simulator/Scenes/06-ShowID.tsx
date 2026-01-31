@@ -11,7 +11,7 @@ export default function ShowID() {
   return (
     <section className="mx-auto flex h-screen w-full max-w-xl flex-col gap-4 p-4 px-6">
       <div className="flex flex-col gap-2 ">
-        <h1 className="text-4xl font-medium text-PED-green-secondary">ยื่นหลักฐานแสดงตัวตน<br/>ให้กับเจ้าหน้าที่</h1>
+        <h1 className="text-4xl font-semibold text-PED-green-secondary">ยื่นหลักฐานแสดงตัวตน<br/>ให้กับเจ้าหน้าที่</h1>
         <p className="text-lg font-light text-PED-green">
           สามารถใช้บัตรประจำตัวประชาชน ใบขับขี่ พาสปอร์ต หรือบัตรจากแอป ThaID ในการแสดงตัวตนก็ได้
         </p>

@@ -27,7 +27,7 @@ export default function Recap() {
     <section className="min-h-screen w-full bg-PED-green">
       <div className="mx-auto flex w-full flex-col gap-4 px-4 py-12 md:px-10">
         <div className="mb-4 grid w-full grid-cols-2 items-end justify-between sm:flex">
-          <h1 className="pr-4 text-2xl font-medium text-white md:text-3xl">ขั้นตอนการลงคะแนนเสียง</h1>
+          <h1 className="pr-4 text-2xl font-semibold text-white md:text-3xl">ขั้นตอนการลงคะแนนเสียง</h1>
 
           <Button
             className="px-2 py-1.5 text-center text-base sm:px-10 sm:py-2.5 sm:text-lg"
@@ -43,17 +43,17 @@ export default function Recap() {
                 key={step.no}
                 className="flex flex-col items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-center shadow-2xl ring-1 ring-PED-purple-secondary/10 transition-all duration-500 ease-out hover:scale-[101%] hover:ring-8"
               >
-                <p className="text-xl font-medium text-PED-orange">{step.no}</p>
+                <p className="text-xl font-semibold text-PED-orange">{step.no}</p>
 
-                <p className="text-lg font-medium text-PED-purple">{step.title}</p>
+                <p className="text-lg font-semibold text-PED-purple">{step.title}</p>
                 {step.description && <p className="text-sm font-light text-PED-purple">{step.description}</p>}
               </div>
             ))}
           </div>
 
           <div className="mx-auto flex w-full max-w-sm flex-col gap-2 rounded-xl bg-PED-purple-secondary p-6 text-white shadow-2xl ring-1 ring-PED-purple-secondary/10 transition-all duration-500 ease-out hover:scale-[101%] hover:ring-8 md:max-w-full">
-            <div className="flex items-center justify-center gap-2 font-medium text-PED-yellow">
-              <div className="flex size-8 items-center justify-center rounded-full bg-PED-orange text-lg font-medium text-white">
+            <div className="flex items-center justify-center gap-2 font-semibold text-PED-yellow">
+              <div className="flex size-8 items-center justify-center rounded-full bg-PED-orange text-lg font-semibold text-white">
                 ?
               </div>
 
@@ -65,10 +65,10 @@ export default function Recap() {
 
               <ol className="list-decimal px-4">
                 <li>
-                  ให้ทำเครื่องหมาย <span className="font-medium">กากบาท</span> ลงในช่องที่กำหนดเพียง 1 ช่องเท่านั้น
+                  ให้ทำเครื่องหมาย <span className="font-semibold">กากบาท</span> ลงในช่องที่กำหนดเพียง 1 ช่องเท่านั้น
                 </li>
                 <li>
-                  ห้ามทำเครื่องหมายอื่นหรือเขียนข้อความอื่นนอกจาก <span className="font-medium">กากบาท</span>{" "}
+                  ห้ามทำเครื่องหมายอื่นหรือเขียนข้อความอื่นนอกจาก <span className="font-semibold">กากบาท</span>{" "}
                   ลงบนบัตรเลือกตั้ง
                 </li>
               </ol>

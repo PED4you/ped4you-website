@@ -17,7 +17,7 @@ export default function ViewYourNumber() {
         <p className="text-lg font-light text-PED-green">เพื่อนำเลขลำดับของตนเองไปแจ้งกับเจ้าหน้าที่</p>
       </div>
 
-      <div className="mb-4 text-left text-base font-medium text-PED-orange">
+      <div className="mb-4 text-left text-base font-semibold text-PED-orange">
         <p>
           หมายเหตุ : เลขนี้เป็นเพียงเลขสมมติ
           ในวันจริงจะต้องดูที่บอร์ดของหน่วยเลือกตั้ง
@@ -51,7 +51,7 @@ export default function ViewYourNumber() {
           <hr className="relative col-span-5 my-4 border border-slate-200" />
 
           <div className="col-span-2 size-full p-2 py-4">
-            <p className="text-left font-medium">
+            <p className="text-left font-semibold">
               {userData.title}
               {userData.name}
             </p>
@@ -118,11 +118,11 @@ export default function ViewYourNumber() {
             .map((_, i) => (
               <Fragment key={i}>
                 <div className="col-span-2 flex size-full items-center justify-center p-2 py-4 blur-sm">
-                  <p className="text-left  font-medium">นายเลือกตั้ง จำลอง</p>
+                  <p className="text-left  font-semibold">นายเลือกตั้ง จำลอง</p>
                 </div>
 
                 <div className="col-span-1 flex size-full items-center justify-center p-2 py-4 blur-sm">
-                  <p className="text-center font-medium">{146 + i}</p>
+                  <p className="text-center font-semibold">{146 + i}</p>
                 </div>
 
                 <div className="col-span-2 size-full p-2 py-4"></div>

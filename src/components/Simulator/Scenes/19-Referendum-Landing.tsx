@@ -11,7 +11,7 @@ export default function ReferendumLanding() {
       <div className="relative flex flex-col items-center justify-center gap-4 overflow-hidden p-10 sm:mt-4">
         <SimulatorHeading className="h-32 sm:h-36" />
 
-        <h2 className="mt-4 text-center text-2xl font-medium text-PED-purple">
+        <h2 className="mt-4 text-center text-2xl font-semibold text-PED-purple">
           ขั้นตอนที่ 2: ประชามติ
         </h2>
 

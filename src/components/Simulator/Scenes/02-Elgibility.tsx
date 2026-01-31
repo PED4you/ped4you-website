@@ -14,7 +14,7 @@ export default function Elgibility() {
       <div className="flex grow flex-col justify-center gap-6">
         <h1
           className={classNames(
-            "text-center text-4xl font-medium",
+            "text-center text-4xl font-semibold",
             canVote ? "text-PED-green-secondary" : "text-PED-orange"
           )}
         >

@@ -15,7 +15,7 @@ export default function Folding() {
   return (
     <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4 px-6">
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl font-medium text-PED-green-secondary">พับบัตรเพื่อหย่อนลง<br/>หีบใส่บัตร</h1>
+        <h1 className="text-4xl font-semibold text-PED-green-secondary">พับบัตรเพื่อหย่อนลง<br/>หีบใส่บัตร</h1>
         <p className="text-lg font-light text-PED-green">
           การพับบัตรที่ดี คือ การพับให้มิดชิดและไม่มีการทำรอยหรือสัญลักษณ์พิเศษที่บ่งบอกถึงบัตรใบนั้น ๆ
         </p>

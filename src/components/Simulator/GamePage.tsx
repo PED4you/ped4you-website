@@ -1,5 +1,7 @@
 "use client"
+import { ibmPlexSansThai } from "@/app/fonts"
 import ReferendumLanding from "@/components/Simulator/Scenes/19-Referendum-Landing"
+import classNames from "classnames"
 
 import ProgressBar from "./components/ProgressBar"
 import { getProgressState } from "./components/progressConfig"
@@ -106,7 +108,7 @@ export default function PageRenderer() {
   const showProgressBar = page !== "0" && page !== "19" && page !== "30"
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className={classNames("flex min-h-screen flex-col", ibmPlexSansThai.className)}>
       {showProgressBar && <ProgressBar processes={progressState} className="mx-4 mt-4" />}
       <PageContent page={page} />
     </div>

@@ -43,13 +43,13 @@ export default function ReferendumResult() {
 
   return (
     <section className="mx-auto flex w-full max-w-xl flex-col items-center p-4 px-6">
-      <h1 className="text-center text-3xl font-medium text-PED-orange">สรุปการออกเสียงประชามติ</h1>
+      <h1 className="text-center text-3xl font-semibold text-PED-orange">สรุปการออกเสียงประชามติ</h1>
 
       <div className="mt-2 flex flex-col items-center gap-3">
         <p className="text-center text-2xl text-[#4438CA]">
           {userData.title} {userData.name}
         </p>
-        <span className="rounded-full bg-PED-green px-8 py-1.5 text-center text-2xl font-medium text-white">
+        <span className="rounded-full bg-PED-green px-8 py-1.5 text-center text-2xl font-semibold text-white">
           {userData.votingDistrict.province} เขต {userData.votingDistrict.code}
         </span>
         <p className="text-center text-sm text-PED-green">{getDistrictText(userData.votingDistrict)}</p>
@@ -60,7 +60,7 @@ export default function ReferendumResult() {
           การออกเสียงประชามติ
         </span>
         <div className="mt-4 flex flex-col gap-1">
-          <p className={`text-xl font-medium ${getChoiceColor(userData.referendumVote?.choice)}`}>
+          <p className={`text-xl font-semibold ${getChoiceColor(userData.referendumVote?.choice)}`}>
             {getChoiceText(userData.referendumVote?.choice)}
           </p>
           <p className="text-xl leading-tight text-black">
@@ -86,7 +86,7 @@ export default function ReferendumResult() {
           </div>
         </div>
 
-        <div className="mt-2 flex items-center justify-center gap-2 text-lg font-medium text-PED-orange">
+        <div className="mt-2 flex items-center justify-center gap-2 text-lg font-semibold text-PED-orange">
           <StarIcon className="size-6" /> 8 ก.พ. 2569 ออกเสียงประชามติ
         </div>
       </div>
@@ -94,7 +94,7 @@ export default function ReferendumResult() {
       <div className="mt-8">
         <Button
           text="เสร็จสิ้น"
-          className="!mt-0 rounded-[2rem] px-16 py-4 text-2xl font-bold"
+          className="!mt-0 rounded-[2rem] px-16 py-4 text-2xl font-semibold"
           onClick={() => setPage("30")}
         />
       </div>

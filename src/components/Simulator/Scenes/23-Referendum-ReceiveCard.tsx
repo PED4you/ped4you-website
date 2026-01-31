@@ -12,7 +12,7 @@ export default function ReferendumReceiveCard() {
   return (
     <section className="relative mx-auto flex w-full max-w-xl flex-col items-center gap-6 p-4 px-6">
       <div className="flex w-full flex-col items-center gap-8">
-        <h1 className="w-full text-left text-4xl font-medium leading-tight text-PED-green-secondary">
+        <h1 className="w-full text-left text-4xl font-semibold leading-tight text-PED-green-secondary">
           คุณจะได้รับบัตร
           <br />
           ออกเสียงประชามติ
@@ -49,7 +49,7 @@ export default function ReferendumReceiveCard() {
       </div>
 
       <div className="mt-2">
-        <Button text="ต่อไป" className="rounded-full px-16 py-3 text-2xl font-medium" onClick={() => setPage("24")} />
+        <Button text="ต่อไป" className="rounded-full px-16 py-3 text-2xl font-semibold" onClick={() => setPage("24")} />
       </div>
     </section>
   )

@@ -19,7 +19,7 @@ export default function DropBallots() {
     <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4 py-6">
 
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl font-medium text-PED-green-secondary">หย่อนบัตรลงหีบใส่บัตรด้วยตนเอง</h1>
+        <h1 className="text-4xl font-semibold text-PED-green-secondary">หย่อนบัตรลงหีบใส่บัตรด้วยตนเอง</h1>
         <p className="text-lg font-light text-PED-green">โดยแยกหย่อนบัตรตามประเภทของบัตร</p>
       </div>
 

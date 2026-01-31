@@ -14,7 +14,7 @@ export default function YourNumber() {
   return (
     <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4 px-6">
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl font-medium text-PED-green-secondary">
+        <h1 className="text-4xl font-semibold text-PED-green-secondary">
           แจ้งเลขลำดับของตน
           <br />
           เองกับเจ้าหน้าที่
@@ -23,7 +23,7 @@ export default function YourNumber() {
 
       <div
         className={classNames(
-          "mx-auto mt-6 max-w-md rounded-3xl p-6 px-10 text-left text-2xl font-medium text-white",
+          "mx-auto mt-6 max-w-md rounded-3xl p-6 px-10 text-left text-2xl font-semibold text-white",
           error ? "bg-PED-orange" : "bg-gradient-to-b from-PED-purple to-PED-purple-secondary"
         )}
       >

@@ -12,7 +12,7 @@ function Heading() {
     <div className="flex flex-col gap-4 p-4 px-6">
 
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl font-medium text-PED-green-secondary">
+        <h1 className="text-4xl font-semibold text-PED-green-secondary">
           เซ็นชื่อและลงลายมือชื่อ<br/>หรือลายพิมพ์นิ้วมือ<br/>ที่ต้นขั้ว
         </h1>
         <p className="text-lg font-light text-PED-green">และฉีกต้นขั้วออกให้กับกรรมการประจำหน่วยเลือกตั้ง</p>

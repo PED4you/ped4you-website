@@ -15,11 +15,11 @@ export default function FillName() {
     <section className="mx-auto flex w-full max-w-xl flex-col gap-4 px-4 py-10">
       <div className="flex items-center gap-2">
         <StarIcon className="h-6 w-6 text-PED-orange" />
-        <span className="text-xl font-medium text-PED-orange">ขั้นที่ 1</span>
+        <span className="text-xl font-semibold text-PED-orange">ขั้นที่ 1</span>
       </div>
 
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-medium text-PED-green-secondary">ตรวจสอบสิทธิ์เลือกตั้ง</h1>
+        <h1 className="text-2xl font-semibold text-PED-green-secondary">ตรวจสอบสิทธิ์เลือกตั้ง</h1>
         <p className="text-lg font-light text-PED-orange">
           ข้อมูลที่กรอกไปจะใช้เพื่อการจำลองเลือกตั้งเท่านั้น จะไม่มีการเก็บข้อมูลส่วนตัวใด ๆ
         </p>
@@ -79,7 +79,7 @@ export default function FillName() {
           <Form className="flex min-h-screen flex-col gap-4">
             {/* name */}
             <div className="flex flex-col gap-2">
-              <label htmlFor="name" className="text-lg font-medium text-PED-purple">
+              <label htmlFor="name" className="text-lg font-semibold text-PED-purple">
                 ชื่อ-นามสกุล
               </label>
 
@@ -113,7 +113,7 @@ export default function FillName() {
 
             {/* birthdate */}
             <div className="flex flex-col gap-2">
-              <label htmlFor="bd_day" className="text-lg font-medium text-PED-purple">
+              <label htmlFor="bd_day" className="text-lg font-semibold text-PED-purple">
                 วันเกิด
               </label>
 

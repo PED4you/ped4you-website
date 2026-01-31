@@ -77,7 +77,7 @@ export default function ViewBoard() {
           {type === "partylist" &&
             partyListMembers.map((member, index) => (
               <div key={index} className="flex flex-col items-center gap-2 rounded-lg bg-white p-4 pb-2">
-                <p className="text-left text-4xl font-medium text-[#FC60A8]">{member.no}</p>
+                <p className="text-left text-4xl font-semibold text-[#FC60A8]">{member.no}</p>
                 <Image src={`/images/simulator/party/${member.party}.png`} alt={member.party} width={75} height={75} />
                 <div className="flex items-center">
                   <p className="text-left font-light text-[#FC60A8]">พรรค{member.party}</p>

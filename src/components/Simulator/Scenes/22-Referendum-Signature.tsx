@@ -16,7 +16,7 @@ export default function ReferendumSignature() {
     <section className="mx-auto flex w-full max-w-xl flex-col gap-4 p-4 px-6">
 
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-medium text-PED-green-secondary">ลงลายมือชื่อหรือพิมพ์ลายนิ้วหัวแม่มือ</h1>
+        <h1 className="text-2xl font-semibold text-PED-green-secondary">ลงลายมือชื่อหรือพิมพ์ลายนิ้วหัวแม่มือ</h1>
         <p className="text-lg font-light text-PED-green">เพื่อเป็นการยืนยันตัวตน</p>
       </div>
 
@@ -47,14 +47,14 @@ export default function ReferendumSignature() {
           <hr className="relative col-span-5 my-4 border border-slate-200" />
 
           <div className="col-span-2 size-full p-2 py-4">
-            <p className="text-left font-medium">
+            <p className="text-left font-semibold">
               {userData.title}
               {userData.name}
             </p>
           </div>
 
           <div className="relative col-span-1 size-full p-2 py-4">
-            <p className="text-center font-medium">145</p>
+            <p className="text-center font-semibold">145</p>
           </div>
 
           <div className="col-span-2 size-full p-2 py-4">
@@ -96,11 +96,11 @@ export default function ReferendumSignature() {
             .map((_, i) => (
               <Fragment key={i}>
                 <div className="col-span-2 flex size-full items-center justify-center p-2 py-4 blur-sm">
-                  <p className="text-left  font-medium">นายเลือกตั้ง จำลอง</p>
+                  <p className="text-left  font-semibold">นายเลือกตั้ง จำลอง</p>
                 </div>
 
                 <div className="col-span-1 flex size-full items-center justify-center p-2 py-4 blur-sm">
-                  <p className="text-center font-medium">{146 + i}</p>
+                  <p className="text-center font-semibold">{146 + i}</p>
                 </div>
 
                 <div className="col-span-2 size-full p-2 py-4"></div>

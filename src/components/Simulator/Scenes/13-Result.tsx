@@ -10,7 +10,7 @@ export default function Result() {
 
   return (
     <section className="mx-auto flex w-full max-w-xl flex-col p-4 px-6">
-      <h1 className="text-center text-4xl font-medium text-PED-orange">สรุปการลงคะแนนเสียง</h1>
+      <h1 className="text-center text-4xl font-semibold text-PED-orange">สรุปการลงคะแนนเสียง</h1>
 
       <div className="mt-2 flex flex-col items-center gap-2">
         <p className="text-center text-2xl text-PED-purple">
@@ -33,7 +33,7 @@ export default function Result() {
         </span>
 
         <div className="flex flex-col">
-          <p className="font-medium text-PED-green-secondary">หมายเลข {userData.regionVote.no}</p>
+          <p className="font-semibold text-PED-green-secondary">หมายเลข {userData.regionVote.no}</p>
           <p className="font-light">{userData.regionVote.candidate}</p>
           <p className="font-light">พรรค{userData.regionVote.party}</p>
         </div>
@@ -42,7 +42,7 @@ export default function Result() {
         </span>
 
         <div className="flex flex-col">
-          <p className="font-medium text-[#FC60A8]">หมายเลข {userData.partylistVote.no}</p>
+          <p className="font-semibold text-[#FC60A8]">หมายเลข {userData.partylistVote.no}</p>
           <p className="font-light">พรรค{userData.partylistVote.party}</p>
         </div>
 
