@@ -38,7 +38,7 @@ export default function ReferendumResult() {
     if (!votingDistrict) return ""
     const districtNames = votingDistrict.districts.map((d: any) => d.name)
     if (districtNames.length === 0) return ""
-    return `(เขต${districtNames.join(" เขต")})`
+    return `(${districtNames.join(" เขต")})`
   }
 
   return (
