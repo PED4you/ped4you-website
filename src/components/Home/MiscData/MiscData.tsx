@@ -54,11 +54,23 @@ export const MiscData: FC<MiscDataProps> = ({ hideButton }) => {
               <span>
                 คำศัพท์ที่น่าสนใจ
                 <br />
+                เลือกตั้ง 69
+              </span>
+            }
+            date="30 ม.ค. 69"
+            url={"/blog/words"}
+            thumbnail={"thumb-8.jpg"}
+          />
+          <ArticleCard
+            title={
+              <span>
+                คำศัพท์ที่น่าสนใจ
+                <br />
                 เลือกตั้ง 66
               </span>
             }
             date="24 เม.ย. 66"
-            url={"/blog/words"}
+            url={"/blog/words-66"}
             thumbnail={"thumb-1.jpg"}
           />
           <ArticleCard
