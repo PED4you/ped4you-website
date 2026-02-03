@@ -1701,9 +1701,7 @@
       },
       {
         "name": "เกาะสีชัง",
-        "subdistricts": [
-          { "name": "ท่าเทววงษ์", "votingDistrict": "ชลบุรี.06" }
-        ]
+        "subdistricts": [{ "name": "ท่าเทววงษ์", "votingDistrict": "ชลบุรี.06" }]
       },
       {
         "name": "บ่อทอง",
@@ -4439,9 +4437,7 @@
       },
       {
         "name": "แม่เปิน",
-        "subdistricts": [
-          { "name": "แม่เปิน", "votingDistrict": "นครสวรรค์.06" }
-        ]
+        "subdistricts": [{ "name": "แม่เปิน", "votingDistrict": "นครสวรรค์.06" }]
       },
       {
         "name": "แม่วงก์",
