@@ -56,7 +56,7 @@ export default function HomePage() {
       <Landing />
       <Simulator />
       <FYI />
-      <MiscData />
+      <MiscData homePage />
       <Footer />
     </>
   )

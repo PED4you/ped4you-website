@@ -7,7 +7,7 @@ export { metadata }
 const Page = () => {
   return (
     <div>
-      <MiscData hideButton={true} />
+      <MiscData homePage={false} hideButton={true} />
     </div>
   )
 }

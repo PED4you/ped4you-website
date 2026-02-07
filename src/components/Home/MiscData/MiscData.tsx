@@ -6,9 +6,10 @@ import { MiscHeader } from "@/components/Home/MiscData/MiscHeader"
 
 interface MiscDataProps {
   hideButton?: boolean
+  homePage?: boolean
 }
 
-export const MiscData: FC<MiscDataProps> = ({ hideButton }) => {
+export const MiscData: FC<MiscDataProps> = ({ hideButton, homePage }) => {
   return (
     <section>
       <div className="flex flex-col items-center py-20">
@@ -61,7 +62,7 @@ export const MiscData: FC<MiscDataProps> = ({ hideButton }) => {
             url={"/blog/words"}
             thumbnail={"thumb-8.jpg"}
           />
-          <ArticleCard
+          {!homePage && (<ArticleCard
             title={
               <span>
                 คำศัพท์ที่น่าสนใจ
@@ -72,7 +73,7 @@ export const MiscData: FC<MiscDataProps> = ({ hideButton }) => {
             date="24 เม.ย. 66"
             url={"/blog/words-66"}
             thumbnail={"thumb-1.jpg"}
-          />
+          />)}
           <ArticleCard
             title={
               <span>
