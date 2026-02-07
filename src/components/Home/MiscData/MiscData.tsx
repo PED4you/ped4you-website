@@ -62,18 +62,6 @@ export const MiscData: FC<MiscDataProps> = ({ hideButton, homePage }) => {
             url={"/blog/words"}
             thumbnail={"thumb-8.jpg"}
           />
-          {!homePage && (<ArticleCard
-            title={
-              <span>
-                คำศัพท์ที่น่าสนใจ
-                <br />
-                เลือกตั้ง 66
-              </span>
-            }
-            date="24 เม.ย. 66"
-            url={"/blog/words-66"}
-            thumbnail={"thumb-1.jpg"}
-          />)}
           <ArticleCard
             title={
               <span>
@@ -100,6 +88,18 @@ export const MiscData: FC<MiscDataProps> = ({ hideButton, homePage }) => {
             url={"/blog/calculate"}
             thumbnail={"thumb-5.jpg"}
           />
+          {!homePage && (<ArticleCard
+            title={
+              <span>
+                คำศัพท์ที่น่าสนใจ
+                <br />
+                เลือกตั้ง 66
+              </span>
+            }
+            date="24 เม.ย. 66"
+            url={"/blog/words-66"}
+            thumbnail={"thumb-1.jpg"}
+          />)}
         </div>
         {!hideButton && <LinkButton link="/blog" text={"ดูข้อมูลทั้งหมด"} />}
       </div>
